@@ -22,10 +22,28 @@
 		max-width: 1140px;
 	}
 
-	@media (min-width: 1360px) {
-		max-width: 1290px;
+	@media (min-width: 1440px) {
+			max-width: 1385px;
+	}
+
+	@media (min-width: 1600px) {
+		max-width: 1560px;
+	}
+
+	@media (min-width: 1720px) {
+		max-width: 1640px;
 	}
 }
+
+.contaienr-custom {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	&.size-1365px {
+		max-width: 1365px;
+	}
+ }
 
 .col {
 	-ms-flex-preferred-size: 0;
