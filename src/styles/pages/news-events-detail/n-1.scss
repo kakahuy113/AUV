@@ -1,0 +1,151 @@
+.news__events--detail {
+	margin-top: 80px;
+}
+.detail-content {
+	max-width: 950px;
+}
+.news__events--inner-content {
+	.relate-news {
+		padding-left: 50px;
+		@media (max-width: 1024.98px) {
+			padding-left: 10px;
+		}
+	}
+	@media (max-width: 1025px) {
+		flex-direction: column;
+		& > div {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+}
+.news__evens--detail__wrapper {
+	max-width: 1500px;
+	margin-left: auto;
+}
+.news__events--inner-title {
+	max-width: 970px;
+	margin-bottom: 36px;
+	h3.title {
+		font-size: 30px;
+		font-weight: bold;
+		color: #002f4b;
+		margin-bottom: 15px;
+	}
+	span {
+		font-size: 16px;
+		color: #989898;
+	}
+}
+.detail-content--post {
+	p:first-child {
+		padding-top: 30px;
+	}
+	& > p {
+		padding-bottom: 30px;
+	}
+}
+.img-for-detail-post-2 {
+	overflow: hidden;
+	@media (min-width: 769px) {
+		img:first-child {
+			float: left;
+			width: 674px;
+			padding-right: 24px;
+			height: 423px;
+		}
+		img + img {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			width: 337px;
+			height: 209px;
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+	@media (max-width: 1605px) {
+		img:first-child {
+			width: 60%;
+		}
+		img + img {
+			width: 40%;
+		}
+	}
+	@media (max-width: 768.98px) {
+		img {
+			float: none !important;
+			width: 100% !important;
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		
+	}
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+.relate-news {
+	h3 {
+		color: #D7970C;
+		font-size: 40px;
+		margin-bottom: 90px;
+		@media (max-width: 1440px) {
+			font-size: 26px;
+		}
+	}
+	.relate-news--inner {
+		.relate-news--item {
+			display: block;
+			width: 100%;
+			height: 100%;
+			margin-bottom: 31px;
+			.img {
+				img {
+					max-height: 143px;
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+					object-position: center;
+					background-size: cover;
+					font-family: 'object-fit: cover, object-position: center';
+				}
+			}
+			.news--date {
+				color :#989898;
+			}
+			p {
+				margin-top: 10px;
+				max-width: 100%;
+				color: #0B1F44;
+				font-size: 22px;
+				font-weight: bold;
+			}
+		}
+		@media (max-width: 1024.98px) {
+			display: flex;
+			flex-wrap: wrap;
+			& > a {
+				-ms-flex: 0 0 33%;
+				flex: 0 0 33%;
+				max-width: 33;
+				padding: 10px;
+			}
+		}
+		@media (max-width: 767.98px) {
+            & > a {
+				-ms-flex: 0 0 50%;
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+        }
+	}
+}
