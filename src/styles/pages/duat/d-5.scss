@@ -1,0 +1,66 @@
+// Auv-section
+.auvmap-section {
+	iframe {width: 100%;
+		height: 773px;
+}
+}
+
+.auv-section{
+.container {
+	padding: 20px;
+	.title {
+		text-align: center;
+		color:#d7970c ;
+		font-size: 6rem;
+		font-family: Minion-Pro;
+		font-weight: bold;
+	margin-bottom: 40px;
+	@media (max-width: 1024.98px) {
+		margin-bottom: 20px;
+	}
+}
+.auv-main-swiper {
+	position: relative;
+	.swiper-container {
+		margin: 0 44px;
+		@media (max-width: 575.98px) {
+			margin: 0;
+		}
+	}
+	.swiper-button-next, .swiper-button-prev {
+		&::after {
+			content: "";
+			background-color: #d7970c;
+			width: 31px;
+			height: 31px;
+			border-radius: 8px;
+		}
+		@media (max-width: 575.98px) {
+			top: unset;
+			bottom: -50px;
+			&.swiper-button-next {
+				right: calc(50% - 50px);
+				@media (max-width: 575.98px) {
+					right: calc(50% - 35px);
+				}
+			}
+			&.swiper-button-prev {
+				left: calc(50% - 50px);
+				@media (max-width: 575.98px) {
+					left: calc(50% - 35px);
+				}
+			}
+		}
+	}
+	.swiper-slide {
+		display: flex;
+		justify-content: center;
+		align-self: center;
+		align-items: center;
+	}
+}
+}
+margin-bottom: 80px;
+
+}
+

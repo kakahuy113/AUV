@@ -1,0 +1,121 @@
+.lib__page {
+	.container {
+		max-width: 1320px;
+		.lib__page__wrapper{
+			padding-bottom: 50px;
+			.title {
+				p {
+					font-size: 5rem;
+					color :#d7970c;
+					font-weight: bold;
+					padding-top: 70px;
+				}
+			}
+			.list-item-lib {
+				.item-1{
+					position: relative;
+					p {
+						padding-top: 50px;
+						padding-bottom: 30px;
+						font-size: 3.5rem;
+						font-weight: bold;
+						color: #0B1F44;
+					}
+					&::before {
+						content: "";
+						position: absolute;
+						width: 950px;
+						height: 2px;
+						bottom: 0;
+						left: 9%;
+						top: 63%;
+						background-color:#0B1F44;
+					}
+				}
+			}
+		}
+	}
+
+}
+.content--gallery {
+	display: grid;
+	grid-template-columns: 33.33% 33.33% 33.33%;
+	grid-row-gap: 10px;
+	width: 100%;
+	@media (max-width: 1024.98px) {
+		grid-template-columns:50% 50% ;
+	}
+	.item-gallery {
+		max-width: 395px;
+		max-height: 291px;
+		position: relative;
+		width: 100%;
+		img {
+			width: 100%;
+			transition: .2s all ease-in-out;
+		}
+	}
+
+	@media (min-width: 1025px) {
+		.item-gallery:hover {
+			cursor: pointer;
+			&::before {
+				position: absolute;
+				pointer-events: none;
+				content: '';
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 10;
+				background-size: cover;
+			}
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+
+.pagination {
+	padding-top: 50px;
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    li {
+        margin: 0 5px;
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #989898;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-family: MYRIADPRO-BOLD;
+            font-size: 18px;
+            transition: all .2s cubic-bezier(.2, .5, .5, .8);
+        }
+        &:hover {
+            a {
+                text-decoration: none;
+                color: #0B1F44;
+            }
+        }
+        &.active {
+            a {
+                color: #FFFFFF;
+                background: #0B1F44;
+            }
+        }
+    }
+    @media (max-width: 1024.98px) {
+        li {
+            a {
+                font-size: 14px;
+            }
+        }
+    }
+}
