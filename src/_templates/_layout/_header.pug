@@ -1,17 +1,38 @@
 header
-	.container
-		.container-custom.size-1365px
-			.header__warpper
-				.header--top
-					.mail
-						a(href="") info@edu.vn
-					.phone
-						a(href="") (84-236) 3967 585
-					.language
-						.languages__item.item
-							a.languages__link(href="") EN
-						.languages__item.item
-							a.languages__link(href="") VN
-				.header--bottom
-					.header__logo
-					.header__nav
+	.header__warpper
+		.header--top
+			.container
+				.container-custom.size-1365px
+					.header--top__wrapper
+						.mail
+							a(href="") info@edu.vn
+						.phone
+							a(href="") (84-236) 3967 585
+						.language
+							.languages__item.item
+								a.languages__link(href="") EN
+							.languages__item.item
+								a.languages__link.active(href="") VN
+		.header--bottom
+			.container
+				.container-custom.size-1365px
+					.header--bottom__wrapper
+						.header__logo
+							a.headerLogo__link(href="")
+								img.blur-up.lazyload(src="./assets/images/index/logo.png", alt="")
+						.header__nav
+							.nav_wrapper
+								.navBar
+									.navBar__item
+										a(href="").navBar__link  ABOUT
+									.navBar__item
+										a(href="").navBar__link  ADMISSION
+									.navBar__item
+										a(href="").navBar__link  ACADEMICS
+									.navBar__item
+										a(href="").navBar__link  NEWS - EVENTS
+									.navBar__item
+										a(href="").navBar__link  GALLERY
+									.navBar__item
+										a(href="").navBar__link  CONTACT US
+								.navBarHamburger__wrapper.mobile
