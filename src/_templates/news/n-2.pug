@@ -1,0 +1,67 @@
+section.lib__page
+	.container
+		.container-custom
+			.lib__page__wrapper
+				.title
+					p Photo Gallery
+				.list-item-lib
+					.item-1
+						p  Photo
+				.tab-content
+					.content.image-content-tab
+						.lib__page__img
+							.content--gallery.no-gutters.p-0
+								-for(var i = 0; i< 6; i++)
+									.item-gallery
+										a.item-gallery--popup
+											img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+				ul.pagination
+					li.pagination-prev
+						a(href="#")
+							img.object-cover(src="./assets/icons/arw.svg", alt="")
+					li
+						a(href="#") 1
+					li.active
+						a(href="#") 2
+					li
+						a(href="#") 3
+					li
+						a(href="#") 4
+					li.pagination-dot
+						a(href="#") ...
+					li
+						a(href="#") 10
+					li.pagination-next
+						a(href="#")
+							img.object-cover(src="./assets/icons/arwnex.svg", alt="")
+			.lib__page__wrapper
+				.list-item-lib
+					.item-1
+						p  Video
+				.tab-content
+					.content.image-content-tab
+						.lib__page__img
+							.content--gallery.no-gutters.p-0
+								-for(var i = 0; i< 6; i++)
+									.item-gallery
+										a.item-gallery--popup
+											img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+				ul.pagination
+					li.pagination-prev
+						a(href="#")
+							img.object-cover(src="./assets/icons/arw.svg", alt="")
+					li
+						a(href="#") 1
+					li.active
+						a(href="#") 2
+					li
+						a(href="#") 3
+					li
+						a(href="#") 4
+					li.pagination-dot
+						a(href="#") ...
+					li
+						a(href="#") 10
+					li.pagination-next
+						a(href="#")
+							img.object-cover(src="./assets/icons/arwnex.svg", alt="")
