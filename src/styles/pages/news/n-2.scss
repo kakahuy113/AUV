@@ -1,5 +1,6 @@
 .lib__page {
 	.container {
+		left: 8%;
 		max-width: 1320px;
 		.lib__page__wrapper{
 			padding-bottom: 50px;
@@ -12,25 +13,26 @@
 				}
 			}
 			.list-item-lib {
+				margin-bottom: 30px;
+				margin-top: 50px;
 				.item-1{
 					position: relative;
 					p {
-						padding-top: 50px;
-						padding-bottom: 30px;
 						font-size: 3.5rem;
 						font-weight: bold;
 						color: #0B1F44;
+						&::before {
+							content: "";
+							position: absolute;
+							width: 91%;
+							height: 2px;
+							bottom: 0;
+							left: 9%;
+							top: 63%;
+							background-color:#0B1F44;
+						}
 					}
-					&::before {
-						content: "";
-						position: absolute;
-						width: 950px;
-						height: 2px;
-						bottom: 0;
-						left: 9%;
-						top: 63%;
-						background-color:#0B1F44;
-					}
+
 				}
 			}
 		}
@@ -50,6 +52,7 @@
 		max-height: 291px;
 		position: relative;
 		width: 100%;
+		overflow: hidden;
 		img {
 			width: 100%;
 			transition: .2s all ease-in-out;

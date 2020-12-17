@@ -1,10 +1,13 @@
 import { getSVGs, Loading } from "./utilities/util";
 import Axios from "axios";
+import Tab from './libraries/Tab';
 declare var Swiper:any;
 
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
+	const example = new Tab(".executive-committee .tab-container");
+
 });
 const auv = new Swiper('.auv-section .swiper-container', {
 	slidesPerView: 5,
