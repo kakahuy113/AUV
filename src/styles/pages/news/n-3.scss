@@ -4,7 +4,6 @@
 		margin-bottom: 40px;
 	}
 	.container {
-		left: 15%;
 		margin-top: 80px;
 		.tab-container {
 			padding-top: 70px;
@@ -27,52 +26,50 @@
 						background-color: #ffffff;
 						padding: 20px;
 						margin: 20px;
-						color: #707070;
 						border-radius: 8px;
-						h2 {
-							span {
-								cursor: pointer;
-								&:first-child {
-									padding-right: 45px;
-									@media (max-width: 575.98px) {
-										padding-right: 10px;
-									}
-								}
-								&:last-child {
-									padding-left: 45px;
-									@media (max-width: 575.98px) {
-										padding-left: 10px;
-									}
-								}
+						@media (min-width: 1025px) {
+							&:hover {
+								background-color: #d7970c;
 							}
 						}
 					}
+					p {
+						color: #707070;
+						font-size: 20px;
+						&:hover {
+							color: #ffffff;
+							font-weight: bold;
+						}
+							cursor: pointer;
+					}
 				}
 				.list-tab-content.col-9 {
+					padding-top: 20px;
 					.tab-content {
 						background-color: #ffffff;
 						max-width: 931px;
 						max-height: 418px;
 						.content.tab-bch {
 							padding: 65px;
+							.title-lab {
+								color:#0D1F3C;
+								font-weight: bold;
+								padding-bottom: 15px;
+							}
 							.sub-title {
 								p {
-									width: 700px;
-									height: 250px;
+									font-size: 20px;
 									overflow: hidden;
 									text-overflow: ellipsis;
 									-webkit-line-clamp: 9;
 									display: -webkit-box;
 									-webkit-box-orient: vertical;
-									
 								}
 							}
 						}
 					}
 				}
 			}
-
 		}
-	
 	}
 }
