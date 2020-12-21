@@ -8,9 +8,11 @@ const auv = new Swiper('.auv-section .swiper-container', {
 	spaceBetween: 10,
 	loop: true,
 	speed: 800,
-	autoplay: {
-		delay: 1500,
-	},
+
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	  },
 	breakpoints: {
 		 320: { 
 		slidesPerView: 2,
@@ -61,6 +63,34 @@ const ImagePopupabout = () => {
 		
 	})
 
+}
+const dropLine = () => {
+	document.querySelectorAll(".block-vote .title p").forEach(item => {
+		const text = item.outerHTML;
+		const newText = text.replace("." , "</br>");
+		item.outerHTML = newText
+	})
+	
+	document.querySelectorAll(".block--button-catalog .item a").forEach(item => {
+		const text = item.outerHTML;
+		const splitText = text.split(".");
+		const newText = splitText.join("</br>");
+		item.outerHTML = newText
+	})
+
+	document.querySelectorAll(".item-vote figcaption h5").forEach(item => {
+		const text = item.outerHTML;
+		const splitText = text.split(",");
+		const newText = splitText.join("</br>");
+		item.outerHTML = newText
+	})
+	document.querySelectorAll(".index-earth .item-left").forEach(item => {
+		const text = item.outerHTML;
+		const splitText = text.split(",");
+		const newText = splitText.join("</br>");
+		item.outerHTML = newText
+	})
+	
 }
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");

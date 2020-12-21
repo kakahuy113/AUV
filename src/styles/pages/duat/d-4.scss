@@ -17,10 +17,13 @@
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: column;
-		max-height: 100rem; 
 		.item-left{
+			padding-left: 20px;
 			text-align: left;
+			position: absolute;
+			height: 100%;
 			.block {
+				height: 230px;
 				padding-bottom: 70px;
 				h2 {
 					color:#d7970c;
@@ -50,9 +53,11 @@
 			}
 		}
 		.item-right {
+			padding-right: 20px;
 			align-self: flex-end;
 			text-align: right;
 				.block {
+					height: 230px;
 					padding-bottom: 10px;
 					h2{
 						color :#d7970c;
