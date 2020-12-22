@@ -2,16 +2,52 @@
 section.auv-galley 
 		.title-galley
 			p Galler
-		.main-galley
-			.imp.col-3
-				img.object-cover.fullsize(src="./assets/images/index/new-1.png", alt="")
-			.imp.col-3
-				img.object-cover.fullsize(src="./assets/images/index/new-2.png", alt="")
-			.imp.col-3
-				img.object-cover.fullsize(src="./assets/images/index/new-3.png", alt="")
-			.imp.col-3
-				img.object-cover.fullsize(src="./assets/images/index/new-6.png", alt="")
-
+		.tab-content
+			.content.image-galley
+				.main-galley
+					.is-img.item-galley.col-3
+						.galley-img
+							img.object-cover.fullsize(src="./assets/images/index/new-1.png", alt="")
+						.galley-desc
+							p Lorem Ipsum is simply dummy text printing
+						.d-none
+							-for(var j = 0; j< 6; j++)
+								.swiper-slide
+									img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+					.is-img.item-galley.col-3
+						.galley-img
+							img.object-cover.fullsize(src="./assets/images/index/new-2.png", alt="")
+						.galley-desc
+							p Lorem Ipsum is simply dummy text printing
+						.d-none
+							-for(var j = 0; j< 6; j++)
+								.swiper-slide
+									img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+					.is-video.item-galley.col-3(data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk")
+						.galley-video
+							img.object-cover.fullsize(src="./assets/images/index/new-4.png", alt="")
+						.galley-desc
+							p Lorem Ipsum is simply dummy text printing
+					.is-img.item-galley.col-3
+						.galley-img
+							img.object-cover.fullsize(src="./assets/images/index/new-3.png", alt="")
+						.galley-desc
+							p Lorem Ipsum is simply dummy text printing
+						.d-none
+							-for(var j = 0; j< 6; j++)
+								.swiper-slide
+									img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+		.d-none
+			.popup-img#popup-imgs
+				.pop-img__wrapper
+					.swiper-container.gallery-top
+						.swiper-wrapper
+						.wrapper
+							.swiper-button-next
+							.swiper-button-prev
+					.swiper-container.gallery-thumbs
+						.swiper-wrapper
+			
 section.auv-section
 	.container
 		.auv-section_wrapper
