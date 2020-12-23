@@ -1,0 +1,75 @@
+.executive-committee {
+	background-color: #0B1F44;
+	@media (max-width: 1024.98px) {
+		margin-bottom: 40px;
+	}
+	.container {
+		margin-top: 80px;
+		.tab-container {
+			padding-top: 70px;
+			padding-bottom: 100px;
+			.main-title {
+				padding-left: 30px;
+				color: #ffffff;
+				font-size: 5rem;
+				font-weight: bold;
+				padding-bottom: 65px;
+			}
+			.content-items{
+				display: flex;
+				.block__main--title {
+					@media (max-width: 1024.98px) {
+						margin-bottom: 20px;
+					}
+					.title {
+						width: 300px;
+						background-color: #ffffff;
+						padding: 20px;
+						margin: 20px;
+						border-radius: 8px;
+						@media (min-width: 1025px) {
+							&:hover {
+								background-color: #d7970c;
+							}
+						}
+					}
+					p {
+						color: #707070;
+						font-size: 20px;
+						&:hover {
+							color: #ffffff;
+							font-weight: bold;
+						}
+							cursor: pointer;
+					}
+				}
+				.list-tab-content.col-9 {
+					padding-top: 20px;
+					.tab-content {
+						background-color: #ffffff;
+						max-width: 931px;
+						max-height: 418px;
+						.content.tab-bch {
+							padding: 65px;
+							.title-lab {
+								color:#0D1F3C;
+								font-weight: bold;
+								padding-bottom: 15px;
+							}
+							.sub-title {
+								p {
+									font-size: 20px;
+									overflow: hidden;
+									text-overflow: ellipsis;
+									-webkit-line-clamp: 9;
+									display: -webkit-box;
+									-webkit-box-orient: vertical;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

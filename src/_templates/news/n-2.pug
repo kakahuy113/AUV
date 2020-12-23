@@ -15,6 +15,20 @@ section.lib__page
 									.item-gallery
 										a.item-gallery--popup
 											img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+										.d-none
+											-for(var j = 0; j< 6; j++)
+												.swiper-slide
+													img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+				.d-none
+					.popup-img#popup-img
+						.pop-img__wrapper
+							.swiper-container.gallery-top
+								.swiper-wrapper
+								.wrapper
+									.swiper-button-next
+									.swiper-button-prev
+							.swiper-container.gallery-thumbs
+								.swiper-wrapper
 				ul.pagination
 					li.pagination-prev
 						a(href="#")

@@ -1,8 +1,57 @@
 //-  Auv-section
+section.auv-galley 
+		.title-galley
+			p Galler
+		.tab-content
+			.content.image-galley
+				.main-galley
+					.is-img.item-galley.col-3
+						.galley-img
+							img.object-cover.fullsize(src="./assets/images/index/new-1.png", alt="")
+						.galley-desc
+							p Lorem Ipsum is simply dummy text printing
+						.d-none
+							-for(var j = 0; j< 6; j++)
+								.swiper-slide
+									img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+					.is-img.item-galley.col-3
+						.galley-img
+							img.object-cover.fullsize(src="./assets/images/index/new-2.png", alt="")
+						.galley-desc
+							p Lorem Ipsum is simply dummy text printing
+						.d-none
+							-for(var j = 0; j< 6; j++)
+								.swiper-slide
+									img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+					.is-video.item-galley.col-3(data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk")
+						.galley-video
+							img.object-cover.fullsize(src="./assets/images/index/new-4.png", alt="")
+						.galley-desc
+							p Lorem Ipsum is simply dummy text printing
+					.is-img.item-galley.col-3
+						.galley-img
+							img.object-cover.fullsize(src="./assets/images/index/new-3.png", alt="")
+						.galley-desc
+							p Lorem Ipsum is simply dummy text printing
+						.d-none
+							-for(var j = 0; j< 6; j++)
+								.swiper-slide
+									img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+		.d-none
+			.popup-img#popup-imgs
+				.pop-img__wrapper
+					.swiper-container.gallery-top
+						.swiper-wrapper
+						.wrapper
+							.swiper-button-next
+							.swiper-button-prev
+					.swiper-container.gallery-thumbs
+						.swiper-wrapper
+			
 section.auv-section
 	.container
 		.auv-section_wrapper
-			.container-custom.size-1365px
+			.container-custom
 				.title 
 					p AUV
 				.auv-main-swiper
@@ -24,40 +73,9 @@ section.auv-section
 								.auv-item
 								a(href="#").img
 										img(src="./assets/images/index/13.png", alt="")
-					.swiper-button-next
-					.swiper-button-prev
-	section.auvmap-section
-			.map
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15343.018521998123!2d108.2574856!3d15.9741851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe0e536208d071afc!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBN4bu5IHThuqFpIFZp4buHdCBOYW0gQVVW!5e0!3m2!1svi!2s!4v1607326360610!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
-section.auv-section
-	.container
-		.auv-section_wrapper
-			.container-custom.size-1365px
-				.title 
-					p AUV
-				.auv-main-swiper
-					.swiper-container
-						.swiper-wrapper
 							.swiper-slide
 								.auv-item
-								a(href="#")
-									.img
-										img(src="./assets/images/index/14.png", alt="")
-							.swiper-slide
-								.auv-item
-								a(href="#")
-									.img
-										img(src="./assets/images/index/13.png", alt="")
-							.swiper-slide
-								.auv-item
-								a(href="#")
-									.img
-										img(src="./assets/images/index/12.png", alt="")
-							.swiper-slide
-								.auv-item
-								a(href="#")
-									.img
+								a(href="#").img
 										img(src="./assets/images/index/13.png", alt="")
 					.swiper-button-next
 					.swiper-button-prev
