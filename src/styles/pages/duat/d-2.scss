@@ -14,7 +14,7 @@
 						font-weight:bold;
 						color: #0b1f44;
 						text-align: center;
-						font-family: Minion-Pro;
+						font-family: MinionPro-Bold;
 					}
 				}
 			}
@@ -34,7 +34,7 @@
 									-ms-flex: 0 0 100%;
 									flex: 0 0 100%;
 									max-width: 100%;
-									margin-bottom: 10px;
+
 										@media (min-width: 1025px) {
 											grid-row-start: 1;
 											grid-row-end: 3;
@@ -51,7 +51,7 @@
 										&:hover {
 											.news-img {
 												img {
-													transform: scale(1.2);
+													transform: scale(1.1);
 													transition: transform .5s ease;
 										}
 										&::before {
@@ -76,10 +76,10 @@
 										}
 										color: #d7970c;
 										p {
-											font-family: Montserrat;
+											font-family: Montserrat-Bold;
 											overflow: hidden;
 											text-overflow: clip;
-											-webkit-line-clamp: 1;
+											-webkit-line-clamp: 2;
 											display: -webkit-box;
 											-webkit-box-orient: vertical;
 											font-weight: bold;
@@ -106,7 +106,7 @@
 										margin-bottom: 10px;
 									}
 									.news-img {
-										position: relative;
+										
 										overflow: hidden;
 										img {
 											transition: transform .5s ease;
@@ -145,7 +145,7 @@
 										p {
 											font-weight: bold;
 											font-size: 16px;
-											font-family: Montserrat;
+											font-family: Montserrat-Bold;
 											overflow: hidden;
 											text-overflow: ellipsis;
 											-webkit-line-clamp: 2;
