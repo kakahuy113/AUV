@@ -103,6 +103,12 @@ const dropLine = () => {
 		item.outerHTML = newText
 	})
 	
+	document.querySelectorAll(".index-earth .text p").forEach(item => {
+		const text = item.outerHTML;
+		const newText = text.replace("." , "</br>");
+		item.outerHTML = newText
+	})
+
 	document.querySelectorAll(".block--button-catalog .item a").forEach(item => {
 		const text = item.outerHTML;
 		const splitText = text.split(".");
@@ -149,13 +155,36 @@ const initMainBanner = () => {
 			},
 		});
 	}
-};
+}
+
+const showMenuMobile = () => {
+	const btnMenuMobile = document.querySelector('.navBarHamburger__wrapper');
+	const navBarMenuMobile = document.querySelector('.navBar');
+	const overlay = document.querySelector('#overlay');
+	// CHECK BUTTON
+	if (btnMenuMobile) {
+		btnMenuMobile.addEventListener('click', () => {
+			btnMenuMobile.classList.toggle('active');
+			navBarMenuMobile.classList.toggle('active');
+			overlay.classList.toggle('show');
+		})
+	}
+	if (overlay) {
+		overlay.addEventListener('click', (e) => {
+			navBarMenuMobile.classList.remove('active');
+			overlay.classList.remove('show');
+			btnMenuMobile.classList.remove('active');
+		});
+	}
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
+	dropLine();
 	initMainBanner();
 	ImagePopupabout();
 	ImagePopugalley();
+	showMenuMobile();
 	const example = new Tab(".executive-committee .tab-container");
 });
 
