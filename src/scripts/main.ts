@@ -177,6 +177,22 @@ const showMenuMobile = () => {
 		});
 	}
 }
+const showBackToTop = () => {
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 800) {
+			$('#go-top').addClass('show');
+		} else {
+			$('#go-top').removeClass('show');
+		}
+	});
+
+	$('#go-top').on('click', function(e:any) {
+		e.preventDefault();
+		$('html,body').animate({
+			scrollTop: 0,
+		});
+	});
+} ;
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -185,6 +201,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	ImagePopupabout();
 	ImagePopugalley();
 	showMenuMobile();
+	showBackToTop();
 	const example = new Tab(".executive-committee .tab-container");
 });
 

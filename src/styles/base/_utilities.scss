@@ -97,3 +97,25 @@
 .text-center {
 	text-align: center;
 }
+#go-top {
+	cursor: pointer;
+	position: fixed;
+	right: 25px;
+	bottom: 120px;
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s all ease-in-out;
+	z-index: 300;
+	width: 70px;
+	&.show {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@media (max-width: 575.98px) {
+		right: unset;
+		left: 10px;
+		bottom: 10px;
+		width: 40px;
+	}
+}
