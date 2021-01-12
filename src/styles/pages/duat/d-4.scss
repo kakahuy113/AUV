@@ -96,6 +96,21 @@
 					font-size: 6rem;
 					font-family: MinionPro-Bold;
 				}
+				&:first-child {
+					.text {
+						p {
+							color: white;
+							font-size: 21px;
+							max-width: 300px;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							-webkit-line-clamp: 5;
+							display: -webkit-box;
+							-webkit-box-orient: vertical;
+							
+						}
+					}
+				}
 				.text {
 					p { 
 						color: white;
@@ -106,17 +121,6 @@
 					-webkit-line-clamp: 2;
 					display: -webkit-box;
 					-webkit-box-orient: vertical;
-					}
-					p1 {
-						color: white;
-						font-size: 21px;
-						max-width: 300px;
-						overflow: hidden;
-						text-overflow: ellipsis;
-						-webkit-line-clamp: 5;
-						display: -webkit-box;
-						-webkit-box-orient: vertical;
-						
 					}
 				}
 			}

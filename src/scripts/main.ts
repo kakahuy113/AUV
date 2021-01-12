@@ -95,40 +95,19 @@ const ImagePopugalley = () => {
 		
 	})
 }
-//drop line 
 const dropLine = () => {
-	document.querySelectorAll(".block-vote .title p").forEach(item => {
-		const text = item.outerHTML;
-		const newText = text.replace("." , "</br>");
-		item.outerHTML = newText
-	})
-	
-	document.querySelectorAll(".index-earth .text p").forEach(item => {
-		const text = item.outerHTML;
-		const newText = text.replace("." , "</br>");
-		item.outerHTML = newText
-	})
-
-	document.querySelectorAll(".block--button-catalog .item a").forEach(item => {
+	document.querySelectorAll(".footer__contact .item__text a").forEach(item => {
 		const text = item.outerHTML;
 		const splitText = text.split(".");
 		const newText = splitText.join("</br>");
 		item.outerHTML = newText
 	})
-
-	document.querySelectorAll(".item-vote figcaption h5").forEach(item => {
+	document.querySelectorAll(".list-items .text p").forEach(item => {
 		const text = item.outerHTML;
-		const splitText = text.split(",");
+		const splitText = text.split(".");
 		const newText = splitText.join("</br>");
 		item.outerHTML = newText
 	})
-	document.querySelectorAll(".index-earth .item-left").forEach(item => {
-		const text = item.outerHTML;
-		const splitText = text.split(",");
-		const newText = splitText.join("</br>");
-		item.outerHTML = newText
-	})
-	
 }
 
 // MAIN BANNER WEBSITE

@@ -1,4 +1,74 @@
-footer {
+footer { 
+	   .col-3 {
+	@media (max-width: 768.98px) {
+		margin-bottom: 40px;
+	}
+	&.footer__logo {
+		position: relative;
+		@media (max-width: 1259.98px) {
+			padding-left: 50px;
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+		@media (min-width: 1440px) {
+			img {
+				position: absolute;
+				top: 25%;
+				left: 20%;
+			}
+		}
+		@media (max-width: 575.98px) {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		@media (max-width: 575.98px) {
+			padding-left: 30px;
+		}
+	}
+	&.footer__contact {
+		@media (max-width: 1259.98px) {
+			margin-bottom: 20px;
+			flex: 0 0 30%;
+			.contact__item {
+				margin-bottom: 0px !important;
+			}
+		}
+		@media (max-width: 1259.98px) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+		@media (max-width: 575.98px) {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;	
+			max-width: 100%;
+		}
+		@media (max-width: 575.98px) {
+			padding-left: 30px;
+		}
+	}
+	&.footer__social {
+		@media (max-width: 1259.98px) {
+			padding-left: 50px;
+			flex: 0 0 50%;
+			max-width: 50%;
+			h2 {
+				padding-bottom: 15px !important;
+			}
+			.social__wrapper {
+				margin-bottom: 0px !important;
+			}
+		}
+		@media (max-width: 575.98px) {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		@media (max-width: 575.98px) {
+			padding-left: 30px;
+		}
+	}
+}
 	.footer__wrapper {
 		background: #0b1f44;
 	}
@@ -19,14 +89,16 @@ footer {
 					.item__text{
 						padding-bottom: 20px;
 				}
-				&::after {
-					content: "";
-					position: absolute;
-					width: 310px;
-					height: 1px;
-					bottom: 0;
-					left: 0;
-					background-color:#FFFFFF;
+				@media (min-width: 1440px) {
+					&::after {
+						content: "";
+						position: absolute;
+						width: 310px;
+						height: 1px;
+						bottom: 0;
+						left: 0;
+						background-color:#FFFFFF;
+					}
 				}
 			}
 			}
@@ -52,14 +124,16 @@ footer {
 			&:not(:last-child) {
 				margin-bottom: 30px;
 				padding-bottom: 15px;
-				&::after {
-					content: "";
-					position: absolute;
-					width: 170px;
-					height: 1px;
-					bottom: 0;
-					left: 0;
-					background-color:#FFFFFF;
+				@media (min-width: 1440px) {
+					&::after {
+						content: "";
+						position: absolute;
+						width: 170px;
+						height: 1px;
+						bottom: 0;
+						left: 0;
+						background-color:#FFFFFF;
+					}
 				}
 			}
 		}
