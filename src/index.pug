@@ -15,3 +15,13 @@ block main
 	include _templates/index/i-4
 	include _templates/index/i-5
 block scripts
+	script.
+		var locationsInput = [
+			{
+				lat: 21.011568,
+				lng: 105.849071,
+				title: 'HHCCV VIETNAMESE',
+				icon: './assets/icons/map.png'
+			},
+		]
+	script(src="./js/GoogleMapController.min.js")

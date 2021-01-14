@@ -1,5 +1,4 @@
 import { getSVGs, Loading } from "./utilities/util";
-import Axios from "axios";
 import Tab from './libraries/Tab';
 declare var Swiper:any;
 declare var $:any;
