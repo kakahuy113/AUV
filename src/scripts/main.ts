@@ -94,34 +94,19 @@ const ImagePopugalley = () => {
 		
 	})
 }
-//drop line 
 const dropLine = () => {
-	document.querySelectorAll(".block-vote .title p").forEach(item => {
-		const text = item.outerHTML;
-		const newText = text.replace("." , "</br>");
-		item.outerHTML = newText
-	})
-	
-	document.querySelectorAll(".block--button-catalog .item a").forEach(item => {
+	document.querySelectorAll(".footer__contact .item__text a").forEach(item => {
 		const text = item.outerHTML;
 		const splitText = text.split(".");
 		const newText = splitText.join("</br>");
 		item.outerHTML = newText
 	})
-
-	document.querySelectorAll(".item-vote figcaption h5").forEach(item => {
+	document.querySelectorAll(".list-items .text p").forEach(item => {
 		const text = item.outerHTML;
-		const splitText = text.split(",");
+		const splitText = text.split(".");
 		const newText = splitText.join("</br>");
 		item.outerHTML = newText
 	})
-	document.querySelectorAll(".index-earth .item-left").forEach(item => {
-		const text = item.outerHTML;
-		const splitText = text.split(",");
-		const newText = splitText.join("</br>");
-		item.outerHTML = newText
-	})
-	
 }
 
 // MAIN BANNER WEBSITE
@@ -148,13 +133,53 @@ const initMainBanner = () => {
 			},
 		});
 	}
-};
+}
+
+const showMenuMobile = () => {
+	const btnMenuMobile = document.querySelector('.navBarHamburger__wrapper');
+	const navBarMenuMobile = document.querySelector('.navBar');
+	const overlay = document.querySelector('#overlay');
+	// CHECK BUTTON
+	if (btnMenuMobile) {
+		btnMenuMobile.addEventListener('click', () => {
+			btnMenuMobile.classList.toggle('active');
+			navBarMenuMobile.classList.toggle('active');
+			overlay.classList.toggle('show');
+		})
+	}
+	if (overlay) {
+		overlay.addEventListener('click', (e) => {
+			navBarMenuMobile.classList.remove('active');
+			overlay.classList.remove('show');
+			btnMenuMobile.classList.remove('active');
+		});
+	}
+}
+const showBackToTop = () => {
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 800) {
+			$('#go-top').addClass('show');
+		} else {
+			$('#go-top').removeClass('show');
+		}
+	});
+
+	$('#go-top').on('click', function(e:any) {
+		e.preventDefault();
+		$('html,body').animate({
+			scrollTop: 0,
+		});
+	});
+} ;
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
+	dropLine();
 	initMainBanner();
 	ImagePopupabout();
 	ImagePopugalley();
+	showMenuMobile();
+	showBackToTop();
 	const example = new Tab(".executive-committee .tab-container");
 });
 
