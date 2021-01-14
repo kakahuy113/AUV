@@ -15,3 +15,21 @@ block main
 	include _templates/index/i-4
 	include _templates/index/i-5
 block scripts
+	script.
+			var locationsInput = [
+				{
+					lat: 10.8511063,
+					lng: 106.6867113,
+					title: 'Home',
+					address: '134/8A, Trần Bá Giao, Q.Gò Vấp, Tp. HCM',
+					phone: '0914.633.990'
+				},
+				{
+					lat: 12.1275322,
+					lng: 104.1095803,
+					title: 'Company',
+					address: '192/68, Nguyễn Oanh, Q.Gò Vấp, TP.HCM',
+					phone: '0905.010.115'
+				},
+			]
+	script(src="./js/GoogleMapController.min.js")
