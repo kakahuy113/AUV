@@ -171,8 +171,21 @@ const showBackToTop = () => {
 		});
 	});
 } ;
-const ajaxlistproject = () => {
+const ajaxlistnews = () => {
 	$(document).on("click" , ".note-section .pagination li" ,function(e:any) {
+		e.preventDefault();
+		const url = $(this).attr("data-url")
+		$.ajax({	
+			url: url,
+			type: 'get',
+			success: function(res:any) {
+				$(this).parent().parent().html(res);
+			},
+		})
+	})
+}
+const ajaxlisgallery = () => {
+	$(document).on("click" , ".lib__page .pagination li" ,function(e:any) {
 		e.preventDefault();
 		const url = $(this).attr("data-url")
 		$.ajax({	
@@ -193,7 +206,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	ImagePopugalley();
 	showMenuMobile();
 	showBackToTop();
-	ajaxlistproject();
+	ajaxlistnews();
+	ajaxlisgallery();
 	const example = new Tab(".executive-committee .tab-container");
 });
 

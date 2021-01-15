@@ -1,40 +1,39 @@
 section.note-section 
 	.container 
-		.container-custom
+		.container-custom.container-1365px 
 			.auv-new-content
 				.auv-new-title 
 					h2 News & Events
 				.block-main-title
 					.title 
 						p Annoucements 
-				.news-events-content.row
-					.block-list-item
-						-for(i=0;i<=4;i++)
-							.block__item
-									.img--news
-										img.object-cover.fullsize(src=`./assets/images/index/new-1.png`, alt="something")
-									.item--desc
-										p.title VietNam aviation alliance education and training partnership meeting
-										.news--date
-											span 23.07.2020
-			ul.pagination
-				li(data-url="asd").pagination-prev
-					a(href="#")
-						img.object-cover(src="./assets/icons/arw.svg", alt="")
-					li(data-url="asd")
-						a(href="#") 1
-					li(data-url="asd")
-						a(href="#") 2
-					li(data-url="asd")
-						a(href="#") 3
-					li(data-url="asd").pagination-dot
-						a(href="#") ...
-					li(data-url="asd")
-						a(href="#") 13
-					li(data-url="asd")
-						a(href="#") 14
-					li(data-url="asd")
-						a(href="#") 15
-				li(data-url="asd").pagination-next
-					a(href="#")
-						img.object-cover(src="./assets/icons/arwnex.svg", alt="")
+				.block-list-item
+					-for(i=0;i<=4;i++)
+						.block__item
+								.img--news
+									img.object-cover.fullsize(src=`./assets/images/index/new-1.png`, alt="something")
+								.item--desc
+									p.title VietNam aviation alliance education and training partnership meeting
+									.news--date
+										span 23.07.2020
+				ul.pagination
+					li(data-url="asd").pagination-prev
+						a(href="#")
+							img.object-cover(src="./assets/icons/arw.svg", alt="")
+						li(data-url="asd")
+							a(href="#") 1
+						li(data-url="asd")
+							a(href="#") 2
+						li(data-url="asd")
+							a(href="#") 3
+						li(data-url="asd").pagination-dot
+							a(href="#") ...
+						li(data-url="asd")
+							a(href="#") 13
+						li(data-url="asd")
+							a(href="#") 14
+						li(data-url="asd")
+							a(href="#") 15
+					li(data-url="asd").pagination-next
+						a(href="#")
+							img.object-cover(src="./assets/icons/arwnex.svg", alt="")
