@@ -171,6 +171,19 @@ const showBackToTop = () => {
 		});
 	});
 } ;
+const ajaxlistproject = () => {
+	$(document).on("click" , ".note-section .pagination li" ,function(e:any) {
+		e.preventDefault();
+		const url = $(this).attr("data-url")
+		$.ajax({	
+			url: url,
+			type: 'get',
+			success: function(res:any) {
+				$(this).parent().parent().html(res);
+			},
+		})
+	})
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -180,6 +193,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	ImagePopugalley();
 	showMenuMobile();
 	showBackToTop();
+	ajaxlistproject();
 	const example = new Tab(".executive-committee .tab-container");
 });
 

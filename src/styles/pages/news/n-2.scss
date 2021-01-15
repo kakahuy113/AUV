@@ -1,7 +1,5 @@
 .lib__page {
 	.container {
-		left: 8%;
-		max-width: 1320px;
 		.lib__page__wrapper{
 			padding-bottom: 50px;
 			.title {
@@ -109,8 +107,6 @@
         }
         &.active {
             a {
-                color: #FFFFFF;
-                background: #0B1F44;
             }
         }
     }
@@ -132,7 +128,6 @@
 }
 .popup-img {
 	width: 100%;
-	padding: 190px;
 	.pop-img__wrapper {
 		.swiper-container.gallery-top {
 			margin-bottom: 10px;
