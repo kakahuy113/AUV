@@ -1,5 +1,5 @@
 .news__events--detail {
-	margin-top: 80px;
+	margin-top: 300px;
 }
 .detail-content {
 	max-width: 950px;
@@ -28,7 +28,8 @@
 	max-width: 970px;
 	margin-bottom: 36px;
 	h3.title {
-		font-size: 30px;
+		font-family: MinionPro-Bold;
+		font-size: 3rem;
 		font-weight: bold;
 		color: #002f4b;
 		margin-bottom: 15px;
@@ -39,6 +40,9 @@
 	}
 }
 .detail-content--post {
+	p {
+		color: #707070;
+	}
 	p:first-child {
 		padding-top: 30px;
 	}
@@ -95,6 +99,7 @@
 }
 .relate-news {
 	h3 {
+		font-family: MinionPro-Bold;
 		color: #D7970C;
 		font-size: 40px;
 		margin-bottom: 90px;
@@ -104,13 +109,13 @@
 	}
 	.relate-news--inner {
 		.relate-news--item {
-			display: block;
+			display: flex;
 			width: 100%;
 			height: 100%;
 			margin-bottom: 31px;
 			.img {
 				img {
-					max-height: 143px;
+					
 					height: 100%;
 					width: 100%;
 					object-fit: cover;
@@ -120,14 +125,16 @@
 				}
 			}
 			.news--date {
+				margin-top: 20px;
 				color :#989898;
 			}
 			p {
+				font-family: MinionPro-Bold;
 				margin-top: 10px;
 				max-width: 100%;
 				color: #0B1F44;
 				font-size: 22px;
-				font-weight: bold;
+				
 			}
 		}
 		@media (max-width: 1024.98px) {

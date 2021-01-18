@@ -111,6 +111,18 @@ const dropLine = () => {
 		const newText = splitText.join("</br>");
 		item.outerHTML = newText
 	})
+	document.querySelectorAll(".contact-us .desc p").forEach(item => {
+		const text = item.outerHTML;
+		const splitText = text.split(".");
+		const newText = splitText.join("</br>");
+		item.outerHTML = newText
+	})
+	document.querySelectorAll(".content-items.local .desc a").forEach(item => {
+		const text = item.outerHTML;
+		const splitText = text.split(".");
+		const newText = splitText.join("</br>");
+		item.outerHTML = newText
+	})
 }
 
 // MAIN BANNER WEBSITE
@@ -204,6 +216,49 @@ const ajaxlisgallery = () => {
 		})
 	})
 }
+
+//tab-construction plans 
+const tabplan = () => {
+	const example = new Tab(".construction-Plans .tab-container");
+}
+//
+
+const ajaxContactForm = () => {
+	$(".contact-form form .btn-submit").on("click", function(e:any) {
+		e.preventDefault();
+		const url = $(this).attr("data-url");
+		const formData = new FormData();
+		$(this).parent().find(".form input").each(function(el :any) {
+			const name = $(this).attr("name");
+			const val = $(this).val();
+			formData.append(name , val);
+		})
+		$(this).parent().find(".form textarea").each(function(el:any) {
+			const name = $(this).attr("name")
+			const val = $(this).val();
+			formData.append(name , val);
+		})
+		const recaptcha = $(".g-recaptcha")
+
+		formData.append(recaptcha.attr("name") , recaptcha.val());
+		if($(".contact-form form").valid() === true) {
+			$.ajax({
+				url: url,
+				type: "POST",
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function() {
+					$(this).attr('disabled', 'disabled');
+				},
+				success: function(res :any) {
+					alert(`${res.Message}`);
+					window.location.reload();
+				},
+			})
+		}
+	});
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -216,6 +271,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	ajaxlistnews();
 	ajaxlisgallery();
 	swiperindex();
-	const example = new Tab(".executive-committee .tab-container");
+	tabplan();
+	ajaxContactForm();
 });
 

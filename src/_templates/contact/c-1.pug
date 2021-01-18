@@ -1,0 +1,35 @@
+section.contact-us
+	.container
+		.container-custom.size-1365px
+			.row.list-contact
+				.items
+					.content-items.phone.col-lg-4
+						.img
+							img.object-cover(src="./assets/images/contact/phone.png", alt="")
+						.desc
+							p 
+								!= "<a href>(84-236) 3967 585 </a> . <a href>(84-236) 3967 595</a>"
+					.content-items.local.col-lg-4
+						.img
+							img.object-cover(src="./assets/images/contact/local.png", alt="")
+						.desc
+							a(href="") 299 Tran Dai Nghia St, . Hoa Hai Ward, Ngu Hanh Son Dist,. Da Nang City, Vietnam
+					.content-items.mail.col-lg-4
+						.img
+							img.object-cover(src="./assets/images/contact/mail.png", alt="")
+						.desc
+							a(href="") info@auv.edu.vn
+			#map
+			.contact-form
+					form(action="")
+						.form__wrapper.row
+							.form.col-sm-6
+								input(type="text" name="name" placeholder="Your Name*")
+							.form.col-sm-6
+								input(type="text" name="name" placeholder="Your Email*")
+							.form.col-12
+								input(type="text" name="name" placeholder="Subject*")
+							.form.col-12
+								textarea(name="content", cols="30", rows="10" placeholder="Your Message*")
+							.btn.btn-submit(data-url="submit")
+								button.btn Submit
