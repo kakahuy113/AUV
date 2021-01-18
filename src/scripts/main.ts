@@ -3,34 +3,6 @@ import Tab from './libraries/Tab';
 declare var Swiper:any;
 declare var $:any;
 
-//swiper slides auv
-const auv = new Swiper('.auv-section .swiper-container', {
-	slidesPerView: 5,
-	spaceBetween: 10,
-	loop: true,
-	speed: 800,
-
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	  },
-	breakpoints: {
-		 320: { 
-		slidesPerView: 2,
-		spaceBetween: 20
-	  },
-	  // when window width is >= 480px
-	  480: {
-		slidesPerView: 3,
-		spaceBetween: 30
-	  },
-	  // when window width is >= 640px
-	  640: {
-		slidesPerView: 5,
-		spaceBetween: 40
-	  }
-	}
-})
 //popup image News&Events
 const ImagePopupabout = () => {
 	$(".lib__page__img .item-gallery").on("click" , function() {
@@ -112,28 +84,27 @@ const dropLine = () => {
 // MAIN BANNER WEBSITE
 const initMainBanner = () => {
 	const namePage = document.querySelector('#js-page-verify');
-	const mainBanner = document.querySelector('.main__banner');
+	const mainBanner = document.querySelector('.MainSlider__Banners');
 	if (namePage.className == 'index-page') {
 		mainBanner.classList.add('isIndex');
-		return new Swiper('.main__banner .swiper-container', {
-			effect: 'fade',
-			fadeEffect: {
-				crossFade: true,
-			},
-			loop:true,
-			speed: 1000,
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
-			},
-			pagination: {
-				el: '.main__banner .swiper-pagination',
-				type: 'bullets',
-				clickable: true,
-			},
-		});
 	}
-}
+	const swiper =  new Swiper('.MainSlider__Banners .swiper-container', {
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		speed: 1000,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.MainSlider__Banners .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+	});
+};
 
 const showMenuMobile = () => {
 	const btnMenuMobile = document.querySelector('.navBarHamburger__wrapper');
@@ -155,6 +126,7 @@ const showMenuMobile = () => {
 		});
 	}
 }
+
 const showBackToTop = () => {
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 800) {
@@ -171,6 +143,7 @@ const showBackToTop = () => {
 		});
 	});
 } ;
+
 const ajaxlistnews = () => {
 	$(document).on("click" , ".note-section .pagination li" ,function(e:any) {
 		e.preventDefault();
@@ -197,10 +170,22 @@ const ajaxlisgallery = () => {
 		})
 	})
 }
+
+// SETBACKGROUND IMAGE
+const setBackgroundImageSection = () => {
+	// PARAMS HERE !!!
+	const datas = document.querySelectorAll("[fp-bg]");
+	// ACTION !!!
+	datas.forEach((item) => {
+		const link = item.getAttribute("fp-bg");
+		item.setAttribute("style", `background-image:url(${link})`);
+	});
+};
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
 	dropLine();
+	// MAIN SWiper
 	initMainBanner();
 	ImagePopupabout();
 	ImagePopugalley();
@@ -208,6 +193,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	showBackToTop();
 	ajaxlistnews();
 	ajaxlisgallery();
+	// SETBACKGROUND IMAGE
+	setBackgroundImageSection();
+	// Tab
+	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const example = new Tab(".executive-committee .tab-container");
 });
 

@@ -14,6 +14,8 @@
 @import "layout/navigation";
 @import "layout/sidebar";
 @import "layout/forms";
+@import "layout/mainBanner";
+@import "layout/breadcrumb";
 
 @import "components/buttons";
 @import "components/tab";
@@ -21,6 +23,7 @@
 @import "components/fullpage";
 
 @import "pages/index";
+@import "pages/about";
 @import "pages/duat/main.scss";
 
 @import "pages/news/main.scss";
