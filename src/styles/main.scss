@@ -14,6 +14,8 @@
 @import "layout/navigation";
 @import "layout/sidebar";
 @import "layout/forms";
+@import "layout/mainBanner";
+@import "layout/breadcrumb";
 
 @import "components/buttons";
 @import "components/tab";
@@ -21,10 +23,9 @@
 @import "components/fullpage";
 
 @import "pages/index";
+@import "pages/about";
 @import "pages/index/main.scss";
-
 @import "pages/news/main.scss";
 @import "pages/news-events-detail/n-1.scss";
-
 @import "pages/student/main.scss";
 @import "pages/contact/main.scss";

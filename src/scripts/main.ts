@@ -128,29 +128,28 @@ const dropLine = () => {
 // MAIN BANNER WEBSITE
 const initMainBanner = () => {
 	const namePage = document.querySelector('#js-page-verify');
-	const mainBanner = document.querySelector('.main__banner');
+	const mainBanner = document.querySelector('.MainSlider__Banners');
 	if (namePage.className == 'index-page') {
 		mainBanner.classList.add('isIndex');
-		return new Swiper('.main__banner .swiper-container', {
-			effect: 'fade',
-			fadeEffect: {
-				crossFade: true,
-			},
-			loop:true,
-			speed: 1000,
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
-			},
-			pagination: {
-				el: '.main__banner .swiper-pagination',
-				type: 'bullets',
-				clickable: true,
-			},
-		});
 	}
-}
-//menu mobile
+	const swiper =  new Swiper('.MainSlider__Banners .swiper-container', {
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		speed: 1000,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.MainSlider__Banners .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+	});
+};
+
 const showMenuMobile = () => {
 	const btnMenuMobile = document.querySelector('.navBarHamburger__wrapper');
 	const navBarMenuMobile = document.querySelector('.navBar');
@@ -217,11 +216,17 @@ const ajaxlisgallery = () => {
 	})
 }
 
-//tab-construction plans 
-const tabplan = () => {
-	const example = new Tab(".construction-Plans .tab-container");
-}
-//
+// SETBACKGROUND IMAGE
+const setBackgroundImageSection = () => {
+	// PARAMS HERE !!!
+	const datas = document.querySelectorAll("[fp-bg]");
+	// ACTION !!!
+	datas.forEach((item) => {
+		const link = item.getAttribute("fp-bg");
+		item.setAttribute("style", `background-image:url(${link})`);
+	});
+};
+
 
 const ajaxContactForm = () => {
 	$(".contact-form form .btn-submit").on("click", function(e:any) {
@@ -263,15 +268,28 @@ document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
 	dropLine();
+	// MAIN SWiper
 	initMainBanner();
+	//
 	ImagePopupabout();
+	//
 	ImagePopugalley();
+	//
 	showMenuMobile();
+	//
 	showBackToTop();
+	//
 	ajaxlistnews();
+	//
 	ajaxlisgallery();
+	//
 	swiperindex();
-	tabplan();
+	//
 	ajaxContactForm();
+	// SETBACKGROUND IMAGE
+	setBackgroundImageSection();
+	// Tab
+	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
+	const constructionPlan = new Tab(".construction-Plans .tab-container");
 });
 

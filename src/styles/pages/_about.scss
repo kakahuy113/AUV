@@ -1,0 +1,256 @@
+.about-desc {
+	padding-top: 140px;
+	padding-bottom: 110px;
+	.about-desc__wrapper {
+		position: relative;
+		&::before {
+			content: "";
+			pointer-events: none;
+			position: absolute;
+			right: 20px;
+			bottom: -80px;
+			width: 700px;
+			height: 320px;
+			background: url(../assets/images/about/map.png) no-repeat;
+			background-size: 100% 100%;
+			z-index: -1;
+		}
+		.title {
+			max-width: 812px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 50px;
+			h2 {
+				font-family: MinionPro-Bold;
+				font-size: 5rem;
+				position: relative;
+				overflow: hidden;
+				color: map-get($color, main-4);
+				&::after {
+					content: "";
+					position: absolute;
+					left: 140px;
+					top: 50%;
+					transform: translateY(-50%);
+					background: map-get($color, main-4);
+					width: 100%;
+					height: 1px;
+				}
+			}
+		}
+		.desc {
+			max-width: 950px;
+			z-index: 1;
+			p {
+				color: map-get($color, main-5);
+			}
+			p:not(:last-child) {
+				margin-bottom: 25px;
+			}
+		}
+	}
+}
+
+.about-mission {
+	padding-top: 115px;
+	padding-bottom: 145px;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	position: relative;
+	&::before {
+		z-index: 0;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #314058;
+		opacity: .8;
+		top: 0;
+		left: 0;
+	}
+	.title {
+		margin-bottom: 80px;
+		text-align: center;
+		h3 {
+			font-size: 5rem;
+			font-family: MinionPro-Bold;
+			color: map-get($color, x-white);
+		}
+	}
+	.about-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-left: -10px;
+		margin-right: -10px;
+		.item {
+			max-width: 400px;
+			padding: 0 10px;
+			box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+			height: fit-content;
+			padding-bottom: 10px;
+			
+			position: relative;
+			.overlapping-dot {
+				position: absolute;
+				content: "";
+				background-size: cover;
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+				width: 28px;
+				height: 28px;
+				border-radius: 50%;
+				box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+				left: 50%;
+				transform: translateX(-50%);
+				top: 25px;
+			}
+			.item__wrapper {
+				padding: 100px 30px 70px 30px;
+				mix-blend-mode: normal;
+				background-color:map-get($color, x-white);
+				p {
+					position: relative;
+					&::after {
+						position: absolute;
+						content: "";
+						width: 20px;
+						height: 2px;
+						top: -10px;
+						left: 0;
+						background: map-get($color, main-4);
+					}
+				}
+
+			}
+			&:nth-child(2) {
+				padding: 0;
+				.item__wrapper {
+					background: map-get($color, main-4);
+					p {
+						color: map-get($color, x-white);
+						&::after {
+							background: map-get($color, x-white);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.about-values {
+	padding-top: 85px;
+	padding-bottom: 100px;
+	.title {
+		text-align: center;
+		margin-bottom: 70px;
+		h2 {
+			font-family: MinionPro-Bold;
+			font-size: 5rem;
+		}
+	}
+	.about-values__wrapper {
+		margin-bottom: 100px;
+	}
+	.tab-container__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		.content-active {
+			-ms-flex: 0 0 675px;
+			flex: 0 0 675px;
+			max-width: 675px;
+				.desc {
+					background: #11233F;
+					padding: 25px 30px;
+					box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+					p {
+						color: map-get($color, x-white);
+					}
+				}
+		}
+		.content-item {
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
+			padding-left: 65px;
+			ul {
+				max-width: 520px;
+				list-style: none;
+				padding: 0;
+				li {
+					padding-left: 30px;
+					padding-bottom: 13px;
+					position: relative;
+					margin-bottom: 15px;
+					&::before {
+						content: "";
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						background: url(../assets/images/about/line.png) no-repeat;
+						width: 100%;
+						height: 13px;
+					}
+					&::after {
+						content: "";
+						position: absolute;
+						width: 12px;
+						height: 12px;
+						border-radius: 50%;
+						bottom: 0;
+						left: 0;
+						background: transparent;
+					}
+					&.active {
+						&::after {
+							background: map-get($color, main-4);
+							animation: pulse 1.5s infinite;
+						}
+					}
+				}
+			}
+		}
+	}
+	.about-history__wrapper {
+		.chart {
+			position: relative;
+		}
+		.chart__wrapper {
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translate(-50%);
+				width: 1px;
+				height: 100%;
+				background: map-get($color, main-3);
+			}
+			.item{
+				position: relative;
+				.title-item {
+					position: absolute;
+					bottom: 100%;
+				}
+				&:nth-child(odd) {
+					max-width: 50%;
+					margin-left: auto;
+					text-align: left;
+					padding-left: 22px;
+				}
+				&:nth-child(even) {
+					max-width: 50%;
+					margin-right: auto;
+					text-align: right;
+					padding-right: 22px;
+				}
+			}
+		}
+	}
+}
