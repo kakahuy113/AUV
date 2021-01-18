@@ -1,6 +1,6 @@
 section.note-section 
 	.container 
-		.container-custom.container-1365px 
+		.container-custom.size-1365px 
 			.auv-new-content
 				.auv-new-title 
 					h2 News & Events
@@ -9,7 +9,7 @@ section.note-section
 						p Annoucements 
 				.block-list-item
 					-for(i=0;i<=4;i++)
-						.block__item
+						.block__item-note
 								.img--news
 									img.object-cover.fullsize(src=`./assets/images/index/new-1.png`, alt="something")
 								.item--desc
@@ -20,7 +20,7 @@ section.note-section
 					li(data-url="asd").pagination-prev
 						a(href="#")
 							img.object-cover(src="./assets/icons/arw.svg", alt="")
-						li(data-url="asd")
+						li(data-url="asd").active
 							a(href="#") 1
 						li(data-url="asd")
 							a(href="#") 2

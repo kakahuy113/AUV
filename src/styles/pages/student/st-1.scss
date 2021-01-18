@@ -1,0 +1,23 @@
+.notify-student {
+	.container {
+		.container-custom{
+			.student-note {
+				margin-left: auto;
+				margin-right: auto;
+				.student-title {
+					text-align: center;
+					p {
+						font-size: 5rem;
+						font-family: MinionPro-Bold;
+					}
+				}
+				.note-day {
+					text-align: center;
+					.note-st--main {
+						display: flex;
+					}
+				}
+			}
+		}
+	}
+}

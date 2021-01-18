@@ -123,3 +123,18 @@
 .h-100 {
 	height: 100%;	
 }
+.lcl {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	&.lcl-1 {
+		-webkit-line-clamp: 1;
+	}
+	&.lcl-2 {
+		-webkit-line-clamp: 2;
+	}
+	&.lcl-3 {
+		-webkit-line-clamp: 3;
+	}
+}

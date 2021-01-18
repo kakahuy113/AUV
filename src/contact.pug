@@ -1,0 +1,22 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Contact | Index';
+	- let bodyClass = 'contact-page';
+//- block loading
+block banner,breadcrumb
+	include _templates/_layout/_mainBanner
+block main
+	include _templates/contact/c-1
+	include _templates/contact/c-2
+block scripts
+	script.
+		var locationsInput = [
+			{
+				lat: 15.974071628854,
+				lng: 108.25750705499,
+				title: 'AUV University',
+				icon: './assets/icons/map.png'
+			},
+		]
+	script(src="./js/GoogleMapController.min.js")
