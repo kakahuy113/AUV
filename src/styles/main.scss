@@ -2,7 +2,7 @@
 @import "abstracts/functions";
 @import "abstracts/mixins";
 
-@import "base/animations";
+// @import "base/animations";
 @import "base/reset";
 @import "base/fonts";
 @import "base/global";
@@ -21,8 +21,9 @@
 @import "components/fullpage";
 
 @import "pages/index";
-@import "pages/duat/main.scss";
+@import "pages/index/main.scss";
 
 @import "pages/news/main.scss";
 @import "pages/news-events-detail/n-1.scss";
 
+@import "pages/student/main.scss";

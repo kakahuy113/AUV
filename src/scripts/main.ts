@@ -4,33 +4,35 @@ declare var Swiper:any;
 declare var $:any;
 
 //swiper slides auv
-const auv = new Swiper('.auv-section .swiper-container', {
-	slidesPerView: 5,
-	spaceBetween: 10,
-	loop: true,
-	speed: 800,
-
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	  },
-	breakpoints: {
-		 320: { 
-		slidesPerView: 2,
-		spaceBetween: 20
-	  },
-	  // when window width is >= 480px
-	  480: {
-		slidesPerView: 3,
-		spaceBetween: 30
-	  },
-	  // when window width is >= 640px
-	  640: {
+const swiperindex = () => {
+	const swiperslide = new Swiper('.auv-section .swiper-container', {
 		slidesPerView: 5,
-		spaceBetween: 40
-	  }
-	}
-})
+		spaceBetween: 10,
+		loop: true,
+		speed: 800,
+
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		breakpoints: {
+			320: { 
+			slidesPerView: 2,
+			spaceBetween: 20
+		},
+		// when window width is >= 480px
+		480: {
+			slidesPerView: 3,
+			spaceBetween: 30
+		},
+		// when window width is >= 640px
+		640: {
+			slidesPerView: 5,
+			spaceBetween: 40
+		}
+		}
+	})
+}
 //popup image News&Events
 const ImagePopupabout = () => {
 	$(".lib__page__img .item-gallery").on("click" , function() {
@@ -63,6 +65,7 @@ const ImagePopupabout = () => {
 		
 	})
 }
+//popup image Gallery
 const ImagePopugalley = () => {
 	$(".main-galley .is-img").on("click" , function() {
 		const slides = $(this).find(".d-none")[0].innerHTML
@@ -94,6 +97,7 @@ const ImagePopugalley = () => {
 		
 	})
 }
+//drop line 
 const dropLine = () => {
 	document.querySelectorAll(".footer__contact .item__text a").forEach(item => {
 		const text = item.outerHTML;
@@ -134,7 +138,7 @@ const initMainBanner = () => {
 		});
 	}
 }
-
+//menu mobile
 const showMenuMobile = () => {
 	const btnMenuMobile = document.querySelector('.navBarHamburger__wrapper');
 	const navBarMenuMobile = document.querySelector('.navBar');
@@ -155,6 +159,7 @@ const showMenuMobile = () => {
 		});
 	}
 }
+//button go top
 const showBackToTop = () => {
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 800) {
@@ -171,6 +176,7 @@ const showBackToTop = () => {
 		});
 	});
 } ;
+//ajax news
 const ajaxlistnews = () => {
 	$(document).on("click" , ".note-section .pagination li" ,function(e:any) {
 		e.preventDefault();
@@ -184,6 +190,7 @@ const ajaxlistnews = () => {
 		})
 	})
 }
+//ajax gallery
 const ajaxlisgallery = () => {
 	$(document).on("click" , ".lib__page .pagination li" ,function(e:any) {
 		e.preventDefault();
@@ -208,6 +215,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	showBackToTop();
 	ajaxlistnews();
 	ajaxlisgallery();
+	swiperindex();
 	const example = new Tab(".executive-committee .tab-container");
 });
 
