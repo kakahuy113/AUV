@@ -1,0 +1,49 @@
+section.about-academic
+	.container
+		.container-custom.size-1365px
+			.about-academic__wrapper.tab-container
+				.title
+					h2 Academic Focus
+				.desc
+					p Our strategy for achieving our mission is to provide an American style education that offers compelling academic programs.
+				.tab-item
+					.item(toggle-for="academic-1")
+						.item__wrapper
+							.item-img
+								img.object-cover.lazyload.blur-up(src="./assets/images/about/item-1.png", alt="")
+							.item-desc
+								p Our General Studies. program focus
+					.item(toggle-for="academic-2")
+						.item__wrapper
+							.item-img
+								img.object-cover.lazyload.blur-up(src="./assets/images/about/item-2.png", alt="")
+							.item-desc
+								p Our Major. programs focus
+					.item(toggle-for="academic-3")
+						.item__wrapper
+							.item-img
+								img.object-cover.lazyload.blur-up(src="./assets/images/about/item-3.png", alt="")
+							.item-desc
+								p Our courses focus
+					.item(toggle-for="academic-4")
+						.item__wrapper
+							.item-img
+								img.object-cover.lazyload.blur-up(src="./assets/images/about/item-4.png", alt="")
+							.item-desc
+								p Our classroom. instructions focus
+					.item(toggle-for="academic-5")
+						.item__wrapper
+							.item-img
+								img.object-cover.lazyload.blur-up(src="./assets/images/about/item-5.png", alt="")
+							.item-desc
+								p Our capstone. requirements focus
+				.conten-active
+					.tab-content
+						-for(var i = 0;i < 5; i ++)
+							.content(tab-id=`academic-${ i + 1}`)
+								.item
+									.item-img
+										img.object-cvoer.fullsize.lazyload.blur-up(src="./assets/images/about/item-active.png", alt="")
+									.item-desc
+										p Our General Studies program focus on developing students’ intellectual abilities, personal values, and lifelong skills including oral and written fluency in English and a rich understanding of natural sciences, humanities, technology, social institutions, and world cultures. Our General Studies are compatible with the programs of reputable institutions of higher education in the U.S.
+

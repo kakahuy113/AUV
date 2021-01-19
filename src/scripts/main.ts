@@ -123,6 +123,12 @@ const dropLine = () => {
 		const newText = splitText.join("</br>");
 		item.outerHTML = newText
 	})
+	document.querySelectorAll(".about-academic .tab-item p").forEach(item => {
+		const text = item.outerHTML;
+		const splitText = text.split(".");
+		const newText = splitText.join("</br>");
+		item.outerHTML = newText
+	})
 }
 
 // MAIN BANNER WEBSITE
@@ -264,6 +270,38 @@ const ajaxContactForm = () => {
 		}
 	});
 }
+
+//swiper about advusory
+const SwiperAdvisory = () => {
+	const swiper = new Swiper('.about-advisory .swiper-container', {
+		slidesPerView: 3,
+		// spaceBetween: 10,
+		// loop: true,
+		speed: 800,
+
+		navigation: {
+			nextEl: '.about-advisory .swiper-button-next',
+			prevEl: '.about-advisory .swiper-button-prev',
+		},
+		// breakpoints: {
+		// 	320: { 
+		// 	slidesPerView: 2,
+		// 	spaceBetween: 20
+		// 	},
+		// 	// when window width is >= 480px
+		// 	480: {
+		// 		slidesPerView: 3,
+		// 		spaceBetween: 30
+		// 	},
+		// 	// when window width is >= 640px
+		// 	640: {
+		// 		slidesPerView: 5,
+		// 		spaceBetween: 40
+		// 	}
+		// }
+	})
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -288,8 +326,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 	ajaxContactForm();
 	// SETBACKGROUND IMAGE
 	setBackgroundImageSection();
+	//
+	SwiperAdvisory();
 	// Tab
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
+	const aboutAcademic = new Tab(".about-academic .tab-container");
 });
 
