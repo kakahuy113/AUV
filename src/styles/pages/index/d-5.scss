@@ -1,8 +1,9 @@
 //Galley
 .auv-galley {
 	padding-bottom: 50px;
+	margin-top: 85px;
 	.title-galley {
-		padding: 85px;
+		padding-bottom: 85px;
 		p {
 			text-align: center;
 			font-size: 6rem;
@@ -141,6 +142,15 @@
 }
 
 
+@media (max-width: 768px) {
+	.auv-galley {
+		margin-top: 30px;
+		.title-galley {
+			padding-bottom: 25px;
+		}
+	}
+}
+
 .auv-section{
 	.container {
 		padding: 20px;
@@ -201,8 +211,8 @@
 	}
 	}
 margin-bottom: 80px;
-
 }
+
 //auvmap
 .auvmap-section {
 	#map {

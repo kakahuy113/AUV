@@ -156,6 +156,7 @@ const initMainBanner = () => {
 	});
 };
 
+//menu mobile
 const showMenuMobile = () => {
 	const btnMenuMobile = document.querySelector('.navBarHamburger__wrapper');
 	const navBarMenuMobile = document.querySelector('.navBar');
@@ -234,6 +235,7 @@ const setBackgroundImageSection = () => {
 };
 
 
+// submit contact
 const ajaxContactForm = () => {
 	$(".contact-form form .btn-submit").on("click", function(e:any) {
 		e.preventDefault();
@@ -329,6 +331,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//
 	SwiperAdvisory();
 	// Tab
+	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
 	const aboutAcademic = new Tab(".about-academic .tab-container");
