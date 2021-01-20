@@ -273,6 +273,20 @@ const ajaxContactForm = () => {
 	});
 }
 
+
+const popupImgmem = () => {
+	if(document.querySelector(".work-shop"))
+	$(document).on("click", ".work-shop .item", function(element:any) {
+		element.preventDefault()
+		const data = $(this).children()[0].innerHTML
+		$("#work-shop .list-ws").html(`${data}`);
+		$.fancybox.open({
+			src: "#work-shop",
+			type: "inline"
+		})
+	})
+}
+
 //swiper about advusory
 const SwiperAdvisory = () => {
 	const swiper = new Swiper('.about-advisory .swiper-container', {
@@ -331,6 +345,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//
 	SwiperAdvisory();
 	// Tab
+	popupImgmem();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
