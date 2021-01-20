@@ -6,6 +6,36 @@ declare var $:any;
 //swiper slides auv
 const swiperindex = () => {
 	const swiperslide = new Swiper('.auv-section .swiper-container', {
+		slidesPerView: 4,
+		spaceBetween: 10,
+		loop: true,
+		speed: 800,
+
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		breakpoints: {
+			320: { 
+			slidesPerView: 2,
+			spaceBetween: 20
+		},
+		// when window width is >= 480px
+		480: {
+			slidesPerView: 3,
+			spaceBetween: 30
+		},
+		// when window width is >= 640px
+		640: {
+			slidesPerView: 5,
+			spaceBetween: 40
+		}
+		}
+	})
+}
+
+const swiperstudent = () => {
+	const swiperslide = new Swiper('.camp-life .swiper-container', {
 		slidesPerView: 5,
 		spaceBetween: 10,
 		loop: true,
@@ -346,6 +376,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	SwiperAdvisory();
 	// Tab
 	popupImgmem();
+
+	swiperstudent();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
