@@ -25,6 +25,19 @@
 						font-family: MinionPro-Bold;
 						color: #989898;
 					}
+					@media (max-width: 1439.98px) {
+						p {
+							font-size: 5rem;
+						}
+					}
+				}
+				@media (max-width: 575.98px) {
+					.desc {
+						top: 75%;
+						p {
+							font-size: 3rem;
+						}
+					}
 				}
 			}
 		}
@@ -39,10 +52,6 @@
 				flex-wrap: wrap;
 				.img--news {
 					max-width: 50%;
-					img {
-						max-width:536px ;
-						max-height: 435px;
-					}
 				}
 				.items--desc {
 					padding-left: 56px;

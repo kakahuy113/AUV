@@ -4,12 +4,17 @@ section.camp-life
 			.title 
 				p Campus Life
 			.camp-swiper
-				.swiper-container
+				.swiper-container.gallery-top
 					.swiper-wrapper
-						-for(var i = 0; i < 6;i++)
+						-for(var i = 0; i < 7;i++)
 							.swiper-slide
-								.cam-item
-								a(href="#").img
-										img.object-cover.full-size(src="./assets/images/student/cam-3.png", alt="")
-					.swiper-button-next
-					.swiper-button-prev
+								.img
+									img.object-cover.full-size(src="./assets/images/student/cam-3.png", alt="")
+				.swiper-container.gallery-thumbs
+					.swiper-wrapper
+						-for(var i = 0; i < 7;i++)
+							.swiper-slide
+								.img
+									img.object-cover.full-size(src="./assets/images/student/cam-3.png", alt="")
+				.swiper-button-next
+				.swiper-button-prev

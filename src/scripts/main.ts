@@ -34,33 +34,45 @@ const swiperindex = () => {
 	})
 }
 
+//swiper slide student 
 const swiperstudent = () => {
-	const swiperslide = new Swiper('.camp-life .swiper-container', {
-		slidesPerView: 5,
-		spaceBetween: 10,
-		loop: true,
-		speed: 800,
-		navigation: {
-			nextEl: '.auv-section .swiper-button-next',
-			prevEl: '.auv-section .swiper-button-prev',
-		},
+	const galleryThumbs = new Swiper('.camp-life .gallery-thumbs', {
+		spaceBetween: 1,
+		slidesPerView: 3,
+		direction: 'vertical',
+		mousewheel: true,
+		// loop: true,
+		// loopedSlides: 5, //looped slides should be the same
 		breakpoints: {
-			320: { 
-			slidesPerView: 2,
-			spaceBetween: 20
+			// 300: {
+			// 	slidesPerView: 2,
+			// 	direction: 'horizontal',
+			// },
+			// 430: {
+			// 	slidesPerView: 3,
+			// 	direction: 'horizontal',
+			// },
+			// 768: {
+			// 	slidesPerView: 4,
+			// 	direction: 'vertical',
+			// }
 		},
-		// when window width is >= 480px
-		480: {
-			slidesPerView: 3,
-			spaceBetween: 30
+		freeMode: true,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	});
+	const galleryTop = new Swiper('.camp-life .gallery-top', {
+		spaceBetween: 10,
+		// loop:true,
+		// loopedSlides: 5, //looped slides should be the same
+		navigation: {
+		nextEl: '.camp-life .swiper-button-next',
+		prevEl: '.camp-life .swiper-button-prev',
 		},
-		// when window width is >= 640px
-		640: {
-			slidesPerView: 5,
-			spaceBetween: 40
-		}
-		}
-	})
+		thumbs: {
+		swiper: galleryThumbs,
+		},
+	});
 }
 //popup image News&Events
 const ImagePopupabout = () => {
@@ -302,7 +314,7 @@ const ajaxContactForm = () => {
 	});
 }
 
-
+// popup images member
 const popupImgmem = () => {
 	if(document.querySelector(".work-shop"))
 	$(document).on("click", ".work-shop .item", function(element:any) {
@@ -439,6 +451,22 @@ const fancyboxFacultyAbout = () => {
 	})
 }
 
+const fancyboxRules = () => {
+	$(document).on("click", ".list-tab-content-rules .btn-remore" , function() {
+		const content = $(this).parent()[0].outerHTML
+		$.fancybox.open({
+			src : "#rules-popup",
+			type : "inline",
+			opts: {
+				beforeShow: function() {
+					document.querySelector("#rules-popup").innerHTML = content;
+				}
+			}
+		})
+		
+	})
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -473,8 +501,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	fancyboxFacultyAbout();
 	// Tab
 	popupImgmem();
-
+	// slide student campus
 	swiperstudent();
+	//fancybox Rules of Product
+	fancyboxRules();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
