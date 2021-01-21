@@ -1,0 +1,116 @@
+.work-shop {
+	.container {
+		margin-top: 97px;
+		.container-custom {
+			.title-work-shop {
+				.block-title {
+					h2 {
+						text-align: center;
+						font-size: 5rem;
+						font-family: MinionPro-Bold;
+						color: #0B1F44;
+					}
+				}
+				.title-desc {
+					margin-left: auto;
+					margin-right: auto;
+					padding-bottom: 40px;
+					max-width: 523px;
+					text-align: center;
+					p {
+						font-size: 2rem;
+						color: #707070;
+					}
+				}
+			}
+			.list-item-work {
+				.content-items{
+					max-width: 398px;
+					.content {
+						.text {
+							display: none;
+						}
+						.title {
+							height: 111px;
+							padding: 20px 15px 15px 25px;
+							background: #D7970C;
+							box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: .16);
+							p {
+								font-size: 3rem;
+								font-family: Futura-Light;
+								color: white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#work-shop {
+	max-width: 1365px;
+	.list-ws {
+				background: white;
+				display: flex;
+				padding: 65px 65px 65px 135px;
+				.img {
+					max-width: 50%;
+					img {
+						max-width: 398px;
+						max-height: 442px;
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.content {
+					-ms-flex: 0 0 50%;
+					flex: 0 0 50%;
+					max-width: 50%;
+					padding-left: 78px;
+					.title {
+						position: relative;
+						padding-bottom: 60px;
+						padding-top: 30px;
+						&::after {
+							content: '';
+							position: absolute;
+							width: 25px;
+							height: 1px;
+							bottom: 10%;
+							left: 0;
+							background: #CF910C;
+						}
+						p {
+							font-size: 3rem;
+							font-family: MinionPro-Bold;
+							color: #D7970C;
+						}
+					}
+				}
+			
+		
+
+	}
+}
+.other {
+	background: #F1F1F1;
+	text-align: center;
+	padding:100px 0;
+	.title {
+		p{
+			font-size: 5rem;
+			font-family: MinionPro-Bold;
+			color: #0B1F44;
+		}
+	}
+	.desc {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 813px;
+		width: 100%;
+		p {
+			color: #707070;
+			font-size: 2rem;
+		}
+	}
+}

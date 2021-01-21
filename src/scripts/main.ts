@@ -6,6 +6,36 @@ declare var $:any;
 //swiper slides auv
 const swiperindex = () => {
 	const swiperslide = new Swiper('.auv-section .swiper-container', {
+		slidesPerView: 4,
+		spaceBetween: 10,
+		loop: true,
+		speed: 800,
+
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		breakpoints: {
+			320: { 
+			slidesPerView: 2,
+			spaceBetween: 20
+		},
+		// when window width is >= 480px
+		480: {
+			slidesPerView: 3,
+			spaceBetween: 30
+		},
+		// when window width is >= 640px
+		640: {
+			slidesPerView: 5,
+			spaceBetween: 40
+		}
+		}
+	})
+}
+
+const swiperstudent = () => {
+	const swiperslide = new Swiper('.camp-life .swiper-container', {
 		slidesPerView: 5,
 		spaceBetween: 10,
 		loop: true,
@@ -155,6 +185,7 @@ const initMainBanner = () => {
 	});
 };
 
+//menu mobile
 const showMenuMobile = () => {
 	const btnMenuMobile = document.querySelector('.navBarHamburger__wrapper');
 	const navBarMenuMobile = document.querySelector('.navBar');
@@ -233,6 +264,7 @@ const setBackgroundImageSection = () => {
 };
 
 
+// submit contact
 const ajaxContactForm = () => {
 	$(".contact-form form .btn-submit").on("click", function(e:any) {
 		e.preventDefault();
@@ -268,6 +300,20 @@ const ajaxContactForm = () => {
 			})
 		}
 	});
+}
+
+
+const popupImgmem = () => {
+	if(document.querySelector(".work-shop"))
+	$(document).on("click", ".work-shop .item", function(element:any) {
+		element.preventDefault()
+		const data = $(this).children()[0].innerHTML
+		$("#work-shop .list-ws").html(`${data}`);
+		$.fancybox.open({
+			src: "#work-shop",
+			type: "inline"
+		})
+	})
 }
 
 //swiper about advusory
@@ -426,6 +472,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//
 	fancyboxFacultyAbout();
 	// Tab
+	popupImgmem();
+
+	swiperstudent();
+	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
 	const aboutAcademic = new Tab(".about-academic .tab-container");

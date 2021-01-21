@@ -19,7 +19,6 @@
 		flex-wrap: wrap;
 		flex-direction: row;
 		.item-left{
-			padding-left: 20px;
 			text-align: left;
 			flex: 0 0 50%;
 			max-width: 50%;		
@@ -126,7 +125,10 @@
 			}
 		}
 	}
-	@media (max-width: 759.98px) {
+	@media (max-width: 768px) {
+		.title {
+			padding-bottom: 50px;
+		}
 		.row {
 			.item-left{
 				text-align: center;
@@ -145,4 +147,8 @@
 	}
 }
 }
-
+@media (max-width: 767.98px) {
+	.index-earth {
+		padding:50px 0;
+	}
+}
