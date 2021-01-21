@@ -51,20 +51,7 @@
 							}
 						}
 					}
-					.btn-remore {
-						text-align: right;
-						button {
-							border: solid;
-							width: 111px;
-							height: 35px;
-							font-size: 17px;
-							font-weight: bold;
-							background-color: #ffffff;
-							border-color: #d7970c;
-							display: inline-flexbox;
-							font-family: MinionPro-Bold;
-						}
-					}
+				
 					@media (max-width: 1024px) {
 						max-width: 100%;
 						.block-list-item {

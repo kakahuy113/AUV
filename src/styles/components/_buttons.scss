@@ -5,3 +5,19 @@
 	border: 0;
 	appearance: none;
 }
+
+.btn-remore {
+	max-width: fit-content;
+	margin-left: auto;
+	button {
+		padding: 0;
+		border:1px solid #d7970c;
+		width: 111px;
+		height: 35px;
+		background-color: #ffffff;
+		span {
+			font-family: MinionPro-Bold;
+			padding-right: 5px;
+		}
+	}
+}
