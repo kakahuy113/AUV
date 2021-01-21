@@ -1,0 +1,13 @@
+.popup {
+	.fancybox-button {
+		position: fixed;
+		top: 0;
+		right: 0;
+		background: map-get($color, main-3);
+		color: map-get($color, x-white);
+	}
+}
+.fancybox-bg {
+	background: map-get($color, main-3);
+	opacity: .9;
+}

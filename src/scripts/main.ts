@@ -10,10 +10,9 @@ const swiperindex = () => {
 		spaceBetween: 10,
 		loop: true,
 		speed: 800,
-
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.auv-section .swiper-button-next',
+			prevEl: '.auv-section .swiper-button-prev',
 		},
 		breakpoints: {
 			320: { 
@@ -276,13 +275,17 @@ const SwiperAdvisory = () => {
 	const swiper = new Swiper('.about-advisory .swiper-container', {
 		slidesPerView: 3,
 		// spaceBetween: 10,
-		// loop: true,
+		loop: true,
 		speed: 800,
-
+		centeredSlides: true,
 		navigation: {
 			nextEl: '.about-advisory .swiper-button-next',
 			prevEl: '.about-advisory .swiper-button-prev',
 		},
+		autoplay: {
+			delay: 2000,
+			disableOnInteraction: false
+		  },
 		// breakpoints: {
 		// 	320: { 
 		// 	slidesPerView: 2,
@@ -299,6 +302,94 @@ const SwiperAdvisory = () => {
 		// 		spaceBetween: 40
 		// 	}
 		// }
+	})
+}
+
+//swiper about Faculty
+const swiperFaculty = () => {
+	const swiper = new Swiper('.about-faculty-slide .swiper-container', {
+		slidesPerView: 1,
+		// spaceBetween: 10,
+		loop: true,
+		speed: 800,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		navigation: {
+			nextEl: '.about-faculty-slide .swiper-button-next',
+			prevEl: '.about-faculty-slide .swiper-button-prev',
+		},
+		autoplay: {
+			delay: 2000,
+			disableOnInteraction: false
+		  },
+		// breakpoints: {
+		// 	320: { 
+		// 	slidesPerView: 2,
+		// 	spaceBetween: 20
+		// 	},
+		// 	// when window width is >= 480px
+		// 	480: {
+		// 		slidesPerView: 3,
+		// 		spaceBetween: 30
+		// 	},
+		// 	// when window width is >= 640px
+		// 	640: {
+		// 		slidesPerView: 5,
+		// 		spaceBetween: 40
+		// 	}
+		// }
+	})
+}
+//swiper about Campus
+const swipeCampus = () => {
+	const swiper = new Swiper('.about-campus-slide .swiper-container', {
+		slidesPerView: 2.2,
+		spaceBetween: 100,
+		centeredSlides: true,
+		loop: true,
+		speed: 800,
+		navigation: {
+			nextEl: '.about-campus-slide .swiper-button-next',
+			prevEl: '.about-campus-slide .swiper-button-prev',
+		},
+		autoplay: {
+			delay: 2000,
+			disableOnInteraction: false
+		  },
+		// breakpoints: {
+		// 	320: { 
+		// 	slidesPerView: 2,
+		// 	spaceBetween: 20
+		// 	},
+		// 	// when window width is >= 480px
+		// 	480: {
+		// 		slidesPerView: 3,
+		// 		spaceBetween: 30
+		// 	},
+		// 	// when window width is >= 640px
+		// 	640: {
+		// 		slidesPerView: 5,
+		// 		spaceBetween: 40
+		// 	}
+		// }
+	})
+}
+// popup faculty about
+const fancyboxFacultyAbout = () => {
+	$(document).on("click", ".about-faculty-slide .btn-remore" , function() {
+		const content = $(this).parent()[0].outerHTML
+		$.fancybox.open({
+			src : "#popup-faculty",
+			type : "inline",
+			opts: {
+				beforeShow: function() {
+					document.querySelector("#popup-faculty").innerHTML = content;
+				}
+			}
+		})
+		
 	})
 }
 
@@ -328,6 +419,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 	setBackgroundImageSection();
 	//
 	SwiperAdvisory();
+	//
+	swiperFaculty();
+	//
+	swipeCampus();
+	//
+	fancyboxFacultyAbout();
 	// Tab
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
