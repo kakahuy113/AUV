@@ -158,6 +158,12 @@ const dropLine = () => {
 		const newText = splitText.join("</br>");
 		item.outerHTML = newText
 	})
+	document.querySelectorAll("[dropline]").forEach(item => {
+		const text = item.outerHTML;
+		const splitText = text.split(".");
+		const newText = splitText.join("</br>");
+		item.outerHTML = newText
+	})
 }
 
 // MAIN BANNER WEBSITE
@@ -320,7 +326,7 @@ const popupImgmem = () => {
 const SwiperAdvisory = () => {
 	const swiper = new Swiper('.about-advisory .swiper-container', {
 		slidesPerView: 3,
-		// spaceBetween: 10,
+		spaceBetween: 10,
 		loop: true,
 		speed: 800,
 		centeredSlides: true,
@@ -332,22 +338,14 @@ const SwiperAdvisory = () => {
 			delay: 2000,
 			disableOnInteraction: false
 		  },
-		// breakpoints: {
-		// 	320: { 
-		// 	slidesPerView: 2,
-		// 	spaceBetween: 20
-		// 	},
-		// 	// when window width is >= 480px
-		// 	480: {
-		// 		slidesPerView: 3,
-		// 		spaceBetween: 30
-		// 	},
-		// 	// when window width is >= 640px
-		// 	640: {
-		// 		slidesPerView: 5,
-		// 		spaceBetween: 40
-		// 	}
-		// }
+		breakpoints: {
+			300: {
+				slidesPerView: 1.8,
+			},
+			768: {
+				slidesPerView: 3,
+			}
+		}
 	})
 }
 
@@ -404,22 +402,15 @@ const swipeCampus = () => {
 			delay: 2000,
 			disableOnInteraction: false
 		  },
-		// breakpoints: {
-		// 	320: { 
-		// 	slidesPerView: 2,
-		// 	spaceBetween: 20
-		// 	},
-		// 	// when window width is >= 480px
-		// 	480: {
-		// 		slidesPerView: 3,
-		// 		spaceBetween: 30
-		// 	},
-		// 	// when window width is >= 640px
-		// 	640: {
-		// 		slidesPerView: 5,
-		// 		spaceBetween: 40
-		// 	}
-		// }
+		breakpoints: {
+			300: {
+			spaceBetween: 20,
+			},
+			768: {
+			spaceBetween: 100,
+
+			}
+		}
 	})
 }
 // popup faculty about
@@ -479,5 +470,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
 	const aboutAcademic = new Tab(".about-academic .tab-container");
+	const admissionapllynow = new Tab(".admission-apply .tab-container");
 });
 

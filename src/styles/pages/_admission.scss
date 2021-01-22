@@ -1,0 +1,405 @@
+.admission-requirements {
+	padding-top: 145px;
+	padding-bottom: 110px;
+	.title {
+		margin-bottom: 40px;
+	}
+	img {
+		margin-bottom: 35px;
+	}
+	p {
+		margin-bottom: 20px;
+	}
+	.step,
+	.info {
+		p {
+			margin-bottom: 0;
+		}
+	}
+	.step {
+		padding-top: 10px;
+		position: relative;
+		margin-bottom: 20px;
+		p {
+			span {
+				color: map-get($color, main-3);
+				font-family: Futura-Medium;
+			}
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			width: 15px;
+			height: 3px;
+			border-radius: 3px;
+			background: map-get($color, main-3);
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+.admission-finance {
+	position: relative;
+	padding-top: 60px;
+	padding-bottom: 110px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: map-get($color, main-3);
+		opacity: .8;
+	}
+	.title {
+		text-align: center;
+		margin-bottom: 70px;
+		h2 {
+			color: map-get($color, x-white);
+		}
+	}
+	.content {
+		display: flex;
+		align-items: center;
+		.desc {
+			-ms-flex: 0 0 675px;
+			flex: 0 0 675px;
+			max-width: 675px;
+			background: map-get($color, x-white);
+			padding: 70px 190px 55px 60px;
+			p {
+				position: relative;
+				&:first-child {
+					&::after {
+						content: "";
+						position: absolute;
+						width: 15px;
+						height: 3px;
+						border-radius: 3px;
+						background: map-get($color, main-4);
+						top: -10px;
+						left: 0;
+					}
+				}
+			}
+		}
+		.img {
+			-ms-flex: 0 0 570px;
+			flex: 0 0 570px;
+			max-width: 570px;
+			margin-left: -145px;
+			max-height: 370px;
+			background: map-get($color, x-white);
+			padding: 8px;
+			height: 100%;
+		}
+	}
+}
+
+.admission-scholarships {
+	padding-top: 70px;
+	padding-bottom: 125px;
+	.title {
+		margin-bottom: 15px;
+		text-align: center;
+		h2 {
+			color: map-get($color, main-4);
+		}
+	}
+	.sub-title {
+		margin-bottom: 110px;
+		text-align: center;
+		p {
+			font-size: 1.8rem;
+		}
+	}
+	.content {
+		display: flex;
+		justify-content: space-between;
+		.item {
+			-ms-flex: 0 0 195px;
+			flex: 0 0 195px;
+			max-width: 195px;
+			text-align: center;
+			.img {
+				margin-bottom: 35px;
+				height: 72px;
+				overflow: hidden;
+			}
+			.percent {
+				margin-bottom: 30px;
+				p {
+					color: map-get($color, main-4);
+					font-size: 10rem;
+					font-family: MinionPro-Bold;
+					letter-spacing: -3px;
+					position: relative;
+					span {
+						font-size: 4rem;
+						position: absolute;
+						bottom: 25px;
+					}
+					&::after {
+						content: "";
+						position: absolute;
+						bottom: 0;
+						left: 50%;
+						transform: translateX(-50%);
+						background: map-get($color, main-4);
+						height: 7px;
+						width: 135px;
+					}
+				}
+			}
+			.award {
+				font-size: 2.5rem;
+			}
+		}
+	}
+}
+
+.admission-auv-difference {
+	position: relative;
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	padding-top: 100px;
+	padding-bottom: 120px;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: map-get($color, main-3);
+		opacity: .9;
+	}
+	.title {
+		text-align: center;
+		margin-bottom: 15px;
+		h2 {
+			color: map-get($color, main-4);
+		}
+	}
+	.sub-title {
+		margin-bottom: 70px;
+		text-align: center;
+		max-width: 687px;
+		margin: 0 auto;
+		p {
+			font-size: 1.8rem;
+			color: map-get($color, x-white);
+		}
+	}
+	.content {
+		display: flex;
+		flex-wrap: wrap;
+		.item {
+			-ms-flex: 0 0 33.333333%;
+			flex: 0 0 33.333333%;
+			max-width: 33.333333%;
+			padding: 10px;
+			.item__wrapper {
+				height: 100%;
+				background: map-get($color, x-white );
+				padding: 30px 15px 50px 15px;
+				.img {
+					box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+}
+
+.admission-apply {
+	background: map-get($color, main-3);
+	padding: 85px 0;
+	.title {
+		text-align: center;
+		margin-bottom: 50px;
+		h2 {
+			color: map-get($color, main-4);
+		}
+	}
+	.content {
+		.item {
+			display: flex;
+			flex-wrap: wrap;
+			&:not(:last-child) {
+				margin-bottom: 50px;
+			}
+			> div {
+				-ms-flex: 0 0 50%;
+				flex: 0 0 50%;
+				max-width: 50%;
+				color: map-get($color, x-white);
+			}
+			&:first-child {
+				padding-top: 13px;
+				position: relative;
+				&::after {
+					content: "";
+					position: absolute;
+					background: map-get($color, x-white);
+					top: 3px;
+					left: 0;
+					width: 27px;
+					height: 3px;
+					border-radius: 3px;
+				}
+				p {
+					margin-bottom: 20px;
+					font-size: 2rem;
+					max-width: 625px;
+				}
+			}
+			&.tab-container {
+				.content-item {
+					padding-left: 65px;
+				}
+				h5 {
+					font-size: 2rem;
+					font-family: Montserrat-Bold;
+					max-width: 475px;
+					margin-bottom: 30px;
+				}
+				ul {
+					list-style: none;
+					padding: 0;
+					position: relative;
+					&::before {
+						content: "";
+						position: absolute;
+						left: 5px;
+						top: 50%;
+						transform: translateY(-50%);
+						height: 90%;
+						width: 1px;
+						background: #23457B;
+					}
+					li {
+						padding-left: 30px;
+						position: relative;
+						margin-bottom: 30px;
+						p {
+							font-size: 2rem;
+						}
+						&::before {
+							content: "";
+							position: absolute;
+							top: 50%;
+							transform: translateY(-50%);
+							left: 0;
+							border-radius: 50%;
+							background: #23457B;
+							width: 12px;
+							height: 12px;
+						}
+						&::after {
+							content: "";
+							position: absolute;
+							width: 12px;
+							height: 12px;
+							border-radius: 50%;
+							top: 50%;
+							transform: translateY(-50%);
+							left: 0;
+							background: transparent;
+						}
+						&.active {
+							p {
+								font-family: Futura-Medium;
+							}
+							&::after {
+								background: map-get($color, main-4);
+								animation: pulse 1.5s infinite;
+							}
+						}
+					}
+				}
+			}
+			&:last-child {
+				h5 {
+					margin-top: 20px;
+					font-size: 2rem;
+					font-family: Futura-Bold;
+					color: map-get($color, main-4);
+				}
+				p {
+					font-size: 2rem;
+					span {
+						font-family: Futura-Medium;
+					}
+				}
+			}
+		}
+	}
+}
+
+.admission-how-to-apply {
+	padding-top: 100px;
+	padding-bottom: 140px;
+	.guide-apply {
+		padding: 70px 50px;
+		display: flex;
+		background: #EFEBCF;
+		margin-bottom: 45px;
+		.img {
+			-ms-flex: 0 0 425px;
+			flex: 0 0 425px;
+			max-width: 425px;
+		}
+		.desc {
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
+			padding-left: 65px;
+			h2 {
+				margin-bottom: 40px;
+				font-size: 5rem;
+				font-family: MinionPro-Bold;
+			}
+		}
+	}
+	.apply-form {
+		box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+		.apply-tab {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 60px;
+		}
+		.tab {
+			-ms-flex: 0 0 33.333333%;
+			flex: 0 0 33.333333%;
+			max-width: 33.333333%;
+			padding: 0 1.5px;
+			.tab__wrapper {
+				padding: 10px 30px;
+				background: #F1F1F1;
+				box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+			}
+			p {
+				color: #989898;
+				font-size: 2rem;
+				span {
+					font-size: 2.5rem;
+					font-family: MinionPro-Bold;
+				}
+			}
+			&.active {
+				.tab__wrapper {
+					background: map-get($color, main-3);
+				}
+			}
+		}
+	}
+}

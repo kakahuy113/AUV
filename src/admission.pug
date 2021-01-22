@@ -1,0 +1,18 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'News | Index';
+	- let bodyClass = 'news-page';
+	- let linkBanner = './assets/images/news-events/banner.png';
+	- let titleBanner = 'TRANG CHỦ';
+//- block loading
+block banner,breadcrumb
+	include _templates/_layout/_mainBanner
+block main
+	include _templates/admission/a-1
+	include _templates/admission/a-2
+	include _templates/admission/a-3
+	include _templates/admission/a-4
+	include _templates/admission/a-5
+	include _templates/admission/a-6
+block scripts
