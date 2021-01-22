@@ -1,6 +1,7 @@
 .work-shop {
 	.container {
 		margin-top: 97px;
+		margin-bottom: 135px;
 		.container-custom {
 			.title-work-shop {
 				.block-title {
@@ -41,6 +42,11 @@
 								color: white;
 							}
 						}
+					}
+				}
+				@media (max-width: 575.98px) {
+					.content-items {
+						max-width: 100%;
 					}
 				}
 			}
@@ -87,9 +93,10 @@
 						}
 					}
 				}
-			
-		
-
+	}
+	.fancybox-button.fancybox-close-small {
+		background: #000000;
+		border-radius: 5px;
 	}
 }
 .other {
