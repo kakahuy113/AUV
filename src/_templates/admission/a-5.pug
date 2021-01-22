@@ -1,0 +1,52 @@
+section.admission-apply
+	.container
+		.container-custom.size-1365px
+			.admission-apply__wrapper.title-common
+				.title
+					h2 Apply Now
+				.content
+					.item
+						.desc
+							p Students will be admitted on the basis of secondary school grade-point averages, an essay in English, recommendations of teachers, previous university work, and an interview in English. The academic success of AUV students will depend upon their English language proficiency. Once students are admitted to AUV, they will be tested in English and math.  Based on the results of the tests, students may be placed in the non-credit courses of the University Preparatory (PREP) Program. 
+							p AUV provides equal opportunity in education without regard to race, color, creed, religion, national origin, sex, age, marital status, or disability in accordance with institutional policies and applicable national statutes and regulations. 
+							p To apply to American University in Vietnam, you must submit the AUV Application for Admission along with supplementary materials to AUV Admission Office.
+						.img
+							img.object-cover.fullsize.lazyload.blup-up(data-src="./assets/images/admission/apply-1.png", alt="")
+					.item.tab-container
+						.content-active
+							.tab-content
+								-for(var i = 0;i < 7; i ++)
+									.content(tab-id=`item-${i}`)
+										.img
+											img.object-cover.fullsize.lazyload.blur-up(data-src="./assets/images/admission/apply-2.png", alt="")
+						.content-item
+							h5 Submit documents in hard or scanned copy (without notarization)
+							ul
+								li(toggle-for="item-0")
+									p Application for admission to AUV found online at auv.edu.vn
+								li(toggle-for="item-1")
+									p Official high school diploma
+								li(toggle-for="item-2")
+									p Official high school transcripts
+								li(toggle-for="item-3")
+									p Official college/university transcripts (if any)
+								li(toggle-for="item-4")
+									p Letters of Recommendation (if any)
+								li(toggle-for="item-5")
+									p English language qualifications (if any)
+								li(toggle-for="item-6")
+									p Copies of birth certificate, identification card, or household book
+					.item
+						.desc
+							p Provide IELTS or TOEFL examination scores or take our English Placement Examination prior to admission to the program. We also strongly recommend that students arrange an in-person interview with one of our Admissions Officers.  
+							p  Upon receipt of all required documents, the Admissions Committee will review admission applications and, subject to the applicant meeting the requisite selection criteria, issue a letter of acceptance within five days.   
+							h5 Contact the Admissions Office at: 
+							p 299 Tran Dai Nghia Street, P. Hoa Hai, Q. Ngu Hanh Son, Danang City, Vietnam 
+							p
+								!= "<span>Tel:</span> +84 (236) 3967 585 and 595.  <span>Fax:</span> (84-236) 3928 662 "
+							p
+								!= "<span>Email:</span> info@auv.edu.vn  "
+							p
+								!= "<span>Web:</span>  www.auv.edu.vn "
+						.img
+							img.object-cover.fullsize.lazyload.blur-up(data-src="./assets/images/admission/apply-3.png", alt="")
