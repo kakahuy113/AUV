@@ -32,6 +32,7 @@
 						.items--desc {
 							padding-top: 36px;
 							.title {
+								color:map-get($color, main-3);
 								padding-bottom: 24px;
 								font-size: 2rem;
 								font-family: Futura-Medium;

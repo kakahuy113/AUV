@@ -12,6 +12,7 @@
 						.desc {
 							a {
 								font-size: 2rem;
+								color: map-get($color, main-2 );
 							}
 						}
 						.img {
@@ -24,6 +25,12 @@
 		#map {
 			height: 585px;
 			width: 100%;
+		@media (max-width: 1024.98px) {
+			#map {
+				height: 300px;
+				width: 100%;
+			}
+		}
 		}
 		.contact-form {
 			-ms-flex: 0 0 100%;
