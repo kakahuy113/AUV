@@ -3,6 +3,9 @@
 	background: url("../assets/images/student/rop.png");
 	background-size: 100%;
 	padding:110px 0;
+	@media (max-width: 1024px) {
+		padding: 50px 0;
+	}
 	&::after {
 		content: '';
 		position: absolute;
@@ -26,22 +29,58 @@
 						color :#D7970C; 
 						text-align: center;
 					}
+					@media (max-width: 1024px) {
+						margin-bottom: 30px;
+					}
 				}
 				.content-items {
 					display: flex;
 					flex-wrap: wrap;
 					.block__main--title {
+						justify-content: center;
 						padding-left: 50px;
 						-ms-flex: 0 0 40%;
 						flex: 0 0 40%;
 						max-width: 40%;
+						@media (max-width: 1024.98px) {
+							padding-bottom: 10px;
+							padding-right: 0px !important;
+							-ms-flex: 0 0 100%;
+							flex: 0 0 100%;
+							max-width: 100%;
+							display: flex;
+							flex-wrap: wrap;
+							.title__tab {
+								padding:10px 10px ;
+								-ms-flex: 0 0 50%;
+								flex: 0 0 50%;
+								max-width: 50%;
+							}
+						}
+						@media (max-width: 525px) {
+							padding-left: 0px !important;
+							padding-right: 0px !important;
+							-ms-flex: 0 0 100%;
+							flex: 0 0 100%;
+							max-width: 100%;
+							display: flex;
+							flex-wrap: wrap;
+							.title__tab {
+								-ms-flex: 0 0 100%;
+								flex: 0 0 100%;
+								max-width: 100%;
+							}
+						}
 						.title {
+							height: 100%;
 							padding: 12px 25px 14px 21px;
 							margin-bottom: 20px;
 							background: #FFFFFF;
 							border-radius: 5px;
-							&:hover {
-								background-color: #d7970c;
+							@media (min-width: 1024px) {
+								&:hover {
+									background-color: #d7970c;
+								}
 							}
 							&.active {
 								background-color: #d7970c;
@@ -52,9 +91,11 @@
 							font-family: Futura-Light;
 							color: #707070;
 							transition: .3s all ease-in-out;
-							&:hover {
-								color: #ffffff;
-								transition: .3s all ease-in-out;
+							@media (min-width: 1024px) {
+								&:hover {
+									color: #ffffff;
+									transition: .3s all ease-in-out;
+								}
 							}
 							&.active {
 								color: #ffffff;
@@ -64,12 +105,18 @@
 						}
 					}
 					.list-tab-content-rules {
-
 						-ms-flex: 0 0 60%;
 						flex: 0 0 60%;
 						max-width: 60%;
 						background: #FFFFFF;
 						padding: 61px 95px 55px 122px;
+						@media (max-width: 1024px) {
+							order: 1;
+							padding: 20px;
+							-ms-flex: 0 0 100%;
+							flex: 0 0 100%;
+							max-width: 100%;
+						}
 						.tab-content {
 
 						}
@@ -84,6 +131,9 @@
 							max-height: 187px;
 							overflow: hidden;
 							margin-bottom: 35px;
+							@media (max-width: 1024px) {
+								max-width: 100%;
+							}
 							&:last-child {
 									display: none;
 							}
@@ -123,6 +173,9 @@
 			background: #d7970c;
 			padding: 17px 0 20px 138px;
 			font-size: 3rem;
+			@media (max-width: 1024px) {
+				padding: 10px;
+			}
 			p {
 				max-width: 415px;
 			}
@@ -130,6 +183,9 @@
 		.main-sub {
 			background: #ffffff;
 			padding: 55px 138px 50px 138px;
+			@media (max-width: 1024px) {
+				padding: 10px;
+			}
 			.sub-title {
 				&:first-child {
 					padding-bottom: 20px;

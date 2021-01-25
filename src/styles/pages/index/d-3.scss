@@ -30,7 +30,8 @@
 				}
 			}
 	}
-		.row {
+		.list-item-auv{
+			justify-content: center;
 			.item {
 				height: 390px;
 				.content-items{
@@ -89,6 +90,9 @@
 						size: 100%;
 						font-weight: bold;
 					}
+					@media (max-width: 768px) {
+						opacity: 1;
+					}
 				}
 				@media (min-width: 1025px) {
 					&:hover {
@@ -110,6 +114,7 @@
 			.title-auv-aca {
 				padding-bottom: 30px;
 			}
+
 		}
 
 	}
