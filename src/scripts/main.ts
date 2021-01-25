@@ -503,7 +503,8 @@ const LogicFormApply = () => {
 }
 
 const sectionFixed = () => {
-	let html = "";
+	if(document.querySelector("[data-section")) {
+		let html = "";
 	document.querySelectorAll("[data-section]").forEach((Element: Element) => {
 		html = 
 			`<div class="item">
@@ -511,28 +512,30 @@ const sectionFixed = () => {
 		</div>`
 		$(".sectionController").append(html)
 	})
+	}
 }
 
 const activeWhenScroll = () => {
-	document.querySelectorAll("[data-section]").forEach((Element: HTMLElement) => {
+	if(document.querySelector("[data-section")) {
+		document.querySelectorAll("[data-section]").forEach((Element: HTMLElement) => {
 			
-		if(window.pageYOffset + 122 >= Element.offsetTop ) {
-			const text = Element.getAttribute("data-section")
-			console.log(text);
-			
-			document.querySelectorAll(".sectionController .item").forEach((ElementChild: HTMLElement) => {
-				const temp = ElementChild.querySelector("p").innerText;
-				if(text == temp) {
-					document.querySelectorAll(".sectionController .item").forEach((ElementChildChild: HTMLElement) => {
-						ElementChildChild.classList.remove("active");
-					})
-					ElementChild.classList.add("active");
-				}
+			if(window.pageYOffset + 122 >= Element.offsetTop ) {
+				const text = Element.getAttribute("data-section")
 				
-			})
-			
-		}
-	})
+				document.querySelectorAll(".sectionController .item").forEach((ElementChild: HTMLElement) => {
+					const temp = ElementChild.querySelector("p").innerText;
+					if(text == temp) {
+						document.querySelectorAll(".sectionController .item").forEach((ElementChildChild: HTMLElement) => {
+							ElementChildChild.classList.remove("active");
+						})
+						ElementChild.classList.add("active");
+					}
+					
+				})
+				
+			}
+		})
+	}
 }
 
 document.addEventListener("scroll" , async () => {
