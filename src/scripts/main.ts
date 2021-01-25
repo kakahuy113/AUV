@@ -505,9 +505,42 @@ const LogicFormApply = () => {
 }
 
 const sectionFixed = () => {
-	
+	let html = "";
+	document.querySelectorAll("[data-section]").forEach((Element: Element) => {
+		html = 
+			`<div class="item">
+				<p> ${Element.getAttribute("data-section")}</p>
+		</div>`
+		$(".sectionController").append(html)
+	})
 }
 
+const activeWhenScroll = () => {
+	document.querySelectorAll("[data-section]").forEach((Element: HTMLElement) => {
+			
+		if(window.pageYOffset + 122 >= Element.offsetTop ) {
+			const text = Element.getAttribute("data-section")
+			console.log(text);
+			
+			document.querySelectorAll(".sectionController .item").forEach((ElementChild: HTMLElement) => {
+				const temp = ElementChild.querySelector("p").innerText;
+				if(text == temp) {
+					document.querySelectorAll(".sectionController .item").forEach((ElementChildChild: HTMLElement) => {
+						ElementChildChild.classList.remove("active");
+					})
+					ElementChild.classList.add("active");
+				}
+				
+			})
+			
+		}
+	})
+}
+
+document.addEventListener("scroll" , async () => {
+	activeWhenScroll();
+	
+})
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -550,6 +583,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	DatePickerInit();
 	//
 	LogicFormApply();
+	//
+	sectionFixed();
+	//
+	activeWhenScroll();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
