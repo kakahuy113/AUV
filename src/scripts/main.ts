@@ -37,7 +37,7 @@ const swiperindex = () => {
 //swiper slide student 
 const swiperstudent = () => {
 	const galleryThumbs = new Swiper('.camp-life .gallery-thumbs', {
-		spaceBetween: 1,
+		spaceBetween: 2,
 		slidesPerView: 3,
 		direction: 'vertical',
 		mousewheel: true,
@@ -57,9 +57,7 @@ const swiperstudent = () => {
 			// 	direction: 'vertical',
 			// }
 		},
-		freeMode: true,
-		watchSlidesVisibility: true,
-		watchSlidesProgress: true,
+
 	});
 	const galleryTop = new Swiper('.camp-life .gallery-top', {
 		spaceBetween: 10,
@@ -500,10 +498,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
 	const aboutAcademic = new Tab(".about-academic .tab-container");
-<<<<<<< HEAD
 	const calendarAcademic = new Tab(".calendar-auv .tab-container");
-=======
-	const admissionapllynow = new Tab(".admission-apply .tab-container");
->>>>>>> 470b208bfe13bae40bb95bf6973db522175aaad0
 });
 
