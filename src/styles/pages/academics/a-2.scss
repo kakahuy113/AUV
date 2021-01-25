@@ -54,12 +54,13 @@
 						display: -webkit-box;
 						-webkit-box-orient: vertical;
 					}
-					.btn-more {
+					.more-desc {
+						cursor: pointer;
 						margin-top: 35px;
 						padding: 15px 0 35px 35px;
 						opacity: 2;
 						position: relative;
-						width: 100%;
+						width: 100px;
 						border: none;
 						background-color: #ffffff;
 						text-align: left;
@@ -72,7 +73,7 @@
 							content: '';
 							position: absolute;
 							top: 0;
-							left: 7%;
+							left: 35%;
 							width: 25px;
 							height: 2px;
 							background-color: #d7970c;
