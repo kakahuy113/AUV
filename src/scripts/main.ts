@@ -456,6 +456,56 @@ const fancyboxRules = () => {
 	})
 }
 
+function DatePickerInit() {
+  $(".date-picker").each(function () {
+    if ($(this).val().length > 0) {
+      $(this).flatpickr({
+		dateFormat: "Y-m-d",
+		minDate: "today",
+      });
+    } else {
+		$(this).flatpickr({
+		dateFormat: "Y-m-d",
+		minDate: "today",
+		});
+	  }
+  });
+  $(".time-picker").each(function () {
+    if ($(this).val().length > 0) {
+      $(this).flatpickr({
+		enableTime: true,
+		noCalendar: true,
+		dateFormat: "H:i",
+      });
+    } else {
+		$(this).flatpickr({
+			enableTime: true,
+			noCalendar: true,
+			time_24hr: true,
+			dateFormat: "H:i",
+		});
+	} 
+  });
+}
+
+const LogicFormApply = () => {
+	document.querySelectorAll(".apply-tab .tab").forEach((element: Element , index: number) => {
+		element.addEventListener("click" , () => {
+			setTimeout(() => {
+				if(element.classList.contains("active") && element.getAttribute("toggle-for") == "tab-3") {
+					document.querySelector(".text-for-step-3").classList.add("active")
+				} else {
+					document.querySelector(".text-for-step-3").classList.remove("active")
+				}
+			}, 100);
+		})
+	})
+}
+
+const sectionFixed = () => {
+	
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -494,10 +544,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 	swiperstudent();
 	//fancybox Rules of Product
 	fancyboxRules();
+	//
+	DatePickerInit();
+	//
+	LogicFormApply();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
 	const aboutAcademic = new Tab(".about-academic .tab-container");
 	const calendarAcademic = new Tab(".calendar-auv .tab-container");
+<<<<<<< HEAD
+=======
+	const admissionapllynow = new Tab(".admission-apply .tab-container");
+	const AddmissionHowToApply = new Tab(".admission-how-to-apply .tab-container");
+>>>>>>> 99d3d665b89aeb06623d4c4a151560c0d5c39c58
 });
 

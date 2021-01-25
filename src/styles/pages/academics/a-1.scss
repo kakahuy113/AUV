@@ -19,14 +19,18 @@
 				}
 				.content-calendar {
 					display: flex;
+					align-items: center;
+					flex-wrap: wrap;
 					.block-main-title {
 						padding-right: 35px;
 						p {	background: #F1F1F1;
 							border-radius: 5px;
 							font-size: 18px ;
-							margin-bottom: 20px;
-							margin-top: 30px;
 							padding: 15px 0 15px 20px;
+							transition: .5s all ease-in-out;
+							&:not(:last-child) {
+								margin-bottom: 20px;
+							}
 							&:hover {
 								font-family: Futura-Medium;
 								color: #ffffff;
@@ -38,10 +42,14 @@
 								cursor: pointer;
 						}
 						.title {
+							@media (min-width: 1025px) {
 							&:hover {
+								transition: .5s all ease-in-out;
 								background-color: #0B1F44;
 							}
+							}
 							&.active {
+								transition: .5s all ease-in-out;
 								background-color: #0B1F44;
 							}
 						}
