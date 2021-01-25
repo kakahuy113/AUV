@@ -504,6 +504,10 @@ const LogicFormApply = () => {
 	})
 }
 
+const sectionFixed = () => {
+	
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
