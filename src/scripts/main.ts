@@ -37,25 +37,25 @@ const swiperindex = () => {
 //swiper slide student 
 const swiperstudent = () => {
 	const galleryThumbs = new Swiper('.camp-life .gallery-thumbs', {
-		spaceBetween: 2,
+		spaceBetween: 10,
 		slidesPerView: 3,
 		direction: 'vertical',
 		mousewheel: true,
-		// loop: true,
+		loop: true,
 		// loopedSlides: 5, //looped slides should be the same
 		breakpoints: {
-			// 300: {
-			// 	slidesPerView: 2,
-			// 	direction: 'horizontal',
-			// },
-			// 430: {
-			// 	slidesPerView: 3,
-			// 	direction: 'horizontal',
-			// },
-			// 768: {
-			// 	slidesPerView: 4,
-			// 	direction: 'vertical',
-			// }
+			300: {
+				slidesPerView: 2,
+				direction: 'horizontal',
+			},
+			430: {
+				slidesPerView: 3,
+				direction: 'horizontal',
+			},
+			768: {
+				slidesPerView: 4,
+				direction: 'vertical',
+			}
 		},
 
 	});
@@ -553,10 +553,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
 	const aboutAcademic = new Tab(".about-academic .tab-container");
 	const calendarAcademic = new Tab(".calendar-auv .tab-container");
-<<<<<<< HEAD
-=======
-	const admissionapllynow = new Tab(".admission-apply .tab-container");
-	const AddmissionHowToApply = new Tab(".admission-how-to-apply .tab-container");
->>>>>>> 99d3d665b89aeb06623d4c4a151560c0d5c39c58
 });
 

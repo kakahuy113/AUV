@@ -29,8 +29,9 @@
 					.swiper-slide {
 						.img {
 							height: 100%;
+							padding-right: 295px;
 							img {
-								height: 100%;
+								width: 100%;
 							}
 							@media (max-width: 767.98px) {
 								padding-right: 0;
@@ -42,7 +43,6 @@
 					}
 				}
 				.gallery-thumbs {
-					background: map-get($color, x-white );
 					position: absolute;
 					top: 0;
 					right: 0;
@@ -55,7 +55,6 @@
 						.img {
 							height: 100%;
 							img {
-								height: 100%;
 							}
 						}
 					}
