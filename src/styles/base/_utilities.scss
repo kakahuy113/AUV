@@ -210,3 +210,61 @@
 	color: red!important;
 	transition: .3s all ease-in-out;
 }
+
+.sectionController {
+	position: fixed;
+	right: 0;
+	top: 300px;
+	.item {
+		background: map-get($color, x-white);
+		box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+		margin-bottom: 3px;
+		height: 33px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		width: fit-content;
+		margin-left: auto;
+		min-width: 33px;
+		transition: .2s all ease-in-out;
+		p {
+			padding: 0 35px;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			min-width: max-content;
+			width: 100%;
+			font-size: 2rem;
+			font-family: MinionPro-Bold;
+			opacity: 0;
+			transition: .2s all ease-in-out;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			background:#F1F1F1;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 10px;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+		}
+		&.active {
+			background: #F1F1F1;
+			p {
+				position: relative;
+				top: unset;
+				left: unset;
+				transform: unset;
+				opacity: 1;
+				transition: .2s all ease-in-out;
+			}
+			&::after {
+				background: map-get($color, main-5);
+			}
+		}
+	}
+}
