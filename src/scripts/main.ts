@@ -550,6 +550,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
 	const aboutAcademic = new Tab(".about-academic .tab-container");
+	const calendarAcademic = new Tab(".calendar-auv .tab-container");
 	const admissionapllynow = new Tab(".admission-apply .tab-container");
 	const AddmissionHowToApply = new Tab(".admission-how-to-apply .tab-container");
 });

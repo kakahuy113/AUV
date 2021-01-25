@@ -1,0 +1,13 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Academics | Index';
+	- let bodyClass = 'academics-page';
+	- let linkBanner = './assets/images/news-events/banner.png';
+//- block loading
+block banner,breadcrumb
+	include _templates/_layout/_mainBanner
+block main
+	include _templates/academics/a-1
+	include _templates/academics/a-2
+block scripts

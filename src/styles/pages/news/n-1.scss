@@ -26,7 +26,7 @@
 							color: #0B1F44;
 						}
 						&::before {
-							content: "";
+							content: '';
 							position: absolute;
 							width: 950px;
 							height: 1px;
@@ -56,6 +56,9 @@
 			}
 				.news--date{
 					color: #989898;
+					span {
+						
+					}
 			}
 			.item--desc {
 				-ms-flex-preferred-size: 0;
@@ -71,6 +74,7 @@
 				p {
 					font-size: 30px;
 					font-family: Montserrat-Bold;
+					color: map-get($color, main-3);
 				}
 			}
 		}
@@ -98,7 +102,22 @@
     list-style-type: none;
     padding-left: 0;
     li {
-        margin: 0 5px;
+		position: relative;
+		margin: 0 5px;
+		&.active {
+			a {
+				color: #0B1F44;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				width: 50%;
+				height: 1px;
+				bottom: 0;
+				left: 25%;
+				background: map-get($color, x-black);
+			}
+		}
         a {
             display: flex;
             justify-content: center;
@@ -107,21 +126,18 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            font-family: MYRIADPRO-BOLD;
             font-size: 18px;
             transition: all .2s cubic-bezier(.2, .5, .5, .8);
         }
-        @media (min-width: 1025px) {
-			&:hover {
-				a {
-					text-decoration: none;
-					color: #0B1F44;
-				}
+	@media (min-width: 1025px) {
+		&:hover {
+			a {
+				text-decoration: none;
+				color: #0B1F44;
 			}
 		}
-        &.active {
-			color: #0B1F44;
-        }
+	}
+
     }
     @media (max-width: 1024.98px) {
         li {

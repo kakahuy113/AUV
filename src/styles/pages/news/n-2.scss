@@ -25,6 +25,7 @@
 					padding: 0;
 					padding-right: 40px;
 					@media (max-width: 1024.98px) {
+						padding-right: 0px !important;
 						-ms-flex: 0 0 100%;
 						flex: 0 0 100%;
 						max-width: 100%;
@@ -86,6 +87,11 @@
 									-webkit-line-clamp: 9;
 									display: -webkit-box;
 									-webkit-box-orient: vertical;
+								}
+								@media (max-width: 1024.98px) {
+									p {
+										display: block;
+									}
 								}
 							}
 						}

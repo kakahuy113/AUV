@@ -56,48 +56,49 @@
 #work-shop {
 	max-width: 1365px;
 	.list-ws {
-				background: white;
-				display: flex;
-				padding: 65px 65px 65px 135px;
-				.img {
-					max-width: 50%;
-					img {
-						max-width: 398px;
-						max-height: 442px;
-						width: 100%;
-						height: 100%;
-					}
+		max-width: 1088px;
+		background: white;
+		display: flex;
+		padding: 65px 65px 65px 135px;
+		.img {
+			max-width: 50%;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.content {
+			-ms-flex: 0 0 50%;
+			flex: 0 0 50%;
+			max-width: 50%;
+			padding-left: 78px;
+			.title {
+				position: relative;
+				padding-bottom: 60px;
+				padding-top: 30px;
+				&::after {
+					content: '';
+					position: absolute;
+					width: 25px;
+					height: 1px;
+					bottom: 10%;
+					left: 0;
+					background: #CF910C;
 				}
-				.content {
-					-ms-flex: 0 0 50%;
-					flex: 0 0 50%;
-					max-width: 50%;
-					padding-left: 78px;
-					.title {
-						position: relative;
-						padding-bottom: 60px;
-						padding-top: 30px;
-						&::after {
-							content: '';
-							position: absolute;
-							width: 25px;
-							height: 1px;
-							bottom: 10%;
-							left: 0;
-							background: #CF910C;
-						}
-						p {
-							font-size: 3rem;
-							font-family: MinionPro-Bold;
-							color: #D7970C;
-						}
-					}
+				p {
+					font-size: 3rem;
+					font-family: MinionPro-Bold;
+					color: #D7970C;
 				}
-	}
-	.fancybox-button.fancybox-close-small {
-		background: #000000;
-		border-radius: 5px;
-	}
+			}
+			.text {
+				p {
+					font-size: 2rem;
+				}
+			}
+		}
+}
+
 }
 .other {
 	background: #F1F1F1;
