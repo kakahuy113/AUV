@@ -1,7 +1,9 @@
 .student-news {
 	position: relative;
-	background: url("../assets/images/student/st-2.png");
-	&::after {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	&::before {
 		content: "";
 		position: absolute;
 		width: 100%;
@@ -10,7 +12,7 @@
 		left: 0;
 		background: #0B1F44;
 		opacity: .8;
-		z-index: 1;
+
 	}
 	.container {
 		.container-custom {
@@ -20,7 +22,6 @@
 					display: flex;
 					flex-wrap: wrap;
 					.img--news {
-						z-index: 2;
 						-ms-flex: 0 0 40%;
 						flex: 0 0 40%;
 						max-width: 40%;
@@ -31,7 +32,6 @@
 					}
 					.items--desc {
 						padding-left: 56px;
-						z-index: 2;
 						-ms-flex: 0 0 60%;
 						flex: 0 0 60%;
 						max-width: 60%;
@@ -52,7 +52,6 @@
 				}
 			@media (max-width: 1023.98px) {
 				.img--news {
-					z-index: 2;
 					-ms-flex: 0 0 100%;
 					flex: 0 0 100%;
 					max-width: 100%;
@@ -60,7 +59,6 @@
 				}
 				.items--desc {
 					padding-left: 0px;
-					z-index: 2;
 					-ms-flex: 0 0 100%;
 					flex: 0 0 100%;
 					max-width: 100%;
