@@ -4,12 +4,14 @@ block var
 	- let title = 'Contact | Index';
 	- let bodyClass = 'contact-page';
 	- let linkBanner = './assets/images/news-events/banner.png';
+	- let titleBanner = 'Liên Hệ';
 //- block loading
 block banner,breadcrumb
 	include _templates/_layout/_mainBanner
 block main
 	include _templates/contact/c-1
 	include _templates/contact/c-2
+	.sectionController
 block scripts
 	script.
 		var locationsInput = [
