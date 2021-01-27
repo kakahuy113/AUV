@@ -1,0 +1,124 @@
+.academic-studies-program {
+	background: map-get($color, main-3);
+	padding-top: 150px;
+	padding-bottom: 170px;
+	.academic-studies-program__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		.img {
+			-ms-flex: 0 0 614px;
+			flex: 0 0 614px;
+			max-width: 614px;
+		}
+		.desc {
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
+			padding-left: 75px;
+			.title {
+				margin-bottom: 50px;
+				h2 {
+					color: map-get($color, main-4);
+				}
+			}
+			.sub-title {
+				margin-bottom: 45px;
+				p {
+					color: map-get($color, x-white);
+				}
+			}
+			ul {
+				padding: 0;
+				list-style: none;
+				li {
+					display: flex;
+					align-items: center;
+					position: relative;
+					
+					&:not(:last-child) {
+						padding-bottom: 15px;
+						margin-bottom: 15px;
+						border-bottom: 1px solid map-get($color, main-4);
+					}
+					.text {
+						p {
+							font-size: 2rem;
+							position: relative;
+							padding-left: 25px;
+							color: map-get($color, x-white);
+							&::after {
+								content: "";
+								position: absolute;
+								top: 50%;
+								left: 0;
+								transform: translateY(-50%);
+								background: #D7970C;
+								width: 12px;
+								height: 12px;
+								border-radius: 50%;
+							}
+						}
+					}
+					.btn-remore {
+						align-self: flex-end;
+						button {
+							background: map-get($color, main-4);
+						}
+						span {
+							color: map-get($color, x-white);
+						}
+						svg {
+							path {
+								stroke: map-get($color, x-white);
+							}
+						}
+					}
+					
+				}
+			}
+		}
+	}
+}
+
+.popup-academic.popup {
+	max-width: 1088px;
+	width: 100%;
+	background: map-get($color, x-white);
+	padding: 90px 20px 90px 130px;
+	max-height: 570px;
+	.popup__wrapper {
+		overflow-y: auto;
+		max-width: 930px;
+		width: 100%;
+		max-height: 390px;
+		padding-right: 100px;
+		.title {
+			margin-bottom: 20px;
+			p {
+				color: map-get($color, main-4);
+				font-size: 3rem;
+				font-family: MinionPro-Bold;
+			}
+		}
+		.sub-title {
+			margin-bottom: 45px;
+		}
+		.desc-popup {
+			h4 {
+				color: map-get($color, main-3);
+				font-family: Futura-Bold;
+			}
+			h5 {
+				color: map-get($color, main-3);
+				font-family: Futura-Medium;
+			}
+			ul {
+				list-style: none;
+				padding: 0;
+			}
+		}
+	}
+}

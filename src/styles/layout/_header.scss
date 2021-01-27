@@ -38,7 +38,7 @@ header {
 	.phone {
 		padding-right: 30px;
 		a {
-			font-family: Furuta-Light;
+			font-family: Futura-Light;
 			font-size: 1.4rem;
 			color: map-get($color, main-3);
 		}
@@ -118,8 +118,9 @@ header {
 			.navBar__item {
 				padding-left: 50px;
 				.navBar__link {
-					font-family: Furuta-Heavy;
+					font-family: Futura-Heavy;
 					color: map-get($color, x-white);
+					font-size: 1.8rem;
 				}
 			}
 			&.active {

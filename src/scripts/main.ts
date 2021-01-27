@@ -1,5 +1,6 @@
 import { getSVGs, Loading } from "./utilities/util";
 import Tab from './libraries/Tab';
+import { of } from "rxjs";
 declare var Swiper:any;
 declare var $:any;
 
@@ -239,20 +240,22 @@ const showBackToTop = () => {
 		});
 	});
 } ;
-//ajax news
-const ajaxlistnews = () => {
-	$(document).on("click" , ".note-section .pagination li" ,function(e:any) {
-		e.preventDefault();
-		const url = $(this).attr("data-url")
-		$.ajax({	
-			url: url,
-			type: 'get',
-			success: function(res:any) {
-				$(this).parent().parent().html(res);
-			},
-		})
-	})
-}
+// //ajax news
+// const ajaxlistnews = () => {
+// 	$(document).on("click" , ".note-section .pagination li" ,function(e:any) {
+// 		e.preventDefault();
+// 		const url = $(this).attr("data-url");
+// 		console.log(123);
+		
+// 		$.ajax({	
+// 			url: url,
+// 			type: 'get',
+// 			success: function(res:any) {
+// 				$(this).parent().parent().html(res);
+// 			},
+// 		})
+// 	})
+// }
 //ajax gallery
 const ajaxlisgallery = () => {
 	$(document).on("click" , ".lib__page .pagination li" ,function(e:any) {
@@ -519,7 +522,7 @@ const activeWhenScroll = () => {
 	if(document.querySelector("[data-section")) {
 		document.querySelectorAll("[data-section]").forEach((Element: HTMLElement) => {
 			
-			if(window.pageYOffset + 122 >= Element.offsetTop ) {
+			if(window.pageYOffset >= Element.offsetTop - 122) {
 				const text = Element.getAttribute("data-section")
 				
 				document.querySelectorAll(".sectionController .item").forEach((ElementChild: HTMLElement) => {
@@ -529,13 +532,42 @@ const activeWhenScroll = () => {
 							ElementChildChild.classList.remove("active");
 						})
 						ElementChild.classList.add("active");
-					}
+					} 
 					
 				})
 				
 			}
 		})
 	}
+}
+
+const scrollToSection = () => {
+	if(document.querySelector("[data-section")) {
+		document.querySelectorAll(".sectionController .item").forEach((Element:HTMLElement) => {
+			Element.addEventListener("click" ,(e:any) => {
+				console.log( $(`[data-section="${e.target.innerText}`)[0].offsetTop);
+				
+				$('html, body').animate({
+					scrollTop: $(`[data-section="${e.target.innerText}`)[0].offsetTop - 122
+				}, 1000);
+			})
+		})
+	}
+}
+
+const popupAcademics = () => {
+	document.querySelectorAll(".content-curr .more-desc").forEach((element: any) => {
+		element.addEventListener("click" , (e:any) => {
+			e.preventDefault();
+			const content = element.parentElement.parentElement;
+			$("#popup-curricula").html(`${content.outerHTML}`);
+			$.fancybox.open({
+				src: "#popup-curricula",
+				type: "inline"
+			})
+		})
+		
+	})
 }
 
 document.addEventListener("scroll" , async () => {
@@ -556,8 +588,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	showMenuMobile();
 	//
 	showBackToTop();
-	//
-	ajaxlistnews();
 	//
 	ajaxlisgallery();
 	//
@@ -588,6 +618,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	sectionFixed();
 	//
 	activeWhenScroll();
+	//
+	popupAcademics();
+	//
+	scrollToSection();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
