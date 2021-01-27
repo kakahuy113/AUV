@@ -54,13 +54,8 @@
 					max-height: 236px;
 				}
 			}
-				.news--date{
-					color: #989898;
-					span {
-						
-					}
-			}
 			.item--desc {
+				position: relative;
 				-ms-flex-preferred-size: 0;
 				flex-basis: 0;
 				-ms-flex-positive: 1;
@@ -69,13 +64,25 @@
 				padding-left: 15px;
 				.title {
 					padding-top: 20px;
-					margin-bottom: 20px;
+					p {
+						font-size: 30px;
+						font-family: Montserrat-Bold;
+						color: map-get($color, main-3);
+						overflow: hidden;
+						text-overflow: ellipsis;
+						-webkit-line-clamp: 3;
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+					}
 				}
-				p {
-					font-size: 30px;
-					font-family: Montserrat-Bold;
-					color: map-get($color, main-3);
-				}
+				.news--date{
+					position: absolute;
+					bottom: 10%;
+					color: #989898;
+					span {
+						font-family:  Montserrat-Regular;
+					}
+			}
 			}
 		}
 	}

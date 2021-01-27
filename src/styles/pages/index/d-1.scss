@@ -51,7 +51,11 @@
 							}
 						}
 					}
-				
+					.btn-remore {
+						span {
+							color: map-get($color, main-3);
+						}
+					}
 					@media (max-width: 1024px) {
 						max-width: 100%;
 						.block-list-item {
