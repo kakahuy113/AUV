@@ -46,7 +46,7 @@
 					font-family: MinionPro-Bold;
 				}
 				.text {
-						p { max-width: 270px;
+						p { max-width: 250px;
 							color: white;
 							font-size: 21px;
 						}
@@ -100,13 +100,6 @@
 						p {
 							color: white;
 							font-size: 21px;
-							max-width: 300px;
-							overflow: hidden;
-							text-overflow: ellipsis;
-							-webkit-line-clamp: 5;
-							display: -webkit-box;
-							-webkit-box-orient: vertical;
-							
 						}
 					}
 				}
@@ -115,11 +108,6 @@
 						color: white;
 						font-size: 21px;
 						max-width: 300px;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					-webkit-line-clamp: 2;
-					display: -webkit-box;
-					-webkit-box-orient: vertical;
 					}
 				}
 			}

@@ -239,25 +239,13 @@ const showBackToTop = () => {
 		});
 	});
 } ;
-//ajax news
-const ajaxlistnews = () => {
-	$(document).on("click" , ".note-section .pagination li" ,function(e:any) {
-		e.preventDefault();
-		const url = $(this).attr("data-url")
-		$.ajax({	
-			url: url,
-			type: 'get',
-			success: function(res:any) {
-				$(this).parent().parent().html(res);
-			},
-		})
-	})
-}
+
 //ajax gallery
 const ajaxlisgallery = () => {
 	$(document).on("click" , ".lib__page .pagination li" ,function(e:any) {
 		e.preventDefault();
 		const url = $(this).attr("data-url")
+		// $(this).parent().parent().html("<p>asd</p>");
 		$.ajax({	
 			url: url,
 			type: 'get',
@@ -557,7 +545,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//
 	showBackToTop();
 	//
-	ajaxlistnews();
 	//
 	ajaxlisgallery();
 	//

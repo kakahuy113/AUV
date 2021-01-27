@@ -4,21 +4,42 @@ section.lib__page(data-section="Photo Gallery")
 			.lib__page__wrapper
 				.title
 					p Photo Gallery
-				.list-item-lib
-					.item-1
-						p  Photo
-				.tab-content
-					.content.image-content-tab
-						.lib__page__img
-							.content--gallery.no-gutters.p-0
-								-for(var i = 0; i< 6; i++)
-									.item-gallery.img
-										a.item-gallery--popup
-											img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
-										.d-none
-											-for(var j = 0; j< 6; j++)
-												.swiper-slide
-													img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+					.list-item-lib
+						.item-1
+							p  Photo
+					.tab-content
+						.content.image-content-tab
+							.lib__page__img
+								.content--gallery.no-gutters.p-0
+									-for(var i = 0; i< 6; i++)
+										.item-gallery.img
+											a.item-gallery--popup
+												img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+											.d-none
+												-for(var j = 0; j< 6; j++)
+													.swiper-slide
+														img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
+						ul.pagination
+							li(data-url="asd").pagination-prev
+								a(href="#")
+									img.object-cover(src="./assets/icons/arw.svg", alt="")
+								li(data-url="asd")
+									a(href="#") 1
+								li(data-url="asd").active
+									a(href="#") 2
+								li(data-url="asd")
+									a(href="#") 3
+								li(data-url="asd").pagination-dot
+									a(href="#") ...
+								li(data-url="asd")
+									a(href="#") 13
+								li(data-url="asd")
+									a(href="#") 14
+								li(data-url="asd")
+									a(href="#") 15
+							li(data-url="asd").pagination-next
+								a(href="#")
+									img.object-cover(src="./assets/icons/arwnex.svg", alt="")
 				.d-none
 					.popup-img#popup-img
 						.pop-img__wrapper
@@ -29,27 +50,6 @@ section.lib__page(data-section="Photo Gallery")
 									.swiper-button-prev
 							.swiper-container.gallery-thumbs
 								.swiper-wrapper
-				ul.pagination
-					li(data-url="asd").pagination-prev
-						a(href="#")
-							img.object-cover(src="./assets/icons/arw.svg", alt="")
-						li(data-url="asd")
-							a(href="#") 1
-						li(data-url="asd").active
-							a(href="#") 2
-						li(data-url="asd")
-							a(href="#") 3
-						li(data-url="asd").pagination-dot
-							a(href="#") ...
-						li(data-url="asd")
-							a(href="#") 13
-						li(data-url="asd")
-							a(href="#") 14
-						li(data-url="asd")
-							a(href="#") 15
-					li(data-url="asd").pagination-next
-						a(href="#")
-							img.object-cover(src="./assets/icons/arwnex.svg", alt="")
 			.lib__page__wrapper
 				.list-item-lib
 					.item-1
@@ -62,24 +62,24 @@ section.lib__page(data-section="Photo Gallery")
 									.item-gallery.video(data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk")
 										a.item-gallery--popup
 											img.object-cover.fullsize(src=`./assets/images/index/new-2.png`, alt="")
-				ul.pagination
-					li(data-url="asd").pagination-prev
-						a(href="#")
-							img.object-cover(src="./assets/icons/arw.svg", alt="")
-						li(data-url="asd").active
-							a(href="#") 1
-						li(data-url="asd")
-							a(href="#") 2
-						li(data-url="asd")
-							a(href="#") 3
-						li(data-url="asd").pagination-dot
-							a(href="#") ...
-						li(data-url="asd")
-							a(href="#") 13
-						li(data-url="asd")
-							a(href="#") 14
-						li(data-url="asd")
-							a(href="#") 15
-					li(data-url="asd").pagination-next
-						a(href="#")
-							img.object-cover(src="./assets/icons/arwnex.svg", alt="")
+					ul.pagination
+						li(data-url="asd").pagination-prev
+							a(href="#")
+								img.object-cover(src="./assets/icons/arw.svg", alt="")
+							li(data-url="asd").active
+								a(href="#") 1
+							li(data-url="asd")
+								a(href="#") 2
+							li(data-url="asd")
+								a(href="#") 3
+							li(data-url="asd").pagination-dot
+								a(href="#") ...
+							li(data-url="asd")
+								a(href="#") 13
+							li(data-url="asd")
+								a(href="#") 14
+							li(data-url="asd")
+								a(href="#") 15
+						li(data-url="asd").pagination-next
+							a(href="#")
+								img.object-cover(src="./assets/icons/arwnex.svg", alt="")
