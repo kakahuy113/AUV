@@ -3,6 +3,7 @@ import Tab from './libraries/Tab';
 import { of } from "rxjs";
 declare var Swiper:any;
 declare var $:any;
+declare var grecaptcha:any;
 
 //swiper slides auv
 const swiperindex = () => {
@@ -616,7 +617,38 @@ const noBanner = () => {
 	}
 }
 
+const recaptcha = () => {
+	var script = document.createElement('script');
+	script.onload = function() {
+		console.log("Script loaded and ready");
+	};
+	if(document.querySelector(".g-recaptcha")) {
+		const sitekey = document.querySelector(".g-recaptcha").getAttribute("data-sitekey");
+		script.src = `https://www.google.com/recaptcha/api.js?render=${sitekey}`;
+		script.setAttribute("async", "");
+		script.setAttribute("defer", "");
+		document.getElementsByTagName('head')[0].appendChild(script);
+	}
+	var button = document.createElement("button")
+	button.classList.add("fake-button-recaptcha")
+	button.onclick = (e:any) => {
+		e.preventDefault();
+		grecaptcha.ready(function () {
+			const recaptcha: HTMLInputElement =document.querySelector('.g-recaptcha');
+			const sitekey = recaptcha.getAttribute("data-sitekey")
+			grecaptcha.execute(`${sitekey}`, { action: 'KPY' }).then(function (token: any) {
+				recaptcha.value = token
+			});
+		});
+	}
+	document.querySelector('main').appendChild(button);
+}
 
+
+window.onload = () => {
+	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
+	button.click();
+}
 
 document.addEventListener("scroll" , async () => {
 	activeWhenScroll();
