@@ -7,25 +7,10 @@ section.auv-section(data-section="AUV Partners")
 				.auv-main-swiper.swiper-button-yellow
 					.swiper-container
 						.swiper-wrapper
-							.swiper-slide
-								.auv-item
-								a(href="#").img
-										img.object-cover.fullsize(src="./assets/images/index/14.png", alt="")
-							.swiper-slide
-								.auv-item
-								a(href="#").img
-										img.object-cover.fullsize(src="./assets/images/index/13.png", alt="")
-							.swiper-slide
-								.auv-item
-								a(href="#").img
-										img.object-cover.fullsize(src="./assets/images/index/12.png", alt="")
-							.swiper-slide
-								.auv-item
-								a(href="#").img
-										img.object-cover.fullsize(src="./assets/images/index/13.png", alt="")
-							.swiper-slide
-								.auv-item
-								a(href="#").img
-										img.object-cover.fullsize(src="./assets/images/index/13.png", alt="")
+							-for(var i = 0; i< 19; i++)
+								.swiper-slide
+									.auv-item
+									a(href="#").img
+											img.object-cover.fullsize(src=`./assets/images/logo/logo-${i+1}.png`, alt="")
 					.swiper-button-next
 					.swiper-button-prev
