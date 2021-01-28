@@ -1,0 +1,50 @@
+.academics-policies {
+	padding-top: 80px;
+	padding-bottom: 100px;
+	.title {
+		text-align: center;
+		margin-bottom: 100px;
+		h2 {
+			color: map-get($color, main-3);
+		}
+	}
+	.content {
+		display: flex;
+		.img {
+			-ms-flex: 0 0 614px;
+			flex: 0 0 614px;
+			max-width: 614px;
+		}
+		.desc {
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
+			padding-left: 60px;
+			.card {
+				&:not(:last-child) {
+					margin-bottom: 20px;
+				}
+				.card-header {
+					height: 37px;
+					background: #F1F1F1;
+					display: flex;
+					align-items: center;
+					padding:0 40px;
+					h5 {
+						font-family: Montserrat-Bold;
+						font-size: 2rem;
+						color: map-get($color, main-3);
+					}
+				}
+				.card-body {
+					padding-left: 50px;
+					ul {
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,82 @@
+.course-descriptions {
+	padding: 100px 0;
+	.title {
+		margin-bottom: 60px;
+		padding-left: calc(292px + 60px);
+		h2 {
+			color: map-get($color, main-4);
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				width: 150px;
+				height: 3px;
+				background: map-get($color, main-4);
+				bottom: 0;
+				left: 0;
+			}
+		}
+	}
+	.content {
+		display: flex;
+		flex-wrap: wrap;
+		.list-subject {
+			-ms-flex: 0 0 292px;
+			flex: 0 0 292px;
+			max-width: 292px;
+			ul {
+				list-style: none;
+				padding: 30px 15px;
+				background: #F1F1F1;
+				li {
+					margin-bottom: 10px;
+					a {
+						transition: .2s all ease-in-out;
+						color: map-get($color, main-5);
+					}
+					&.active {
+						a {
+							transition: .2s all ease-in-out;
+							color: map-get($color, main-3);
+							font-size: 1.8rem;
+							font-family: Futura-Bold;
+						}
+					}
+				}
+			}
+		}
+		.desc {
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
+			padding-left: 60px;
+			padding-top: 30px;
+			.title-desc {
+				p {
+					color: map-get($color, main-3);
+					margin-bottom: 20px;
+					font-family: Montserrat-Bold;
+				}
+			}
+			.desc-content {
+				padding-bottom: 20px;
+				margin-bottom: 10px;
+				position: relative;
+				&:not(:last-child) {
+					&::after {
+						content: "";
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						width: 100%;
+						height: 0.1px;
+						opacity: 0.2;
+						background: map-get($color, main-5);
+					}
+				}
+			}
+		}
+	}
+}

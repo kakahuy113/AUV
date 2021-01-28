@@ -332,10 +332,10 @@ const SwiperAdvisory = () => {
 			nextEl: '.about-advisory .swiper-button-next',
 			prevEl: '.about-advisory .swiper-button-prev',
 		},
-		autoplay: {
-			delay: 2000,
-			disableOnInteraction: false
-		  },
+		// autoplay: {
+		// 	delay: 2000,
+		// 	disableOnInteraction: false
+		//   },
 		breakpoints: {
 			300: {
 				slidesPerView: 1.8,
@@ -362,10 +362,10 @@ const swiperFaculty = () => {
 			nextEl: '.about-faculty-slide .swiper-button-next',
 			prevEl: '.about-faculty-slide .swiper-button-prev',
 		},
-		autoplay: {
-			delay: 2000,
-			disableOnInteraction: false
-		  },
+		// autoplay: {
+		// 	delay: 2000,
+		// 	disableOnInteraction: false
+		//   },
 		// breakpoints: {
 		// 	320: { 
 		// 	slidesPerView: 2,
@@ -541,19 +541,82 @@ const scrollToSection = () => {
 }
 
 const popupAcademics = () => {
-	document.querySelectorAll(".content-curr .more-desc").forEach((element: any) => {
-		element.addEventListener("click" , (e:any) => {
+	if(document.querySelector(".academics-page")) {
+		document.querySelectorAll(".content-curr .more-desc").forEach((element: any) => {
+			element.addEventListener("click" , (e:any) => {
+				e.preventDefault();
+				const content = element.parentElement.parentElement;
+				$("#popup-curricula").html(`${content.outerHTML}`);
+				$.fancybox.open({
+					src: "#popup-curricula",
+					type: "inline"
+				})
+			})
+			
+		})
+
+		// Ajax get content popup
+		$(document).on("click" , "#majorsAndminors ul li" , function(e:any) {
 			e.preventDefault();
-			const content = element.parentElement.parentElement;
-			$("#popup-curricula").html(`${content.outerHTML}`);
-			$.fancybox.open({
-				src: "#popup-curricula",
-				type: "inline"
+			const _btn = $(this)
+			const url = $(this).attr("data-url")
+			$.ajax({
+				url: url,
+				type: "GET",
+				processData: false,
+				contentType: false,
+				beforeSend: function() {
+					_btn.attr('disabled', 'disabled');
+					_btn.parent().parent().parent().find(".wrapper").html("<p>Loading...</p>")
+				},
+				success: function(res:any) {
+					_btn.parent().parent().parent();
+					_btn.parent().parent().parent().find(".wrapper").html(res)
+				},
+				error: function(res:any) {
+					_btn.parent().parent().parent().find(".wrapper").html("<p>Something went wrong</p>")
+				}
 			})
 		})
-		
-	})
+
+		document.querySelectorAll(".academics-majors .card-body__wrapper .item").forEach((element: HTMLElement) => {
+			element.addEventListener("click" ,(e:any) => {
+				e.preventDefault();
+				const subject = element.querySelector("p").innerText
+				$.fancybox.open({
+					src: "#majorsAndminors",
+					type: "inline",
+					opts: {
+						beforeShow: function() {
+							document.querySelectorAll("#majorsAndminors ul li p").forEach((popupelement:HTMLElement) => {
+								if(popupelement.innerText == subject) {
+									popupelement.parentElement.click();
+									popupelement.parentElement.classList.add("active");
+								}
+							});
+						},
+						afterClose: function() {
+							document.querySelectorAll("#majorsAndminors ul li p").forEach((popupelement:HTMLElement) => {
+								popupelement.parentElement.classList.remove("active");
+								document.querySelector(".subject-desc__wrapper").innerHTML = ""
+							});
+						}
+					}
+				})
+			})
+		})
+	}
 }
+
+const noBanner = () => {
+	if(document.querySelector(".course-detail-page")) {
+		const height = document.querySelector("header").clientHeight
+		document.querySelector(".MainSlider__Banners").setAttribute("style" , `padding-top: ${height + 60}px`)
+		document.querySelector(".MainSlider__Banners").classList.add("noBanner");
+	}
+}
+
+
 
 document.addEventListener("scroll" , async () => {
 	activeWhenScroll();
@@ -608,6 +671,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	popupAcademics();
 	//
 	scrollToSection();
+	//
+	noBanner();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
@@ -615,5 +680,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const calendarAcademic = new Tab(".calendar-auv .tab-container");
 	const admissionapllynow = new Tab(".admission-apply .tab-container");
 	const AddmissionHowToApply = new Tab(".admission-how-to-apply .tab-container");
+	const academicsCenters = new Tab(".academics-centers .tab-container");
 });
 

@@ -1,0 +1,59 @@
+.academis-course {
+	background: #F1F1F1;
+	padding-top: 170px;
+	padding-bottom: 140px;
+	.academis-course__wrapper {
+		position: relative;
+	}
+	.title {
+		text-align: center;
+		position: absolute;
+		width: calc(100% - 536px + 120px);
+		right: 0;
+		top: 10px;
+		h2 {
+			color: map-get($color, main-3);
+		}
+	}
+	.content {
+		display: flex;
+		align-items: flex-end;
+		.img {
+			-ms-flex: 0 0 536px;
+			flex: 0 0 536px;
+			max-width: 536px;
+		}
+		.desc {
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
+			margin-left: -120px;
+			z-index: 1;
+			padding-bottom: 40px;
+			.desc__wrapper {
+				background: map-get($color, x-white);
+				padding: 50px 40px;
+				box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+				p {
+					margin-bottom: 20px;
+				}
+				.btn-remore {
+					margin: unset;
+					button {
+						background: map-get($color, main-4);
+						span {
+							color: map-get($color, x-white);
+						}
+						svg {
+							path {
+								stroke: map-get($color, x-white);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
