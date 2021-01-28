@@ -71,6 +71,9 @@
 				transform: translateY(-50%);
 				background: #F1F1F1;
 				z-index: -1;
+				@media (max-width: 575.98px) {
+					content: none;
+				}
 			}
 		}
 		@media (max-width: 1024.98px) {

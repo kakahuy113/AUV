@@ -823,6 +823,11 @@
 				transition: .5s all ease-in-out;
 			}
 		}
+		.desc {
+			h5 {
+				color: map-get($color, main-3);
+			}
+		}
 	}
 	.swiper-button-next,
 	.swiper-button-prev {

@@ -533,7 +533,7 @@ const scrollToSection = () => {
 				console.log( $(`[data-section="${e.target.innerText}`)[0].offsetTop);
 				
 				$('html, body').animate({
-					scrollTop: $(`[data-section="${e.target.innerText}`)[0].offsetTop - 122
+					scrollTop: $(`[data-section="${e.target.innerText}`)[0].offsetTop - 120
 				}, 1000);
 			})
 		})

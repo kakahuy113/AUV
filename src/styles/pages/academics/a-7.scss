@@ -2,6 +2,9 @@
 	background: #F1F1F1;
 	padding-top: 170px;
 	padding-bottom: 140px;
+	@media (max-width: 1024.98px) {
+		padding: 40px 0;
+	}
 	.academis-course__wrapper {
 		position: relative;
 	}
@@ -14,14 +17,34 @@
 		h2 {
 			color: map-get($color, main-3);
 		}
+		@media (max-width: 1439.98px) {
+			position: relative;
+			right: unset;
+			top: unset;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 20px;
+		}
 	}
 	.content {
 		display: flex;
 		align-items: flex-end;
+		flex-wrap: wrap;
+		@media (max-width: 1024.98px) {
+			justify-content: center;
+		}
 		.img {
 			-ms-flex: 0 0 536px;
 			flex: 0 0 536px;
 			max-width: 536px;
+			@media (max-width: 1024.98px) {
+				margin-bottom: 20px;
+			}
+			@media (max-width: 575.98px) {
+				-ms-flex: 0 0 100%;
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
 		}
 		.desc {
 			-ms-flex-preferred-size: 0;
@@ -51,6 +74,21 @@
 								stroke: map-get($color, x-white);
 							}
 						}
+					}
+				}
+			}
+			@media (max-width: 1024.98px) {
+				-ms-flex: 0 0 100%;
+				flex: 0 0 100%;
+				max-width: 100%;
+				margin: 0;
+				padding-bottom: 0;
+			}
+			@media (max-width: 575.98px) {
+				.desc__wrapper {
+					padding: 10px;
+					p {
+						margin-bottom: 10px;
 					}
 				}
 			}

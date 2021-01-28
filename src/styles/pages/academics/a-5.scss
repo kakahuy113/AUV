@@ -1,6 +1,10 @@
 .academics-majors {
 	background: map-get($color, main-3);
 	padding-bottom: 130px;
+	@media (max-width: 1024.98px) {
+		padding-bottom: 40px;
+		padding-top: 40px;
+	}
 	.card {
 		.card-header {
 			height: 135px;
@@ -12,10 +16,19 @@
 			h2 {
 				color: map-get($color, x-white);
 			}
+			@media (max-width: 1024.98px) {
+				height: 100px;
+			}
 		}
 		.card-body {
 			padding: 70px 85px;
 			background: #F1F1F1;
+			@media (max-width: 1024.98px) {
+				padding: 20px;
+			}
+			@media (max-width: 575.98px) {
+				padding:10px 5px;
+			}
 			.card-body__wrapper {
 				overflow: hidden;
 			}
@@ -24,6 +37,7 @@
 				margin-right: -100px;
 				justify-content: center;
 				position: relative;
+				
 				&::after {
 					content: "";
 					position: absolute;
@@ -85,6 +99,31 @@
 						}
 					}
 				}
+				@media (max-width: 1439.98px) {
+					margin-left: -10px;
+					margin-right: -10px;
+					.item {
+						padding-left: 10px;
+						padding-right: 10px;
+					}
+				}
+				@media (max-width: 767.98px) {
+					.item {
+						-ms-flex: 0 0 50%;
+						flex: 0 0 50%;
+						max-width: 50%;
+						.item__wrapper {
+							padding: 0 5px;
+						}
+					}
+				}
+				@media (max-width: 575.98px) {
+					.item {
+						-ms-flex: 0 0 100%;
+						flex: 0 0 100%;
+						max-width: 100%;
+					}
+				}
 			}
 		}
 	}
@@ -93,15 +132,22 @@
 .academics-centers {
 	background: map-get($color, main-3);
 	padding-bottom: 90px;
+	@media (max-width: 1024.98px) {
+		padding-bottom: 40px;
+	}
 	.title {
 		text-align: center;
 		margin-bottom: 60px;
 		h2 {
 			color: map-get($color, x-white);
 		}
+		@media (max-width: 1024.98px) {
+			margin-bottom: 20px;
+		}
 	}
 	.content {
 		display: flex;
+		flex-wrap: wrap;
 		.content-tab {
 			-ms-flex: 0 0 277px;
 			flex: 0 0 277px;
@@ -147,15 +193,38 @@
 					}
 				}
 			}
+			@media (max-width: 1024.98px) {
+				-ms-flex: 0 0 100%;
+				flex: 0 0 100%;
+				max-width: 100%;
+				margin-bottom: 20px;
+			}
+			@media (max-width: 575.98px) {
+				padding: 15px 5px;
+			}
 		}
 		.content-active-tab {
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
 			padding-left: 35px;
 			.content {
 				background: rgba($color: map-get($color, x-white), $alpha: .2);	
 				padding: 40px 30px 20px 30px;
+				@media (max-width: 1024.98px) {
+					padding: 20px;
+				}
+				@media (max-width: 575.98px) {
+					padding: 10px 5px;
+				}
 			}
 			.content-title {
 				margin-bottom: 40px;
+				@media (max-width: 1024.98px) {
+					margin-bottom: 20px;
+				}
 				p {
 					color: map-get($color, main-4);
 					font-family: Futura-Medium;
@@ -166,7 +235,16 @@
 				p {
 					margin-bottom: 20px;
 					color: map-get($color, x-white);
+					@media (max-width: 1024.98px) {
+						margin-bottom: 10px;
+					}
 				}
+			}
+			@media (max-width: 1024.98px) {
+				-ms-flex: 0 0 100%;
+				flex: 0 0 100%;
+				max-width: 100%;
+				padding-left: unset;
 			}
 		}
 	}
