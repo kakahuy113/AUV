@@ -663,14 +663,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 	DatePickerInit();
 	//
 	LogicFormApply();
-	//
-	sectionFixed();
-	//
-	activeWhenScroll();
+	if(window.innerWidth > 1025) {
+		//
+		sectionFixed();
+		//
+		activeWhenScroll();
+		//
+		scrollToSection();
+	}
 	//
 	popupAcademics();
-	//
-	scrollToSection();
 	//
 	noBanner();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");

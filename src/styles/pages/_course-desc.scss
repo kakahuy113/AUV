@@ -1,5 +1,8 @@
 .course-descriptions {
 	padding: 100px 0;
+	@media (max-width: 1024.98px) {
+		padding: 40px 0;
+	}
 	.title {
 		margin-bottom: 60px;
 		padding-left: calc(292px + 60px);
@@ -16,6 +19,18 @@
 				left: 0;
 			}
 		}
+		@media (max-width: 1024.98px) {
+			margin-bottom: 20px;
+			padding-left: 0;
+			text-align: center;
+			h2 {
+				font-size: 3rem;
+				&::after {
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+		}
 	}
 	.content {
 		display: flex;
@@ -28,11 +43,18 @@
 				list-style: none;
 				padding: 30px 15px;
 				background: #F1F1F1;
+				@media (max-width: 1024.98px) {
+					padding: 15px 5px;
+				}
 				li {
 					margin-bottom: 10px;
 					a {
 						transition: .2s all ease-in-out;
 						color: map-get($color, main-5);
+						@media (max-width: 767.98px) {
+							font-size: 1.4rem;
+							word-break: break-all;
+						}
 					}
 					&.active {
 						a {
@@ -40,9 +62,17 @@
 							color: map-get($color, main-3);
 							font-size: 1.8rem;
 							font-family: Futura-Bold;
+							@media (max-width: 767.98px) {
+								font-size: 1.6rem;
+							}
 						}
 					}
 				}
+			}
+			@media (max-width: 1024.98px) {
+				-ms-flex: 0 0 30%;
+				flex: 0 0 30%;
+				max-width: 30%;
 			}
 		}
 		.desc {
@@ -53,6 +83,7 @@
 			max-width: 100%;
 			padding-left: 60px;
 			padding-top: 30px;
+			
 			.title-desc {
 				p {
 					color: map-get($color, main-3);
@@ -76,6 +107,13 @@
 						background: map-get($color, main-5);
 					}
 				}
+			}
+			@media (max-width: 1024.98px) {
+				padding-left: 10px;
+				padding-top: 0;
+				-ms-flex: 0 0 70%;
+				flex: 0 0 70%;
+				max-width: 70%;
 			}
 		}
 	}

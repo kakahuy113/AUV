@@ -249,6 +249,7 @@
 			-ms-flex: 0 0 675px;
 			flex: 0 0 675px;
 			max-width: 675px;
+			min-height: 470px;
 				.desc {
 					background: map-get($color, main-3);
 					padding: 25px 30px;
@@ -261,6 +262,7 @@
 				-ms-flex: 0 0 50%;
 				flex: 0 0 50%;
 				max-width: 50%;
+				min-height: fit-content;
 				.desc {
 					padding: 10px;
 				}
