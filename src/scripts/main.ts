@@ -666,12 +666,6 @@ const recaptcha = () => {
 	document.querySelector('main').appendChild(button);
 }
 
-$(window).on('load',function(){
-	setTimeout(function(){
-		$('#loadpopup').modal('show')
-	},3000);
-});
-
 window.onload = () => {
 	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
 	button.click();
