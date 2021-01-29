@@ -1,12 +1,21 @@
 .contact-us {
 	padding: 95px 0 90px;
+	@media (max-width: 1024px) {
+		padding: 40px 0 40px;
+	}
 	.container {
 		.container-custom {
 			.list-contact {
 				margin-bottom: 90px;
+				@media (max-width: 1024px) {
+					margin-bottom: 20px;
+				}
 				.items {
 					display: flex;
 					width: 100%;
+					@media (max-width: 767.98px) {
+						flex-wrap: wrap;
+					}
 					.content-items {
 						text-align: center;
 						.desc {
@@ -25,11 +34,9 @@
 		#map {
 			height: 585px;
 			width: 100%;
-		@media (max-width: 1024.98px) {
-			#map {
+			@media (max-width: 1024.98px) {	
 				height: 300px;
 				width: 100%;
-			}
 		}
 		}
 		.contact-form {
