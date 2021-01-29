@@ -54,6 +54,9 @@
 		h2 {
 			font-family: MinionPro-Bold;
 			font-size: 5rem;
+			@media (max-width: 1024.98px) {
+				font-size: 3.5rem;
+			}
 		}
 	}
 }

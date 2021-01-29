@@ -52,6 +52,22 @@
 			padding-top: 93px;
 		}
 	}
+	&.noBanner {
+		.swiper-container {
+			display: none;
+		}
+		.pagesBanner__content {
+			position: relative;
+			top: unset;
+			left: unset;
+			.pagesBanner__content__wrapper {
+				position: relative;
+				bottom: unset;
+				left: unset;
+			}
+		}
+	
+	}
 }
 
 .main_banner__img {

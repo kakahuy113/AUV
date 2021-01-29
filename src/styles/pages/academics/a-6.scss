@@ -1,0 +1,111 @@
+.academics-policies {
+	padding-top: 80px;
+	padding-bottom: 100px;
+	@media (max-width: 1024.98px) {
+		padding: 40px 0;
+	}
+	.title {
+		text-align: center;
+		margin-bottom: 100px;
+		h2 {
+			color: map-get($color, main-3);
+		}
+		@media (max-width: 1024.98px) {
+			margin-bottom: 20px;
+		}
+	}
+	.content {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -10px;
+		@media (max-width: 1024.98px) {
+			justify-content: center;
+		}
+		.img {
+			-ms-flex: 0 0 614px;
+			flex: 0 0 614px;
+			max-width: 614px;
+			@media (max-width: 1439.98px) {
+				-ms-flex: 0 0 50%;
+				flex: 0 0 50%;
+				max-width: 50%;
+				padding: 0 10px;
+			}
+			@media (max-width: 1024.98px) {
+				margin-bottom: 20px;
+			}
+			@media (max-width: 575.98px) {
+				-ms-flex: 0 0 100%;
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+		.desc {
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
+			padding-left: 60px;
+			.card {
+				position: relative;
+				&:not(:last-child) {
+					margin-bottom: 20px;
+				}
+				.card-header {
+					min-height: 37px;
+					height: fit-content;
+					background: #F1F1F1;
+					display: flex;
+					align-items: center;
+					padding:0 40px;
+					margin-bottom: 20px;
+					h5 {
+						font-family: Montserrat-Bold;
+						font-size: 2rem;
+						color: map-get($color, main-3);
+					}
+				}
+				.card-body {
+					padding-left: 50px;
+					ul {
+						padding: 0;
+					}
+				}
+				.card-header {
+					position: relative;
+					&::after {
+						content: "";
+						position: absolute;
+						right: 15px;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 22px;
+						height: 14px;
+						background: url(../assets/images/academics/up.png) no-repeat;
+						background-size: contain;
+					}
+				}
+				&.collapsed-card {
+					.card-header {
+						&::after {
+							background: url(../assets/images/academics/down.png) no-repeat;
+							background-size: contain;
+						}
+					}
+				}
+			}
+			@media (max-width: 1439.98px) {
+				-ms-flex: 0 0 50%;
+				flex: 0 0 50%;
+				max-width: 50%;
+				padding: 0 10px;
+			}
+			@media (max-width: 1024.98px) {
+				-ms-flex: 0 0 100%;
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+}

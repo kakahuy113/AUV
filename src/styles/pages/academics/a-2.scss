@@ -4,6 +4,9 @@
 	position: relative;
 	padding-top: 100px;
 	padding-bottom: 135px;
+	@media (max-width: 1024.98px) {
+		padding: 40px 0;
+	}
 	&::before {
 		position: absolute;
 		top: 0;
@@ -22,15 +25,33 @@
 			font-family: MinionPro-Bold;
 			color: map-get($color, x-white);
 		}
+		@media (max-width: 1024.98px) {
+			margin-bottom: 20px;
+		}
 	}
 	.block-main-curr {
 		margin-left: -30px;
 		margin-right: -30px;
 		justify-content: center;
+		@media (max-width: 1024.98px) {
+			margin-left: -10px;
+			margin-right: -10px;
+		}
 	}
 	.content-curr {
 		width: 100%;
 		padding: 0 30px;
+		@media (max-width: 1024.98px) {
+			padding: 0 10px;
+		}
+		@media (max-width: 767.98px) {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
 	}
 }
 
@@ -81,6 +102,11 @@
 
 #popup-curricula {
 	max-width: 1088px;
+	.curr-desc {
+		max-height: unset; 
+		margin-bottom: unset;
+		overflow: unset;
+	}
 	.more-desc {
 		display: none;
 	}
