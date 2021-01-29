@@ -17,7 +17,7 @@
 	.container {
 		.container-custom {
 			.student-news-auv {
-				padding: 161px 0;
+				padding: 160px 0;
 				.block-list-items {
 					display: flex;
 					flex-wrap: wrap;
@@ -26,20 +26,24 @@
 						flex: 0 0 40%;
 						max-width: 40%;
 						img {
-							max-width:536px ;
-							max-height: 435px;
+							// max-width:536px ;
+							// max-height: 435px;
 						}
 					}
 					.items--desc {
+						padding-top: 20px;
 						padding-left: 56px;
 						-ms-flex: 0 0 60%;
 						flex: 0 0 60%;
 						max-width: 60%;
 						.title {	
-							padding: 30px 0 74px 0;
+							margin-bottom: 75px;
 							font-size: 5rem;
 							color: #D7970C;
 							font-family: MinionPro-Bold;
+							@media (max-width: 1024px) {
+								margin-bottom: 10px;
+							}
 						}
 						.info-desc{
 							p {
@@ -63,7 +67,6 @@
 					flex: 0 0 100%;
 					max-width: 100%;
 					.title {
-						padding: 10px 0 20px 0;
 						text-align: center;
 					}
 				}

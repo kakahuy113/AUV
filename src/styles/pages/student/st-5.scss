@@ -49,12 +49,13 @@
 		.tec-lab {
 			margin-top: 160px	;
 			.block-list-items {
-				margin-left: 5%;
-				margin-right: 5%;
+				max-width: 1500px;
 				background: white;
 				padding: 80px 80px 80px 66px;
 				display: flex;
 				flex-wrap: wrap;
+				margin-left: auto;
+				margin-right: auto;
 				.img--news {
 					max-width: 50%;
 				}

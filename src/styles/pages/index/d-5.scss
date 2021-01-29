@@ -1,13 +1,11 @@
 //Galley
 .auv-galley {
-	padding-bottom: 50px;
 	margin-top: 85px;
 	@media (max-width: 1024px) {
-		padding-bottom: 20px;
 		margin-top: 20px;
 	}
 	.title-galley {
-		padding-bottom: 85px;
+		margin-bottom: 85px;
 		p {
 			text-align: center;
 			font-size: 6rem;
@@ -178,7 +176,9 @@
 	.auv-main-swiper {
 		position: relative;
 		.swiper-container {
-			margin: 0 44px;
+			@media (max-width: 1024px) {
+				padding-bottom: 30px;
+			}
 			@media (max-width: 575.98px) {
 				margin: 0;
 			}
@@ -190,6 +190,22 @@
 			align-items: center;
 			img {
 				max-height: 180px;
+			}
+		}
+		.swiper-button-next,
+		.swiper-button-prev {
+			@media (max-width: 1024px) {
+				top: unset;
+			}
+		}
+		.swiper-button-next {
+			@media (max-width: 1024px) {
+				right: 45%;
+			}
+		}
+		.swiper-button-prev {
+			@media (max-width: 1024px) {
+				left: 45%;
 			}
 		}
 	}

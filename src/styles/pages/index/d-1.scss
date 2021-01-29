@@ -3,24 +3,37 @@
 	.container {
 		margin-top: 100px;
 		margin-bottom: 100px;
-		.row {
+		.auv-about-content {
 			width: 100%;
 			align-items: center;
+			@media (max-width: 1024px) {
+				margin: 0px;
+			}
 			.block-about {
-				padding-bottom: 30px;
 				align-self: flex-end;
+				@media (max-width: 1024px) {
+					&:first-child {
+						padding-bottom: 20px;
+					}
+					padding: 0px;
+				}
+
 				.auv-right {
 					max-width: 580px;
 					.block-main-title{
 						.title {
-							padding-bottom: 40px;
+							margin-bottom: 40px;
 							p {
 								font-family: MinionPro-Bold;
 								font-size: 7rem;
 								color:#d7970c;
 								font-weight: bold;
 							}
+							@media (max-width: 1024px) {
+								margin-bottom: 10px;
+							}
 						}
+
 					}
 
 					@media (max-width: 320px) {
@@ -88,6 +101,9 @@
 									bottom: 50%	;
 									background-color:#d7970c;
 								}
+							}
+							@media (max-width: 1024px) {
+								display: none;
 							}
 							}
 					}

@@ -50,11 +50,15 @@ const swiperstudent = () => {
 				direction: 'horizontal',
 			},
 			430: {
-				slidesPerView: 3,
+				slidesPerView: 2,
 				direction: 'horizontal',
 			},
 			768: {
-				slidesPerView: 4,
+				slidesPerView: 2,
+				direction: 'vertical',
+			},
+			1024: {
+				slidesPerView: 3,
 				direction: 'vertical',
 			}
 		},
