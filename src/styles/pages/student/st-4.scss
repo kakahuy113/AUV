@@ -116,6 +116,20 @@
 							flex: 0 0 100%;
 							max-width: 100%;
 						}
+						.btn-remore {
+							margin: unset;
+							button {
+								background: map-get($color, main-4);
+								span {
+									color: map-get($color, x-white);
+								}
+								svg {
+									path {
+										stroke: map-get($color, x-white);
+									}
+								}
+							}
+						}
 						.title-lab {
 							margin-bottom: 45px;
 								font-size: 2rem;

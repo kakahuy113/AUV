@@ -176,6 +176,7 @@
 	.auv-main-swiper {
 		position: relative;
 		.swiper-container {
+			margin: 0 33px;
 			@media (max-width: 1024px) {
 				padding-bottom: 30px;
 			}
@@ -194,18 +195,19 @@
 		}
 		.swiper-button-next,
 		.swiper-button-prev {
+			right: 0px;
 			@media (max-width: 1024px) {
 				top: unset;
 			}
 		}
 		.swiper-button-next {
 			@media (max-width: 1024px) {
-				right: 45%;
+				right: calc(50% - 50px);
 			}
 		}
 		.swiper-button-prev {
 			@media (max-width: 1024px) {
-				left: 45%;
+				left: calc(50% - 50px);
 			}
 		}
 	}
@@ -216,6 +218,11 @@
 .auvmap-section {
 	#map {
 		height: 500px;
+		width: 100%;
+		@media (max-width: 1024px) {
+			height: 300px;
+			width: 100%;
+		}
 	}
 	
 }

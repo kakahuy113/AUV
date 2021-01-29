@@ -627,7 +627,12 @@ const popupAcademics = () => {
 }
 
 const noBanner = () => {
-	if(document.querySelector(".course-detail-page")) {
+	if(document.querySelector(".news-events-page")) {
+		const height = document.querySelector("header").clientHeight
+		document.querySelector(".MainSlider__Banners").setAttribute("style" , `padding-top: ${height + 60}px`)
+		document.querySelector(".MainSlider__Banners").classList.add("noBanner");
+	};
+		if(document.querySelector(".course-detail-page")) {
 		const height = document.querySelector("header").clientHeight
 		document.querySelector(".MainSlider__Banners").setAttribute("style" , `padding-top: ${height + 60}px`)
 		document.querySelector(".MainSlider__Banners").classList.add("noBanner");
@@ -661,6 +666,11 @@ const recaptcha = () => {
 	document.querySelector('main').appendChild(button);
 }
 
+$(window).on('load',function(){
+	setTimeout(function(){
+		$('#loadpopup').modal('show')
+	},3000);
+});
 
 window.onload = () => {
 	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
@@ -724,6 +734,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	popupAcademics();
 	//
 	noBanner();
+	recaptcha ();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");

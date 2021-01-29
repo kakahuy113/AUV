@@ -47,7 +47,10 @@
 			}
 		}
 		.tec-lab {
-			margin-top: 160px	;
+			margin-top: 160px;
+			@media (max-width: 1024px) {
+				margin-top: 10px;
+			}
 			.block-list-items {
 				max-width: 1500px;
 				background: white;
