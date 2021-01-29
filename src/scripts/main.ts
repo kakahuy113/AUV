@@ -459,6 +459,19 @@ function DatePickerInit() {
 		});
 	  }
   });
+
+  $(".date-picker-2").each(function () {
+    if ($(this).val().length > 0) {
+      $(this).flatpickr({
+		dateFormat: "Y-m-d",
+      });
+    } else {
+		$(this).flatpickr({
+		dateFormat: "Y-m-d",
+		});
+	  }
+  });
+
   $(".time-picker").each(function () {
     if ($(this).val().length > 0) {
       $(this).flatpickr({
