@@ -10,164 +10,54 @@ const mapOption = {
 	zoom: 12,
 	styles: [
 		{
-		  "elementType": "geometry",
-		  "stylers": [
-			{
-			  "color": "#f5f5f5"
-			}
-		  ]
+			"featureType": "all",
+			"elementType": "all",
+			"stylers": [
+				{
+					"hue": "#e7ecf0"
+				}
+			]
 		},
 		{
-		  "elementType": "labels.icon",
-		  "stylers": [
-			{
-			  "visibility": "off"
-			}
-		  ]
+			"featureType": "poi",
+			"elementType": "all",
+			"stylers": [
+				{
+					"visibility": "off"
+				}
+			]
 		},
 		{
-		  "elementType": "labels.text.fill",
-		  "stylers": [
-			{
-			  "color": "#616161"
-			}
-		  ]
+			"featureType": "road",
+			"elementType": "all",
+			"stylers": [
+				{
+					"saturation": -70
+				}
+			]
 		},
 		{
-		  "elementType": "labels.text.stroke",
-		  "stylers": [
-			{
-			  "color": "#f5f5f5"
-			}
-		  ]
+			"featureType": "transit",
+			"elementType": "all",
+			"stylers": [
+				{
+					"visibility": "off"
+				}
+			]
 		},
 		{
-		  "featureType": "administrative.land_parcel",
-		  "elementType": "labels.text.fill",
-		  "stylers": [
-			{
-			  "color": "#bdbdbd"
-			}
-		  ]
-		},
-		{
-		  "featureType": "poi",
-		  "elementType": "geometry",
-		  "stylers": [
-			{
-			  "color": "#eeeeee"
-			}
-		  ]
-		},
-		{
-		  "featureType": "poi",
-		  "elementType": "labels.text.fill",
-		  "stylers": [
-			{
-			  "color": "#757575"
-			}
-		  ]
-		},
-		{
-		  "featureType": "poi.park",
-		  "elementType": "geometry",
-		  "stylers": [
-			{
-			  "color": "#e5e5e5"
-			}
-		  ]
-		},
-		{
-		  "featureType": "poi.park",
-		  "elementType": "labels.text.fill",
-		  "stylers": [
-			{
-			  "color": "#9e9e9e"
-			}
-		  ]
-		},
-		{
-		  "featureType": "road",
-		  "elementType": "geometry",
-		  "stylers": [
-			{
-			  "color": "#ffffff"
-			}
-		  ]
-		},
-		{
-		  "featureType": "road.arterial",
-		  "elementType": "labels.text.fill",
-		  "stylers": [
-			{
-			  "color": "#757575"
-			}
-		  ]
-		},
-		{
-		  "featureType": "road.highway",
-		  "elementType": "geometry",
-		  "stylers": [
-			{
-			  "color": "#dadada"
-			}
-		  ]
-		},
-		{
-		  "featureType": "road.highway",
-		  "elementType": "labels.text.fill",
-		  "stylers": [
-			{
-			  "color": "#616161"
-			}
-		  ]
-		},
-		{
-		  "featureType": "road.local",
-		  "elementType": "labels.text.fill",
-		  "stylers": [
-			{
-			  "color": "#9e9e9e"
-			}
-		  ]
-		},
-		{
-		  "featureType": "transit.line",
-		  "elementType": "geometry",
-		  "stylers": [
-			{
-			  "color": "#e5e5e5"
-			}
-		  ]
-		},
-		{
-		  "featureType": "transit.station",
-		  "elementType": "geometry",
-		  "stylers": [
-			{
-			  "color": "#eeeeee"
-			}
-		  ]
-		},
-		{
-		  "featureType": "water",
-		  "elementType": "geometry",
-		  "stylers": [
-			{
-			  "color": "#c9c9c9"
-			}
-		  ]
-		},
-		{
-		  "featureType": "water",
-		  "elementType": "labels.text.fill",
-		  "stylers": [
-			{
-			  "color": "#9e9e9e"
-			}
-		  ]
+			"featureType": "water",
+			"elementType": "all",
+			"stylers": [
+				{
+					"visibility": "simplified"
+				},
+				{
+					"saturation": -60
+				}
+			]
 		}
-	  ],
+	]
 };
 
 const addMarkers = () => {
@@ -228,7 +118,7 @@ const initialize = () => {
 	addMarkers();
 	let listener = google.maps.event.addListener(map, 'idle', () => {
 		if (map.getZoom() > 12) {
-			map.setZoom(18);
+			map.setZoom(15);
 		}
 		google.maps.event.removeListener(listener);
 	});

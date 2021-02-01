@@ -8,9 +8,11 @@
 					margin-bottom: 50px;
 					h2 {
 						font-size: 6rem;
-						font-weight: bold;
 						color: #d7970c;
 						font-family: MinionPro-Bold;
+						@media (max-width: 1024px) {
+							font-size: 5.5rem;
+						}
 					}
 				}
 				.block-main-title{
@@ -24,10 +26,10 @@
 							font-weight: bold;
 							color: #0B1F44;
 						}
-						&::before {
+						&::after {
 							content: '';
 							position: absolute;
-							width: 950px;
+							width: calc(100% - 200px);
 							height: 1px;
 							bottom: 0;
 							left: 0;
@@ -121,10 +123,16 @@
     width: 100%;
     display: flex;
     list-style-type: none;
-    padding-left: 0;
+	padding-left: 0;
+	@media (max-width: 1024px) {
+		justify-content: center;
+	}
     li {
 		position: relative;
 		margin: 0 5px;
+		@media (max-width: 1024px) {
+			margin: 0px;
+		}
 		&.active {
 			a {
 				color: #0B1F44;

@@ -1,11 +1,14 @@
 .lib__page {
 	padding-top: 70px;
 	margin-bottom: 50px;
+	@media (max-width: 1024px) {
+		padding-top: 20px;
+		margin-bottom: 20px;
+	}
 	.container {
 		.container-custom {
 			.lib__page__wrapper{
 				padding-left: 10%;
-
 				.title {
 					p {
 						font-size: 5rem;
@@ -16,6 +19,10 @@
 				.list-item-lib {
 					margin-bottom: 30px;
 					margin-top: 50px;
+					@media (max-width: 1024px) {
+						margin-top: 20px;
+						margin-bottom: 10px;
+					}
 					.item-1{
 						position: relative;
 						p {

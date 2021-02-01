@@ -110,6 +110,15 @@ const ImagePopupabout = () => {
 		
 	})
 }
+
+//popup-page
+$(document).ready(function () {
+    $("#popup-page").fancybox({
+        'overlayShow': true
+    }).trigger('click');
+});
+
+
 //popup image Gallery
 const ImagePopugalley = () => {
 	$(".main-galley .is-img").on("click" , function() {
@@ -260,6 +269,7 @@ const ajaxlisgallery = () => {
 		})
 	})
 }
+
 
 // SETBACKGROUND IMAGE
 const setBackgroundImageSection = () => {
@@ -718,6 +728,8 @@ window.onload = () => {
 	// const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
 	// button.click();
 }
+
+
 
 document.addEventListener("scroll" , async () => {
 	activeWhenScroll();

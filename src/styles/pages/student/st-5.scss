@@ -75,6 +75,9 @@
 						font-size: 5rem;
 						color: #0B1F44;
 						font-family: MinionPro-Bold;
+						@media (max-width: 1024px) {
+							font-size: 4.5rem;
+						}
 						&::after {
 							content: '';
 							position: absolute;
