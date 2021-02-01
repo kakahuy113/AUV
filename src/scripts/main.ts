@@ -78,6 +78,21 @@ const swiperstudent = () => {
 		},
 	});
 }
+
+// swiper-popup-index
+const swiperForindex = () => {
+	var swiper = new Swiper(".index-popup .swiper-container", {
+		loop: true,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		autoplay: {
+			delay: 2500,
+		},
+	});
+};
+
 //popup image News&Events
 const ImagePopupabout = () => {
 	$(".lib__page__img .item-gallery").on("click" , function() {
@@ -258,14 +273,15 @@ const showBackToTop = () => {
 const ajaxlisgallery = () => {
 	$(document).on("click" , ".lib__page .pagination li" ,function(e:any) {
 		e.preventDefault();
-		const url = $(this).attr("data-url")
+		const _this = $(this)
+		const url = $(this).find("a").attr("href");
 		// $(this).parent().parent().html("<p>asd</p>");
-		$.ajax({	
+		$.ajax({		
 			url: url,
 			type: 'get',
-			success: function(res:any) {
-				$(this).parent().parent().html(res);
-			},
+			succ_thisnction(res:any) {
+				_this.parent().parent().html(res)
+			}
 		})
 	})
 }
@@ -770,6 +786,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//
 	swipeCampus();
 	//
+	//swiper-popup-index
+	swiperForindex();
+
 	fancyboxFacultyAbout();
 	// Tab
 	popupImgmem();

@@ -4,6 +4,12 @@
 		background: map-get($color, x-white );
 	}
 }
+#popup-page.popup
+	.index-popup {
+		.swiper-slide {
+			text-align: center;
+		}
+			}
 //About-AUV
 .about-auv {
 	.container {
