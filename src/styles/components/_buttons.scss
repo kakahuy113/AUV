@@ -9,18 +9,21 @@
 .btn-remore {
 	max-width: fit-content;
 	margin-left: auto;
+	position: relative;
 	button {
 		padding: 0;
 		border:1px solid #d7970c;
 		width: 111px;
 		height: 35px;
 		background-color: #ffffff;
+		position: relative;
 		span {
 			font-family: MinionPro-Bold;
 			padding-right: 5px;
+			padding-top: 3px;
 		}
 		svg {
-			vertical-align:unset;
+			
 		}
 	}
 }

@@ -1,6 +1,6 @@
 import { getSVGs, Loading } from "./utilities/util";
 import Tab from './libraries/Tab';
-import { of } from "rxjs";
+import { commonController } from "./libraries/CommonController";
 declare var Swiper:any;
 declare var $:any;
 declare var grecaptcha:any;
@@ -495,17 +495,46 @@ function DatePickerInit() {
 }
 
 const LogicFormApply = () => {
-	document.querySelectorAll(".apply-tab .tab").forEach((element: Element , index: number) => {
-		element.addEventListener("click" , () => {
-			setTimeout(() => {
-				if(element.classList.contains("active") && element.getAttribute("toggle-for") == "tab-3") {
-					document.querySelector(".text-for-step-3").classList.add("active")
-				} else {
-					document.querySelector(".text-for-step-3").classList.remove("active")
+	if(document.querySelector(".admission-page")) {
+		let num: number;
+
+		document.querySelector(".tab-footer button").addEventListener("click" , (e:any) => {
+			e.preventDefault();
+			document.querySelectorAll(".apply-tab .tab").forEach((element: Element , index: number) => {
+				if(element.classList.contains("active")) { 
+					num = index;
 				}
-			}, 100);
+			});
+	
+			if (num >= 0 && num <= 1) {
+				$(".apply-tab .tab")[num + 1].click();
+			} else {
+				
+			}
+		});
+	
+		$(document).on("click" , ".apply-tab .tab" , function() {
+			if($(this).hasClass("active") && $(this).attr("toggle-for") == "tab-3") {
+				document.querySelector(".text-for-step-3").classList.add("active")
+			} else {
+				document.querySelector(".text-for-step-3").classList.remove("active")
+			}
+	
+			document.querySelectorAll(".apply-tab .tab").forEach((element: Element , index: number) => {
+				if(element.classList.contains("active")) { 
+					num = index;
+				}
+			});
+	
+			if(num == 2) {
+				const text = document.querySelector(".tab-footer button").getAttribute("data-complete")
+				document.querySelector(".tab-footer button").innerHTML = text;
+			} else {
+				const text = document.querySelector(".tab-footer button").getAttribute("data-next-step")
+				document.querySelector(".tab-footer button").innerHTML = text;
+			}
 		})
-	})
+	}
 }
 
 const sectionFixed = () => {
@@ -666,15 +695,28 @@ const recaptcha = () => {
 	document.querySelector('main').appendChild(button);
 }
 
-$(window).on('load',function(){
-	setTimeout(function(){
-		$('#loadpopup').modal('show')
-	},3000);
-});
+// ACTIVE LANGGUAGE
+const activeLanguage = () => {
+	const htmlLang = document.querySelector('html').getAttribute('lang');
+	const items__language = document.querySelectorAll(
+		'.header--top__wrapper .languages__item'
+	);
+	items__language.forEach((item) => {
+		if (item.getAttribute('data-language') == htmlLang) {
+			item.classList.add('active');
+		}
+	});
+};
+
+// $(window).on('load',function(){
+// 	setTimeout(function(){
+// 		$('#loadpopup').modal('show')
+// 	},3000);
+// });
 
 window.onload = () => {
-	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
-	button.click();
+	// const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
+	// button.click();
 }
 
 document.addEventListener("scroll" , async () => {
@@ -684,6 +726,11 @@ document.addEventListener("scroll" , async () => {
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
+	//
+	commonController();
+	//
+	activeLanguage();
+	//
 	dropLine();
 	// MAIN SWiper
 	initMainBanner();
@@ -734,7 +781,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	popupAcademics();
 	//
 	noBanner();
-	recaptcha ();
+	// recaptcha ();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");

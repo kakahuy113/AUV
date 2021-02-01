@@ -33,85 +33,88 @@ section.admission-how-to-apply(data-section="How To Apply")
 											h5 Student Information
 											.row
 												.col-6
-													input(type="text" placeholder="First Name")
+													input(type="text" name="firstName" placeholder="First Name")
 												.col-6
-													input(type="text" placeholder="Last Name")
+													input(type="text" name="lastName" placeholder="Last Name")
 												.col-6
-													select(name="" id="gender")
+													select(name="gender" id="gender")
+														option(value="" disabled selected hidden) Gender
 														option(value="male") Male
 														option(value="male") Male
 												.col-6
-													input(type="text" placeholder="Home address")
+													input(type="text" name="homeaddress" placeholder="Home address")
 												.col-6
-													input.date-picker(type="text" placeholder="Date of birth")
+													input.date-picker-2(type="text" name="dateofbirth" placeholder="Date of birth")
 												.col-6
-													input(type="text" placeholder="Current address(if different")
+													input(type="text" name="currentAddress" placeholder="Current address(if different")
 												.col-6
-													input(type="text" placeholder="ID/ Passwort number")
+													input(type="text" name="idnumber" placeholder="ID/ Passwort number")
 												.col-6
-													input(type="text" placeholder="Email")
+													input(type="text" name="email" placeholder="Email")
 												.col-6
-													input(type="text" placeholder="Cell phone")
+													input(type="text" name="phone" placeholder="Cell phone")
 										.col-md-6.col-sm-12
 											h5 Parent Information
 											.row
 												.col-6
-													input(type="text" placeholder="Full Name*")
+													input(type="text" name="fullname" placeholder="Full Name*")
 												.col-6
-													input(type="text" placeholder="Home address")
+													input(type="text" name="homeAddress" placeholder="Home address")
 												.col-6
-													select(name="" id="gender")
+													select(name="gender" id="gender")
+														option(value="" disabled selected hidden) Relationship*
 														option(value="male") Male
 														option(value="male") Male
 												.col-6
-													input(type="text" placeholder="Company name")
+													input(type="text" name="companyName" placeholder="Company name")
 												.col-6
-													select(name="" id="gender")
+													select(name="relationship" id="gender")
 														option(value="male") Male
 														option(value="male") Male
 												.col-6
-													input(type="text" placeholder="Occupation")
+													input(type="text" name="occupation" placeholder="Occupation")
 												.col-6
-													input(type="text" placeholder="Nationality")
+													input(type="text" nmae="nationality" placeholder="Nationality")
 												.col-6
-													input(type="text" placeholder="Email")
+													input(type="text" name="Email" placeholder="Email")
 												.col-6
-													input(type="text" placeholder="Cell phone*")
+													input(type="text" name="chell phone" placeholder="Cell phone*")
 								.col-12
 									.row
 										.col-md-6.col-sm-12
 											h5 Program Of Study
 											.row
 												.col-12
-													select(name="" id="gender")
+													select(name="goals" id="gender")
+														option(value="" disabled selected hidden) My higher ducation goal(s)
 														option(value="male") Male
 														option(value="male") Male
 												.col-12
 													.row-check
 														p Title of program
 														.item
-															input(type="checkbox" id="title-of-program-1")
+															input( name="titleofprogram" type="checkbox" id="title-of-program-1")
 															label(for="title-of-program-1") Business
 														.item
-															input(type="checkbox" id="title-of-program-2")
+															input( name="titleofprogram" type="checkbox" id="title-of-program-2")
 															label(for="title-of-program-2") Hospitality
 														.item
-															input(type="checkbox" id="title-of-program-3")
+															input( name="titleofprogram" type="checkbox" id="title-of-program-3")
 															label(for="title-of-program-3") Communication
 														.item
-															input(type="checkbox" id="title-of-program-4")
+															input( name="titleofprogram" type="checkbox" id="title-of-program-4")
 															label(for="title-of-program-4") Computer Science
 														.item
-															input(type="checkbox" id="title-of-program-5")
+															input( name="titleofprogram" type="checkbox" id="title-of-program-5")
 															label(for="title-of-program-5") Undecided
 														.item
-															input(type="checkbox" id="title-of-program-6")
+															input( name="titleofprogram" type="checkbox" id="title-of-program-6")
 															label(for="title-of-program-6") Other
 										.col-md-6.col-sm-12
 											h5 Program Of Study
 											.row
 												.col-12
-													input(type="text" placeholder="Proposed start Year")
+													input(type="text" name="proposed" placeholder="Proposed start Year")
 												.col-12
 													.row-check
 														p Semester
@@ -126,9 +129,9 @@ section.admission-how-to-apply(data-section="How To Apply")
 															label(for="semester-3") Communication
 												.col-12
 													.row-check
-														p Title of program
+														p Scholarship
 														.item
-															input(type="checkbox" id="Scholarship")
+															input(name ="Scholarship" type="checkbox" id="Scholarship")
 															label(for="Scholarship") I am interested in a Merit - Based Scholarship
 						.content(tab-id="tab-2")
 							.row
@@ -139,35 +142,35 @@ section.admission-how-to-apply(data-section="How To Apply")
 											p IELTS
 											.row
 												.col-6
-													input(type="text" placeholder="Location")
+													input( name="lazy" type="text" placeholder="Location")
 												.col-6
-													input.date-picker-2(type="text" placeholder="Date of test")
+													input.date-picker-2( name="lazy" type="text" placeholder="Date of test")
 												.col-6
-													input(type="text" placeholder="Score")
+													input( name="lazy" type="text" placeholder="Score")
 												.col-6
-													input(type="text" placeholder="Certificate number")
+													input( name="lazy" type="text" placeholder="Certificate number")
 										.col-md-4.col-sm-12
 											p TOEFL
 											.row
 												.col-6
-													input(type="text" placeholder="Location")
+													input( name="lazy" type="text" placeholder="Location")
 												.col-6
-													input.date-picker-2(type="text" placeholder="Date of test")
+													input.date-picker-2( name="lazy" type="text" placeholder="Date of test")
 												.col-6
-													input(type="text" placeholder="Score")
+													input( name="lazy" type="text" placeholder="Score")
 												.col-6
-													input(type="text" placeholder="Certificate number")
+													input( name="lazy" type="text" placeholder="Certificate number")
 										.col-md-4.col-sm-12
 											p Other
 											.row
 												.col-6
-													input(type="text" placeholder="Location")
+													input( name="lazy" type="text" placeholder="Location")
 												.col-6
-													input.date-picker-2(type="text" placeholder="Date of test")
+													input.date-picker-2( name="lazy" type="text" placeholder="Date of test")
 												.col-6
-													input(type="text" placeholder="Score")
+													input( name="lazy" type="text" placeholder="Score")
 												.col-6
-													input(type="text" placeholder="Certificate number")
+													input( name="lazy" type="text" placeholder="Certificate number")
 								.col-12
 									h5 Qualifications Already Available
 									.row
@@ -175,41 +178,41 @@ section.admission-how-to-apply(data-section="How To Apply")
 											p High School
 											.row
 												.col-12
-													input(type="text" placeholder="Name of Institution")
+													input( name="lazy" type="text" placeholder="Name of Institution")
 												.col-6
-													input(type="text" placeholder="Qualification")
+													input( name="lazy" type="text" placeholder="Qualification")
 												.col-6
-													input(type="text" placeholder="From")
+													input( name="lazy" type="text" placeholder="From")
 												.col-6
-													input(type="text" placeholder="Location")
+													input( name="lazy" type="text" placeholder="Location")
 												.col-6
-													input(type="text" placeholder="To")
+													input( name="lazy" type="text" placeholder="To")
 										.col-md-4.col-sm-12
 											p Colleges
 											.row
 												.col-12
-													input(type="text" placeholder="Name of Institution")
+													input( name="lazy" type="text" placeholder="Name of Institution")
 												.col-6
-													input(type="text" placeholder="Qualification")
+													input( name="lazy" type="text" placeholder="Qualification")
 												.col-6
-													input(type="text" placeholder="From")
+													input( name="lazy" type="text" placeholder="From")
 												.col-6
-													input(type="text" placeholder="Location")
+													input( name="lazy" type="text" placeholder="Location")
 												.col-6
-													input(type="text" placeholder="To")
+													input( name="lazy" type="text" placeholder="To")
 										.col-md-4.col-sm-12
 											p University
 											.row
 												.col-12
-													input(type="text" placeholder="Name of Institution")
+													input( name="lazy" type="text" placeholder="Name of Institution")
 												.col-6
-													input(type="text" placeholder="Qualification")
+													input( name="lazy" type="text" placeholder="Qualification")
 												.col-6
-													input(type="text" placeholder="From")
+													input( name="lazy" type="text" placeholder="From")
 												.col-6
-													input(type="text" placeholder="Location")
+													input( name="lazy" type="text" placeholder="Location")
 												.col-6
-													input(type="text" placeholder="To")
+													input( name="lazy" type="text" placeholder="To")
 								.col-12
 									h5 Submit Official High School diploma, transcripts, Official College/ University transcripts (if any)
 									.row.file-type
@@ -218,13 +221,13 @@ section.admission-how-to-apply(data-section="How To Apply")
 											.row
 												.col-12
 													label(for="diploma" text="Choose File")
-													input(type="file" id="diploma")
+													input( name="file" type="file" id="diploma")
 										.col-md-6.col-sm-12
 											p Transcripts
 											.row
 												.col-12
 													label(for="transcripts" text="Choose File")
-													input(type="file" id="transcripts")
+													input( name="file" type="file" id="transcripts")
 						.content(tab-id="tab-3")
 							.row
 								.col-12
@@ -232,6 +235,7 @@ section.admission-how-to-apply(data-section="How To Apply")
 									.row
 										.col-md-5.col-sm-12
 											.row
+												input(type="text" name="date-time-picker" hidden)
 												.col-8
 													input.date-picker(type="text" placeholder="Date")
 												.col-4
@@ -245,7 +249,7 @@ section.admission-how-to-apply(data-section="How To Apply")
 													input(type="checkbox" id="Schedule-2")
 													label(for="Schedule-2") I give my consent to the processing of my data by AUV. Re information I provide will be held and used for the purposes of: processing my application for study and for future student administration.
 					.tab-footer
-						button.btn.btn-next Next Step
+						button.btn.btn-next(data-complete="Submit" data-next-step="Next Step") Next Step
 				.text-for-step-3
 					p Provide IELTS or TOEFL examination scores or take our English Placement Examination prior to admission to the program. We also strongly recommend that students arrange an in-person interview with one of our Admissions Officers.
 					p Upon receipt of all required documents, the Admissions Committee will review admission applications and, subject to the applicant meeting the requisite selection criteria, issue a letter of acceptance within five days.

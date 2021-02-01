@@ -45,6 +45,12 @@ header {
 	}
 	.language {
 		display: flex;
+		.languages__link {
+			font-family: Futura-Heavy;
+			font-size: 1.4rem;
+			color: map-get($color, main-3);
+			
+		}
 		.languages__item {
 			&:first-child {
 				padding-right: 10px;
@@ -62,15 +68,13 @@ header {
 					background: map-get($color, main-3);
 				}
 			}
-		}
-		.languages__link {
-			font-family: Futura-Heavy;
-			font-size: 1.4rem;
-			color: map-get($color, main-3);
 			&.active {
-				color: map-get($color, main-4);
+				.languages__link {
+					color: map-get($color, main-4);
+				}
 			}
 		}
+		
 	}
 }
 
