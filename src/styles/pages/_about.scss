@@ -779,6 +779,8 @@
 			overflow: hidden;
 			max-height: 315px;
 			height: 100%;
+			max-width: 315px;
+			margin: 0 auto;
 			img {
 				transform: scale(.7);
 				transition: .5s all ease-in-out;
@@ -840,7 +842,7 @@
 		top: 40%;
 		transform: translateY(-50%);
 		@media (max-width: 575.98px) {
-			bottom: 0;
+			bottom: -40px;
 			top: unset;
 		}
 	}

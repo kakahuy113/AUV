@@ -369,7 +369,11 @@ const SwiperAdvisory = () => {
 		//   },
 		breakpoints: {
 			300: {
+				slidesPerView: 1,
+			},
+			575 : {
 				slidesPerView: 1.8,
+
 			},
 			768: {
 				slidesPerView: 3,
@@ -539,6 +543,11 @@ const LogicFormApply = () => {
 			}
 		});
 	
+
+		const ajaxApplyForm = () => {
+			
+		}
+
 		$(document).on("click" , ".apply-tab .tab" , function() {
 			if($(this).hasClass("active") && $(this).attr("toggle-for") == "tab-3") {
 				document.querySelector(".text-for-step-3").classList.add("active")
@@ -551,13 +560,17 @@ const LogicFormApply = () => {
 					num = index;
 				}
 			});
+
+		
 	
 			if(num == 2) {
 				const text = document.querySelector(".tab-footer button").getAttribute("data-complete")
 				document.querySelector(".tab-footer button").innerHTML = text;
+				document.querySelector(".tab-footer button").addEventListener("click" ,ajaxApplyForm)
 			} else {
 				const text = document.querySelector(".tab-footer button").getAttribute("data-next-step")
 				document.querySelector(".tab-footer button").innerHTML = text;
+				document.querySelector(".tab-footer button").removeEventListener("click" ,ajaxApplyForm )
 			}
 		})
 	}
@@ -641,12 +654,18 @@ const popupAcademics = () => {
 				beforeSend: function() {
 					_btn.attr('disabled', 'disabled');
 					_btn.parent().parent().parent().find(".wrapper").html("<p>Loading...</p>")
+					document.querySelectorAll("#majorsAndminors ul li").forEach((el:HTMLElement) => {
+						el.classList.remove("active");
+					})
 				},
 				success: function(res:any) {
+					_btn.removeAttr('disabled');
+					_btn.addClass("active")
 					_btn.parent().parent().parent();
 					_btn.parent().parent().parent().find(".wrapper").html(res)
 				},
 				error: function(res:any) {
+					_btn.removeAttr('disabled');
 					_btn.parent().parent().parent().find(".wrapper").html("<p>Something went wrong</p>")
 				}
 			})
