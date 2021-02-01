@@ -1,4 +1,9 @@
-
+#popup-page {
+	img {
+		padding: 10px;
+		background: map-get($color, x-white );
+	}
+}
 //About-AUV
 .about-auv {
 	.container {
