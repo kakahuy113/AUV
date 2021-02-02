@@ -277,12 +277,24 @@
 		display: flex;
 		margin: 0 -25px;
 		height: 100%;
+		@media (max-width: 1024.98px) {
+			margin: 0 -5px;
+		}
 		.list-subject {
 			padding: 0 25px;
 			-ms-flex: 0 0 240px;
 			flex: 0 0 340px;
 			max-width: 340px;
 			height: 100%;
+			@media (max-width: 1024.98px) {
+				padding: 0 10px;
+				-ms-flex: 0 0 30%;
+				flex: 0 0 30%;
+				max-width: 30%;
+			}
+			@media (max-width: 575.98px) {
+				padding: 0 5px;
+			}
 			ul {
 				list-style: none;
 				padding: 0;
@@ -291,12 +303,18 @@
 					cursor: pointer;
 					p {
 						font-size: 1.4rem;
+						@media (max-width: 575.98px) {
+							font-size: 1.2rem;
+						}
 					}
 					&.active {
 						p {
 							font-size: 1.6rem;
 							color: map-get($color, main-3);
 							font-family: Futura-Bold;
+							@media (max-width: 575.98px) {
+								font-size: 1.4rem;
+							}
 						}
 					}
 				}
@@ -312,6 +330,15 @@
 			padding-top: 50px;
 			height: 100%;
 			background: map-get($color, x-white);
+			@media (max-width: 1024.98px) {
+				padding: 0 10px;
+				-ms-flex: 0 0 70%;
+				flex: 0 0 70%;
+				max-width: 70%;
+			}
+			@media (max-width: 575.98px) {
+				padding:0 5px;
+			}
 			.subject-desc__wrapper {
 				padding-right: 15px;
 				height: 100%;
@@ -329,6 +356,16 @@
 					max-width: 536px;
 					margin-bottom: 20px;
 				}
+			}
+		}
+	}
+	@media (max-width: 1024.98px) {
+		padding: 40px 5px;
+		.popup__wrapper {
+			overflow-y: auto;
+			&::-webkit-scrollbar {
+				width: 3px;
+				height: 3px;
 			}
 		}
 	}

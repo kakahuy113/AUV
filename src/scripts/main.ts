@@ -329,8 +329,12 @@ const ajaxContactForm = () => {
 					$(this).attr('disabled', 'disabled');
 				},
 				success: function(res :any) {
-					alert(`${res.Message}`);
-					window.location.reload();
+					if(res.Code == 200) {
+						alert(`${res.Message}`);
+						window.location.reload();
+					} else {
+						alert(res.Message)
+					}
 				},
 			})
 		}
@@ -789,30 +793,30 @@ const noBanner = () => {
 }
 
 const recaptcha = () => {
-	var script = document.createElement('script');
-	script.onload = function() {
-		console.log("Script loaded and ready");
-	};
 	if(document.querySelector(".g-recaptcha")) {
+		var script = document.createElement('script');
+		script.onload = function() {
+			console.log("Script loaded and ready");
+		};
 		const sitekey = document.querySelector(".g-recaptcha").getAttribute("data-sitekey");
 		script.src = `https://www.google.com/recaptcha/api.js?render=${sitekey}`;
 		script.setAttribute("async", "");
 		script.setAttribute("defer", "");
 		document.getElementsByTagName('head')[0].appendChild(script);
-	}
-	var button = document.createElement("button")
-	button.classList.add("fake-button-recaptcha")
-	button.onclick = (e:any) => {
-		e.preventDefault();
-		grecaptcha.ready(function () {
-			const recaptcha: HTMLInputElement =document.querySelector('.g-recaptcha');
-			const sitekey = recaptcha.getAttribute("data-sitekey")
-			grecaptcha.execute(`${sitekey}`, { action: 'KPY' }).then(function (token: any) {
-				recaptcha.value = token
+		var button = document.createElement("button")
+		button.classList.add("fake-button-recaptcha")
+		button.onclick = (e:any) => {
+			e.preventDefault();
+			grecaptcha.ready(function () {
+				const recaptcha: HTMLInputElement =document.querySelector('.g-recaptcha');
+				const sitekey = recaptcha.getAttribute("data-sitekey")
+				grecaptcha.execute(`${sitekey}`, { action: 'KPY' }).then(function (token: any) {
+					recaptcha.value = token
+				});
 			});
-		});
+		}
+		document.querySelector('main').appendChild(button);
 	}
-	document.querySelector('main').appendChild(button);
 }
 
 // ACTIVE LANGGUAGE
@@ -828,18 +832,24 @@ const activeLanguage = () => {
 	});
 };
 
-// $(window).on('load',function(){
-// 	setTimeout(function(){
-// 		$('#loadpopup').modal('show')
-// 	},3000);
-// });
-
-window.onload = () => {
-	// const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
-	// button.click();
+const readMore = () => {
+	if(window.innerWidth < 576) {
+		document.querySelectorAll(".admission-auv-difference__wrapper .btn-more button").forEach((el:HTMLButtonElement) => {
+			el.addEventListener("click" , (e:any) => {
+				e.preventDefault();
+				el.parentElement.parentElement.querySelector(".desc").classList.add("show");
+				el.parentElement.remove();
+			})
+		})
+	}
 }
 
-
+window.onload = () => {
+	if(document.querySelector(".fake-button-recaptcha")) {
+		const button: HTMLButtonElement = document.querySelector(".fake-button-recaptcha");
+		button.click();
+	}
+}
 
 document.addEventListener("scroll" , async () => {
 	activeWhenScroll();
@@ -854,6 +864,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	activeLanguage();
 	//
 	dropLine();
+	//
+	recaptcha();
 	// MAIN SWiper
 	initMainBanner();
 	//
@@ -906,6 +918,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	popupAcademics();
 	//
 	noBanner();
+	//
+	readMore();
 	// recaptcha ();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
