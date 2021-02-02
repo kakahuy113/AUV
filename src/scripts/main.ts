@@ -83,6 +83,9 @@ const swiperstudent = () => {
 const swiperForindex = () => {
 	var swiper = new Swiper(".index-popup .swiper-container", {
 		loop: true,
+		spaceBetween: 10,
+		slidesPerView: 3,
+		direction: 'vertical',
 		effect: 'fade',
 		fadeEffect: {
 			crossFade: true,
@@ -126,13 +129,14 @@ const ImagePopupabout = () => {
 	})
 }
 
-//popup-page
-$(document).ready(function () {
-    $("#popup-page").fancybox({
-        'overlayShow': true
-    }).trigger('click');
-});
-
+const popupIndex = () => {
+	if(document.querySelector(".index-page")) {
+		$.fancybox.open({
+			src: "#popup-page",
+			type: "inline"
+		})
+	}
+}
 
 //popup image Gallery
 const ImagePopugalley = () => {
@@ -779,6 +783,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	activeLanguage();
 	//
 	dropLine();
+	//
+	popupIndex();
 	// MAIN SWiper
 	initMainBanner();
 	//

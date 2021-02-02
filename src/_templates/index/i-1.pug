@@ -29,6 +29,7 @@ section.about-auv
 			.index-popup
 				.swiper-container
 					.swiper-wrapper
-						.swiper-slide
-							img.object-cover(src="./assets/images/index/popup.png", alt="")
-							
+						-for(var i = 0; i< 3; i++)
+							.swiper-slide
+								img.object-cover(src="./assets/images/index/popup.png", alt="")
+						
