@@ -333,8 +333,12 @@ const ajaxContactForm = () => {
 					$(this).attr('disabled', 'disabled');
 				},
 				success: function(res :any) {
-					alert(`${res.Message}`);
-					window.location.reload();
+					if(res.Code == 200) {
+						alert(`${res.Message}`);
+						window.location.reload();
+					} else {
+						alert(res.Message)
+					}
 				},
 			})
 		}
@@ -532,24 +536,85 @@ const LogicFormApply = () => {
 	if(document.querySelector(".admission-page")) {
 		let num: number;
 
-		document.querySelector(".tab-footer button").addEventListener("click" , (e:any) => {
+		const ajaxApplyForm = (e:any) => {
 			e.preventDefault();
-			document.querySelectorAll(".apply-tab .tab").forEach((element: Element , index: number) => {
-				if(element.classList.contains("active")) { 
-					num = index;
-				}
-			});
-	
-			if (num >= 0 && num <= 1) {
-				$(".apply-tab .tab")[num + 1].click();
-			} else {
-				
-			}
-		});
-	
+			const formData = new FormData();
+			const url = document.querySelector(".tab-footer button").getAttribute("data-url")
+			//Tab 1
+			const tab = document.querySelectorAll(".apply-form .content")
+			tab[0].querySelectorAll("input[type=text]").forEach((el:HTMLInputElement) => {
 
-		const ajaxApplyForm = () => {
-			
+				const name = el.getAttribute("name");
+				const val = el.value;
+				formData.append(name , val);
+			})
+			tab[0].querySelectorAll("select").forEach( (el: HTMLSelectElement) => {
+				const name = el.getAttribute("name");
+				const val = el.value;
+				formData.append(name , val);
+			})
+			tab[0].querySelectorAll(".row-check").forEach((el:HTMLElement) => {
+				if(el.querySelector("input[type=checkbox]")) {
+					const name = el.querySelector("input").getAttribute("name")
+					const array = new Array();
+					el.querySelectorAll("input[type=checkbox]:checked").forEach((el:HTMLInputElement) => {
+						array.push(el.value);
+					})
+					if(array.length < 1) {
+						formData.append(name , null);
+					} else {
+						formData.append(name , JSON.stringify(array));
+					}
+				}
+				if(el.querySelector("input[type=radio]")) {
+					const name = el.querySelector("input").getAttribute("name")
+					const value = el.querySelector<HTMLInputElement>("input[type=radio]").value;
+					formData.append(name , value);
+				}
+			})
+
+			// Tab 2
+			tab[1].querySelectorAll('input:not([type="file"])').forEach((el:HTMLInputElement) => {
+					const name = el.getAttribute("name");
+					const val = el.value;
+					formData.append(name , val);
+			})
+			tab[1].querySelectorAll('input[type="file"]').forEach((el:HTMLInputElement) => {
+				const name = el.getAttribute("name");
+				const file = el.files[0]
+				formData.append(name , file);
+			})
+
+			tab[2].querySelectorAll("input[hidden]").forEach((el:HTMLInputElement) => {
+				const name = el.getAttribute("name");
+				const val = el.value;
+				formData.append(name , val);
+			})
+
+			$.ajax({
+				url : url,
+				data: formData,
+				type: "POST",
+				processData: false,
+				contentType: false,
+				beforeSend: function() {
+					e.target.setAttribute("disabled" , "disabled")
+				},
+				success: function(res:any) {
+					e.target.removeAttribute("disabled" , "disabled")
+					if(res.Code == 200) {
+						alert(res);
+						window.location.reload();
+					} else {
+						alert(res);
+					}
+				},
+				error: function(res:any) {
+					e.target.removeAttribute("disabled" , "disabled")
+					alert(res);
+					window.location.reload();
+				}
+			})
 		}
 
 		$(document).on("click" , ".apply-tab .tab" , function() {
@@ -564,8 +629,6 @@ const LogicFormApply = () => {
 					num = index;
 				}
 			});
-
-		
 	
 			if(num == 2) {
 				const text = document.querySelector(".tab-footer button").getAttribute("data-complete")
@@ -577,6 +640,22 @@ const LogicFormApply = () => {
 				document.querySelector(".tab-footer button").removeEventListener("click" ,ajaxApplyForm )
 			}
 		})
+
+		document.querySelector(".tab-footer button").addEventListener("click" , (e:any) => {
+			e.preventDefault();
+			document.querySelectorAll(".apply-tab .tab").forEach((element: Element , index: number) => {
+				if(element.classList.contains("active")) { 
+					num = index;
+				}
+			});
+	
+			if (num >= 0 && num <= 1) {
+				$(".apply-tab .tab")[num + 1].click();
+			}
+		});
+	
+
+	
 	}
 }
 
@@ -718,30 +797,30 @@ const noBanner = () => {
 }
 
 const recaptcha = () => {
-	var script = document.createElement('script');
-	script.onload = function() {
-		console.log("Script loaded and ready");
-	};
 	if(document.querySelector(".g-recaptcha")) {
+		var script = document.createElement('script');
+		script.onload = function() {
+			console.log("Script loaded and ready");
+		};
 		const sitekey = document.querySelector(".g-recaptcha").getAttribute("data-sitekey");
 		script.src = `https://www.google.com/recaptcha/api.js?render=${sitekey}`;
 		script.setAttribute("async", "");
 		script.setAttribute("defer", "");
 		document.getElementsByTagName('head')[0].appendChild(script);
-	}
-	var button = document.createElement("button")
-	button.classList.add("fake-button-recaptcha")
-	button.onclick = (e:any) => {
-		e.preventDefault();
-		grecaptcha.ready(function () {
-			const recaptcha: HTMLInputElement =document.querySelector('.g-recaptcha');
-			const sitekey = recaptcha.getAttribute("data-sitekey")
-			grecaptcha.execute(`${sitekey}`, { action: 'KPY' }).then(function (token: any) {
-				recaptcha.value = token
+		var button = document.createElement("button")
+		button.classList.add("fake-button-recaptcha")
+		button.onclick = (e:any) => {
+			e.preventDefault();
+			grecaptcha.ready(function () {
+				const recaptcha: HTMLInputElement =document.querySelector('.g-recaptcha');
+				const sitekey = recaptcha.getAttribute("data-sitekey")
+				grecaptcha.execute(`${sitekey}`, { action: 'KPY' }).then(function (token: any) {
+					recaptcha.value = token
+				});
 			});
-		});
+		}
+		document.querySelector('main').appendChild(button);
 	}
-	document.querySelector('main').appendChild(button);
 }
 
 // ACTIVE LANGGUAGE
@@ -757,18 +836,24 @@ const activeLanguage = () => {
 	});
 };
 
-// $(window).on('load',function(){
-// 	setTimeout(function(){
-// 		$('#loadpopup').modal('show')
-// 	},3000);
-// });
-
-window.onload = () => {
-	// const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
-	// button.click();
+const readMore = () => {
+	if(window.innerWidth < 576) {
+		document.querySelectorAll(".admission-auv-difference__wrapper .btn-more button").forEach((el:HTMLButtonElement) => {
+			el.addEventListener("click" , (e:any) => {
+				e.preventDefault();
+				el.parentElement.parentElement.querySelector(".desc").classList.add("show");
+				el.parentElement.remove();
+			})
+		})
+	}
 }
 
-
+window.onload = () => {
+	if(document.querySelector(".fake-button-recaptcha")) {
+		const button: HTMLButtonElement = document.querySelector(".fake-button-recaptcha");
+		button.click();
+	}
+}
 
 document.addEventListener("scroll" , async () => {
 	activeWhenScroll();
@@ -784,7 +869,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//
 	dropLine();
 	//
+<<<<<<< HEAD
 	popupIndex();
+=======
+	recaptcha();
+>>>>>>> b7d322e89c8009fa2906eab205a5c9cb8349390d
 	// MAIN SWiper
 	initMainBanner();
 	//
@@ -837,6 +926,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	popupAcademics();
 	//
 	noBanner();
+	//
+	readMore();
 	// recaptcha ();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
