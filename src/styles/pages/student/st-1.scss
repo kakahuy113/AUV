@@ -28,6 +28,9 @@
 						position: relative;
 						display: flex;
 						padding: 55px 0 55px;
+						@media (max-width: 1024px) {
+							padding: 30px 0 30px;
+						}
 						.day-st {
 							text-align: right;
 							p {

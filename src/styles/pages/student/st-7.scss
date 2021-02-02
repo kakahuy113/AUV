@@ -35,6 +35,8 @@
 					margin-right: auto;
 					margin-left: unset;
 					.swiper-slide {
+						height: auto;
+						max-height: 525px;
 						.img {
 							height: 100%;
 							padding-right: 295px;
@@ -60,6 +62,8 @@
 					overflow: hidden;
 					.swiper-slide {
 						height: auto;
+						max-height: 168.5px;
+						overflow: hidden;
 						.img {
 							height: 100%;
 							img {
