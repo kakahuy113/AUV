@@ -563,6 +563,12 @@
 				color: map-get($color, main-5);
 				padding-left: 15px;
 				border: none;
+				transition: .3s all ease-in-out;
+				&:focus {
+					background: map-get($color, x-white);
+					border: 1px solid map-get($color, main-3);
+					transition: .3s all ease-in-out;
+				}
 			}
 			h5 {
 				font-size: 2rem;

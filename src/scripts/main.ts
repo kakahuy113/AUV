@@ -512,24 +512,85 @@ const LogicFormApply = () => {
 	if(document.querySelector(".admission-page")) {
 		let num: number;
 
-		document.querySelector(".tab-footer button").addEventListener("click" , (e:any) => {
+		const ajaxApplyForm = (e:any) => {
 			e.preventDefault();
-			document.querySelectorAll(".apply-tab .tab").forEach((element: Element , index: number) => {
-				if(element.classList.contains("active")) { 
-					num = index;
-				}
-			});
-	
-			if (num >= 0 && num <= 1) {
-				$(".apply-tab .tab")[num + 1].click();
-			} else {
-				
-			}
-		});
-	
+			const formData = new FormData();
+			const url = document.querySelector(".tab-footer button").getAttribute("data-url")
+			//Tab 1
+			const tab = document.querySelectorAll(".apply-form .content")
+			tab[0].querySelectorAll("input[type=text]").forEach((el:HTMLInputElement) => {
 
-		const ajaxApplyForm = () => {
-			
+				const name = el.getAttribute("name");
+				const val = el.value;
+				formData.append(name , val);
+			})
+			tab[0].querySelectorAll("select").forEach( (el: HTMLSelectElement) => {
+				const name = el.getAttribute("name");
+				const val = el.value;
+				formData.append(name , val);
+			})
+			tab[0].querySelectorAll(".row-check").forEach((el:HTMLElement) => {
+				if(el.querySelector("input[type=checkbox]")) {
+					const name = el.querySelector("input").getAttribute("name")
+					const array = new Array();
+					el.querySelectorAll("input[type=checkbox]:checked").forEach((el:HTMLInputElement) => {
+						array.push(el.value);
+					})
+					if(array.length < 1) {
+						formData.append(name , null);
+					} else {
+						formData.append(name , JSON.stringify(array));
+					}
+				}
+				if(el.querySelector("input[type=radio]")) {
+					const name = el.querySelector("input").getAttribute("name")
+					const value = el.querySelector<HTMLInputElement>("input[type=radio]").value;
+					formData.append(name , value);
+				}
+			})
+
+			// Tab 2
+			tab[1].querySelectorAll('input:not([type="file"])').forEach((el:HTMLInputElement) => {
+					const name = el.getAttribute("name");
+					const val = el.value;
+					formData.append(name , val);
+			})
+			tab[1].querySelectorAll('input[type="file"]').forEach((el:HTMLInputElement) => {
+				const name = el.getAttribute("name");
+				const file = el.files[0]
+				formData.append(name , file);
+			})
+
+			tab[2].querySelectorAll("input[hidden]").forEach((el:HTMLInputElement) => {
+				const name = el.getAttribute("name");
+				const val = el.value;
+				formData.append(name , val);
+			})
+
+			$.ajax({
+				url : url,
+				data: formData,
+				type: "POST",
+				processData: false,
+				contentType: false,
+				beforeSend: function() {
+					e.target.setAttribute("disabled" , "disabled")
+				},
+				success: function(res:any) {
+					e.target.removeAttribute("disabled" , "disabled")
+					if(res.Code == 200) {
+						alert(res);
+						window.location.reload();
+					} else {
+						alert(res);
+					}
+				},
+				error: function(res:any) {
+					e.target.removeAttribute("disabled" , "disabled")
+					alert(res);
+					window.location.reload();
+				}
+			})
 		}
 
 		$(document).on("click" , ".apply-tab .tab" , function() {
@@ -544,8 +605,6 @@ const LogicFormApply = () => {
 					num = index;
 				}
 			});
-
-		
 	
 			if(num == 2) {
 				const text = document.querySelector(".tab-footer button").getAttribute("data-complete")
@@ -557,6 +616,22 @@ const LogicFormApply = () => {
 				document.querySelector(".tab-footer button").removeEventListener("click" ,ajaxApplyForm )
 			}
 		})
+
+		document.querySelector(".tab-footer button").addEventListener("click" , (e:any) => {
+			e.preventDefault();
+			document.querySelectorAll(".apply-tab .tab").forEach((element: Element , index: number) => {
+				if(element.classList.contains("active")) { 
+					num = index;
+				}
+			});
+	
+			if (num >= 0 && num <= 1) {
+				$(".apply-tab .tab")[num + 1].click();
+			}
+		});
+	
+
+	
 	}
 }
 
