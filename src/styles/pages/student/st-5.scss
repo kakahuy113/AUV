@@ -1,6 +1,9 @@
 .schedule-student {
 	background: #0D1F3C;
 	padding-bottom: 160px;
+	@media (max-width: 1024px) {
+		padding-bottom: 40px;
+	}
 	.container { 
 		.container-custom {
 			.schedule-title{
