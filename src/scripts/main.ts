@@ -166,6 +166,7 @@ const ImagePopugalley = () => {
 		
 	})
 }
+
 //drop line 
 const dropLine = () => {
 	document.querySelectorAll(".footer__contact .item__text a").forEach(item => {
@@ -252,6 +253,7 @@ const showMenuMobile = () => {
 		});
 	}
 }
+
 //button go top
 const showBackToTop = () => {
 	$(window).scroll(function() {
@@ -269,6 +271,7 @@ const showBackToTop = () => {
 		});
 	});
 } ;
+
 //ajax gallery
 const ajaxlisgallery = () => {
 	$(document).on("click" , ".lib__page .pagination li" ,function(e:any) {
@@ -286,7 +289,6 @@ const ajaxlisgallery = () => {
 	})
 }
 
-
 // SETBACKGROUND IMAGE
 const setBackgroundImageSection = () => {
 	// PARAMS HERE !!!
@@ -297,7 +299,6 @@ const setBackgroundImageSection = () => {
 		item.setAttribute("style", `background-image:url(${link})`);
 	});
 };
-
 
 // submit contact
 const ajaxContactForm = () => {
@@ -423,6 +424,7 @@ const swiperFaculty = () => {
 		// }
 	})
 }
+
 //swiper about Campus
 const swipeCampus = () => {
 	const swiper = new Swiper('.about-campus-slide .swiper-container', {
@@ -450,6 +452,7 @@ const swipeCampus = () => {
 		}
 	})
 }
+
 // popup faculty about
 const fancyboxFacultyAbout = () => {
 	$(document).on("click", ".about-faculty-slide .btn-remore" , function() {
@@ -844,6 +847,21 @@ const readMore = () => {
 	}
 }
 
+const scrollAcademicIndex = () => {
+	if(document.querySelector(".about-page") && window.location.hash != "") {
+		$('html, body').animate({
+			scrollTop: $(`.about-academic`)[0].offsetTop - 120
+		}, 1000);
+		document.querySelectorAll(".about-academic__wrapper .tab-item .item").forEach((el:HTMLElement) => {
+			if(window.location.hash == `#${el.getAttribute("toggle-for")}`) {
+				window.onload = () => {
+					el.click();
+				}
+			}
+		})
+	}
+}
+
 window.onload = () => {
 	if(document.querySelector(".fake-button-recaptcha")) {
 		const button: HTMLButtonElement = document.querySelector(".fake-button-recaptcha");
@@ -920,7 +938,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	noBanner();
 	//
 	readMore();
-	// recaptcha ();
+	//
+	scrollAcademicIndex();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
