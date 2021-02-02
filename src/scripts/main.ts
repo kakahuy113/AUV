@@ -127,11 +127,11 @@ const ImagePopupabout = () => {
 }
 
 //popup-page
-$(document).ready(function () {
-    $("#popup-page").fancybox({
-        'overlayShow': true
-    }).trigger('click');
-});
+// $(document).ready(function () {
+//     $("#popup-page").fancybox({
+//         'overlayShow': true
+//     }).trigger('click');
+// });
 
 
 //popup image Gallery
