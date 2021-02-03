@@ -79,23 +79,6 @@ const swiperstudent = () => {
 	});
 }
 
-// swiper-popup-index
-const swiperForindex = () => {
-	var swiper = new Swiper(".index-popup .swiper-container", {
-		loop: true,
-		spaceBetween: 10,
-		slidesPerView: 3,
-		direction: 'vertical',
-		effect: 'fade',
-		fadeEffect: {
-			crossFade: true,
-		},
-		autoplay: {
-			delay: 2500,
-		},
-	});
-};
-
 //popup image News&Events
 const ImagePopupabout = () => {
 	$(".lib__page__img .item-gallery").on("click" , function() {
@@ -133,7 +116,21 @@ const popupIndex = () => {
 	if(document.querySelector(".index-page")) {
 		$.fancybox.open({
 			src: "#popup-page",
-			type: "inline"
+			type: "inline",
+			opts: {
+				beforeShow : function() {
+					const condition = document.querySelectorAll(".index-popup .swiper-slide")
+					if(condition.length > 0) {
+						var swiper = new Swiper(".index-popup .swiper-container", {
+							slidesPerView: 1
+							// autoplay: {
+							// 	delay: 2500,
+							// },
+						});
+					}
+					
+				}
+			}
 		})
 	}
 }
@@ -594,30 +591,32 @@ const LogicFormApply = () => {
 				formData.append(name , val);
 			})
 
-			$.ajax({
-				url : url,
-				data: formData,
-				type: "POST",
-				processData: false,
-				contentType: false,
-				beforeSend: function() {
-					e.target.setAttribute("disabled" , "disabled")
-				},
-				success: function(res:any) {
-					e.target.removeAttribute("disabled" , "disabled")
-					if(res.Code == 200) {
-						alert(res);
-						window.location.reload();
-					} else {
-						alert(res);
-					}
-				},
-				error: function(res:any) {
-					e.target.removeAttribute("disabled" , "disabled")
-					alert(res);
-					window.location.reload();
-				}
-			})
+			// if($(".admission-how-to-apply__wrapper form").valid() === true) {
+				$.ajax({
+					url : url,
+					data: formData,
+					type: "POST",
+					processData: false,
+					contentType: false,
+					beforeSend: function() {
+						e.target.setAttribute("disabled" , "disabled")
+					},
+					success: function(res:any) {
+						e.target.removeAttribute("disabled" , "disabled")
+						if(res.Code == 200) {
+							alert(res);
+							window.location.reload();
+						} else {
+							alert(res);
+						}
+					},
+					// error: function(res:any) {
+					// 	e.target.removeAttribute("disabled" , "disabled")
+					// 	alert(res);
+					// 	window.location.reload();
+					// }
+				})
+			// }
 		}
 
 		$(document).on("click" , ".apply-tab .tab" , function() {
@@ -916,9 +915,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//
 	swipeCampus();
 	//
-	//swiper-popup-index
-	swiperForindex();
-
 	fancyboxFacultyAbout();
 	// Tab
 	popupImgmem();
