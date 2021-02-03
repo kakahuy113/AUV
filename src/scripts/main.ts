@@ -894,10 +894,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	dropLine();
 	//
 	popupIndex();
-<<<<<<< HEAD
-=======
 	//
->>>>>>> 4b761aacdc69dd8e39e5b0f7c587bcb11e6528c5
 	recaptcha();
 	// MAIN SWiper
 	initMainBanner();
