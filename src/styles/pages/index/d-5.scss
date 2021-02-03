@@ -68,6 +68,7 @@
 				&.is-img {
 					cursor: pointer;
 					&::before {
+						transition: transform .5s ease;
 						position: absolute;
 						pointer-events: none;
 						content: '';

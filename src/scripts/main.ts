@@ -137,6 +137,13 @@ const popupIndex = () => {
 		})
 	}
 }
+//popup-page
+// $(document).ready(function () {
+//     $("#popup-page").fancybox({
+//         'overlayShow': true
+//     }).trigger('click');
+// });
+
 
 //popup image Gallery
 const ImagePopugalley = () => {
@@ -869,11 +876,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//
 	dropLine();
 	//
-<<<<<<< HEAD
 	popupIndex();
-=======
 	recaptcha();
->>>>>>> b7d322e89c8009fa2906eab205a5c9cb8349390d
 	// MAIN SWiper
 	initMainBanner();
 	//
