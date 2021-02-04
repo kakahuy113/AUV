@@ -600,7 +600,7 @@ const LogicFormApply = () => {
 					formData.append(name , file);
 				})
 
-				tab[2].querySelectorAll("input[hidden]").forEach((el:HTMLInputElement) => {
+				tab[2].querySelectorAll("input[type=hidden]").forEach((el:HTMLInputElement) => {
 					const date = tab[2].querySelector<HTMLInputElement>(".date-picker").value;
 					const time = tab[2].querySelector<HTMLInputElement>(".time-picker").value;
 					const name = el.getAttribute("name");
