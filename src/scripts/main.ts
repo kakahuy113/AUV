@@ -604,8 +604,8 @@ const LogicFormApply = () => {
 					const date = tab[2].querySelector<HTMLInputElement>(".date-picker").value;
 					const time = tab[2].querySelector<HTMLInputElement>(".time-picker").value;
 					const name = el.getAttribute("name");
-					const val = `${date}-${time}`;
-					formData.append(name , val);
+					el.value = `${date}-${time}`;
+					formData.append(name , el.value);
 				})
 	
 				if($(".admission-how-to-apply__wrapper form").valid() === true) {
