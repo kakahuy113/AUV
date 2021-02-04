@@ -25,6 +25,7 @@ section.admission-how-to-apply(data-section="How To Apply")
 								p
 									!= "<span>STEP3 |</span> Schedule an Interview"
 					.tab-content
+						input.g-recaptcha(type="text" hidden data-sitekey="6Le-tdEZAAAAAHiNLcnunnaYNGYWPK7gwZjC1g9y" name="recaptcha")
 						.content(tab-id="tab-1")
 							.row
 								.col-12
@@ -250,7 +251,7 @@ section.admission-how-to-apply(data-section="How To Apply")
 													input(type="checkbox" id="Schedule-2")
 													label(for="Schedule-2") I give my consent to the processing of my data by AUV. Re information I provide will be held and used for the purposes of: processing my application for study and for future student administration.
 					.tab-footer
-						button.btn.btn-next(data-complete="Submit" data-url="asd" data-next-step="Next Step") Next Step
+						button.btn.btn-next(data-complete="Submit" data-url="asd" data-next-step="Next Step" data-warning="Vui long check") Next Step
 				.text-for-step-3
 					p Provide IELTS or TOEFL examination scores or take our English Placement Examination prior to admission to the program. We also strongly recommend that students arrange an in-person interview with one of our Admissions Officers.
 					p Upon receipt of all required documents, the Admissions Committee will review admission applications and, subject to the applicant meeting the requisite selection criteria, issue a letter of acceptance within five days.
