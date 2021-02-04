@@ -6,7 +6,8 @@
 		"node_modules/swiper/js/swiper.min.js",
 		"node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
 		"node_modules/flatpickr/dist/flatpickr.min.js",
-		"vendors/card-widget.js"
+		"vendors/card-widget.js",
+		"vendors/moment.min.js"
 	],
 	"css": [
 		"node_modules/swiper/css/swiper.min.css",

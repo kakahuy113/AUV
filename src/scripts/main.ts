@@ -4,6 +4,7 @@ import { commonController } from "./libraries/CommonController";
 declare var Swiper:any;
 declare var $:any;
 declare var grecaptcha:any;
+declare var moment:any;
 
 //swiper slides auv
 const swiperindex = () => {
@@ -501,11 +502,13 @@ function DatePickerInit() {
       $(this).flatpickr({
 		dateFormat: "Y-m-d",
 		minDate: "today",
+		defaultDate: "today"
       });
     } else {
 		$(this).flatpickr({
 		dateFormat: "Y-m-d",
 		minDate: "today",
+		defaultDate: "today"
 		});
 	  }
   });
@@ -528,6 +531,7 @@ function DatePickerInit() {
 		enableTime: true,
 		noCalendar: true,
 		dateFormat: "H:i",
+		defaultDate: "00:00"
       });
     } else {
 		$(this).flatpickr({
@@ -535,6 +539,7 @@ function DatePickerInit() {
 			noCalendar: true,
 			time_24hr: true,
 			dateFormat: "H:i",
+			defaultDate: "00:00"
 		});
 	} 
   });
@@ -604,7 +609,7 @@ const LogicFormApply = () => {
 					const date = tab[2].querySelector<HTMLInputElement>(".date-picker").value;
 					const time = tab[2].querySelector<HTMLInputElement>(".time-picker").value;
 					const name = el.getAttribute("name");
-					el.value = `${date}-${time}`;
+					el.value = `${ moment(`${date} ${time}`, 'YYYY-MM-DD HH:mm:ss').format()}`
 					formData.append(name , el.value);
 				})
 	
