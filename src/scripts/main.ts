@@ -890,6 +890,35 @@ const scrollAcademicIndex = () => {
 	}
 }
 
+//active menu
+const activeLinkMenu = () => {
+	var link = '';
+	var url = window.location.pathname.split('/');
+	if (url.length !== 4) {
+		if (url[url.length - 1] == '') {
+			link = url[url.length - 2];
+		} else {
+			link = url[url.length - 1];
+		}
+		$('.navBar__item  a').each(function() {
+			var getHref = $(this).attr('href');
+			var href = getHref.split('/').pop();
+			if (href === link) {
+				$(this).parent().addClass('active');
+			}
+		});
+	} else {
+		$('.navBar__item').removeClass('active');
+	}
+};
+
+const inputFileChange =  () => {
+	$("input[type=file]").on("change" , function(el:any) {
+		console.log($(this));
+		$(this).parent().find("label")[0].setAttribute("text" , `${$(this)[0].files[0].name}`)
+	})
+}
+
 window.onload = () => {
 	if(document.querySelector(".fake-button-recaptcha")) {
 		const button: HTMLButtonElement = document.querySelector(".fake-button-recaptcha");
@@ -968,6 +997,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	readMore();
 	//
 	scrollAcademicIndex();
+	//
+	activeLinkMenu();
+	//
+	inputFileChange();
 	const rulesofConduct = new Tab(".rules-of-conduct .tab-container");
 	const aboutvalue = new Tab(".about-values__wrapper .tab-container");
 	const constructionPlan = new Tab(".construction-Plans .tab-container");
