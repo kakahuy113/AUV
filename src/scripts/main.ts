@@ -914,7 +914,6 @@ const activeLinkMenu = () => {
 
 const inputFileChange =  () => {
 	$("input[type=file]").on("change" , function(el:any) {
-		console.log($(this));
 		$(this).parent().find("label")[0].setAttribute("text" , `${$(this)[0].files[0].name}`)
 	})
 }
